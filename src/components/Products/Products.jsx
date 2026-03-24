@@ -1,0 +1,255 @@
+import { useState } from 'react'
+import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+
+const productCategories = {
+  vacuum: [
+    { id: 1, name: 'K2 EDTA Vacuum Blood Collection Tube', image: '/productImage/vaccum_tubes/k2-edta-vacuum-blood-collection-tube-1740491889-7886336.jpg', price: '₹2.75 – ₹4.00 / unit', moq: '5000 piece' },
+    { id: 2, name: 'Clot Activator Vacuum Blood Collection Tube', image: '/productImage/vaccum_tubes/vacuum-clot-activator-blood-collection-tube-1740496023-7886366.jpg', price: '₹2.75 – ₹4.00 / unit', moq: '5000 piece' },
+    { id: 3, name: 'K3 EDTA Vacuum Blood Collection Tube', image: '/productImage/vaccum_tubes/k3-edta-vacuum-blood-collection-tubes-1740491241-7886279.jpg', price: '₹2.75 – ₹4.00 / unit', moq: '5000 piece' },
+    { id: 4, name: 'Fluoride Vacuum Blood Collection Tube', image: '/productImage/vaccum_tubes/fluoride-vacuum-blood-collection-tube-1740496500-7886414.jpg', price: '₹2.75 – ₹4.00 / unit', moq: '5000 piece' },
+    { id: 5, name: 'Plain Serum Vacuum Blood Collection Tube', image: '/productImage/vaccum_tubes/vacuum-plain-serum-blood-collection-tube-1740637011-7886589.jpg', price: '₹3.00 – ₹5.00 / unit', moq: '5000 piece' },
+  ],
+  nonVacuum: [
+    { id: 6, name: 'Blood Collection Fluoride Tube with Double Safety Caps', image: '/productImage/non_vaccum_tubes/fluoride-safety-cap-blood-collection-tube-1740581900-7886495.jpg', price: '₹1.40 – ₹1.80 / unit', moq: '10000 piece' },
+    { id: 7, name: 'Clot Activator Non Vacuum Blood Collection Tube', image: '/productImage/non_vaccum_tubes/clot-activator-safety-cap-blood-collection-tube-1740581205-7886494.jpg', price: '₹1.40 – ₹1.80 / unit', moq: '10000 piece' },
+    { id: 8, name: 'K2 EDTA Safety Cap Blood Collection Tube', image: '/productImage/non_vaccum_tubes/k2-edta-safety-cap-blood-collection-tube-1740580690-7886490.jpg', price: '₹1.40 – ₹1.80 / unit', moq: '10000 piece' },
+    { id: 9, name: 'K3 EDTA Safety Cap Blood Collection Tube', image: '/productImage/non_vaccum_tubes/k3-edta-safety-cap-blood-collection-tube-1740580332-7886474.jpg', price: '₹1.40 – ₹1.80 / unit', moq: '10000 piece' },
+    { id: 10, name: 'Plain Non Vacuum Blood Collection Tube', image: '/productImage/non_vaccum_tubes/non-vacuum-double-cap-plain-blood-collection-tube-1740637631-7886598.jpg', price: '₹1.40 – ₹1.80 / unit', moq: '10000 piece' },
+  ],
+  singleCap: [
+    { id: 11, name: 'Clot Activator Single Cap Blood Collection Tube', image: '/productImage/single_cap_tubes/single-cap-clot-activator-blood-collection-tube-1740497900-7886439.jpg', price: '₹1.20 – ₹1.60 / unit', moq: '12000 piece' },
+    { id: 12, name: 'Fluoride Single Cap Blood Collection Tube', image: '/productImage/single_cap_tubes/fluoride-single-cap-blood-collection-tube-1740498240-7886448.jpg', price: '₹1.20 – ₹1.60 / unit', moq: '12000 piece' },
+    { id: 13, name: 'K2 EDTA Non Vacuum Blood Collection Tube', image: '/productImage/single_cap_tubes/k2-edta-single-cap-blood-collection-tube-1740497396-7886431.jpg', price: '₹1.20 – ₹1.60 / unit', moq: '12000 piece' },
+    { id: 14, name: 'K3 EDTA Single Cap Non Vacuum Blood Collection Tube', image: '/productImage/single_cap_tubes/k3-edta-single-cap-tube-1740497811-7886427.jpg', price: '₹1.20 – ₹1.60 / unit', moq: '12000 piece' },
+    { id: 15, name: 'Plain Serum Blood Collection Tube', image: '/productImage/single_cap_tubes/plain-serum-blood-collection-tubes-1740637606-7886572.jpg', price: '₹1.20 – ₹1.60 / unit', moq: '12000 piece' },
+  ],
+}
+
+const tabs = [
+  { key: 'vacuum', label: 'Vacuum Tubes' },
+  { key: 'nonVacuum', label: 'Non-Vacuum Tubes' },
+  { key: 'singleCap', label: 'Single Cap Tubes' },
+]
+
+const countryCodes = [
+  { code: '+91', flag: '🇮🇳', name: 'IN' },
+  { code: '+1', flag: '🇺🇸', name: 'US' },
+  { code: '+44', flag: '🇬🇧', name: 'GB' },
+  { code: '+971', flag: '🇦🇪', name: 'AE' },
+  { code: '+966', flag: '🇸🇦', name: 'SA' },
+  { code: '+60', flag: '🇲🇾', name: 'MY' },
+  { code: '+65', flag: '🇸🇬', name: 'SG' },
+  { code: '+61', flag: '🇦🇺', name: 'AU' },
+]
+
+function InquireModal({ product, onClose }) {
+  const [quantity, setQuantity] = useState('')
+  const [unit, setUnit] = useState('piece')
+  const [editingUnit, setEditingUnit] = useState(false)
+  const [countryCode, setCountryCode] = useState('+91')
+  const [mobile, setMobile] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Form submission logic can be wired here
+    alert(`Enquiry sent for ${product.name}!\nQty: ${quantity} ${unit}\nMobile: ${countryCode} ${mobile}`)
+    onClose()
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
+      onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
+    >
+      <div className="bg-white rounded-lg shadow-2xl w-full max-w-2xl relative overflow-hidden">
+
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 text-white text-sm font-bold hover:bg-gray-600 transition-colors"
+        >
+          ✕
+        </button>
+
+        <div className="flex flex-col sm:flex-row">
+
+          {/* Left — product info */}
+          <div className="sm:w-5/12 bg-gray-50 p-5 flex flex-col">
+            <div className="bg-gray-200 rounded text-white text-sm font-semibold px-3 py-2 mb-4 leading-tight">
+              <span className="text-gray-800">{product.name}</span>
+            </div>
+            <div className="flex-1 flex items-center justify-center">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="h-44 w-auto object-contain"
+              />
+            </div>
+            <div className="mt-4 text-sm text-gray-800">
+              <p><span className="font-semibold">Price :</span> <span className="font-bold text-[#1D4ED8]">{product.price}</span></p>
+              <p className="mt-1"><span className="font-semibold">MOQ :</span> {product.moq}</p>
+            </div>
+          </div>
+
+          {/* Right — form */}
+          <div className="sm:w-7/12 flex flex-col">
+
+            {/* Header */}
+            <div className="bg-[#1E3A8A] text-white text-center py-4 px-6">
+              <h2 className="text-lg font-bold">Get a Quick Quote</h2>
+            </div>
+
+            <form onSubmit={handleSubmit} className="p-5 flex flex-col gap-4">
+
+              {/* Quantity + Unit row */}
+              <div className="flex gap-3">
+                <div className="flex-1">
+                  <label className="block text-xs text-gray-600 mb-1">Quantity</label>
+                  <input
+                    type="number"
+                    placeholder="Quantity"
+                    value={quantity}
+                    onChange={(e) => setQuantity(e.target.value)}
+                    required
+                    className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-[#1D4ED8]"
+                  />
+                </div>
+                <div className="flex-1">
+                  <label className="block text-xs text-gray-600 mb-1">Measurement Units</label>
+                  <div className="flex items-center border border-gray-300 rounded px-3 py-2 gap-2">
+                    {editingUnit ? (
+                      <input
+                        autoFocus
+                        type="text"
+                        value={unit}
+                        onChange={(e) => setUnit(e.target.value)}
+                        onBlur={() => setEditingUnit(false)}
+                        className="flex-1 text-sm focus:outline-none"
+                      />
+                    ) : (
+                      <span className="flex-1 text-sm text-gray-700">{unit}</span>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => setEditingUnit(true)}
+                      className="text-[#1D4ED8] text-xs font-semibold hover:underline flex items-center gap-1 whitespace-nowrap"
+                    >
+                      ✏️ Edit
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile */}
+              <div>
+                <label className="block text-xs text-gray-600 mb-1">Mobile No.</label>
+                <div className="flex gap-2">
+                  <select
+                    value={countryCode}
+                    onChange={(e) => setCountryCode(e.target.value)}
+                    className="border border-gray-300 rounded px-2 py-2 text-sm focus:outline-none focus:border-[#1D4ED8] bg-white"
+                  >
+                    {countryCodes.map((c) => (
+                      <option key={c.code} value={c.code}>{c.flag} {c.code}</option>
+                    ))}
+                  </select>
+                  <input
+                    type="tel"
+                    placeholder="Enter Mobile No."
+                    value={mobile}
+                    onChange={(e) => setMobile(e.target.value)}
+                    required
+                    className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-[#1D4ED8]"
+                  />
+                </div>
+              </div>
+
+              {/* Submit */}
+              <button
+                type="submit"
+                className="mt-2 bg-gray-900 hover:bg-gray-700 text-white font-semibold py-2.5 rounded transition-colors text-sm"
+              >
+                Send Enquiry
+              </button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const Products = () => {
+  const [activeTab, setActiveTab] = useState('vacuum')
+  const [selectedProduct, setSelectedProduct] = useState(null)
+  const ref = useScrollAnimation()
+
+  return (
+    <section className="py-16 lg:py-20 bg-[#EFF6FF]" id="products">
+      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
+
+        {/* Section header */}
+        <div className="mb-10">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-0.5 bg-[#1D4ED8]" />
+            <p className="text-[#1D4ED8] text-xs font-bold uppercase tracking-[0.3em]">OUR PRODUCTS</p>
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-[#0F172A]">Blood Collection Tubes</h2>
+        </div>
+
+        {/* Tab navigation */}
+        <div className="flex gap-2 mb-8 flex-wrap">
+          {tabs.map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
+                activeTab === tab.key
+                  ? 'bg-[#1D4ED8] text-white shadow-md'
+                  : 'bg-white text-[#1E3A8A] border border-[#BFDBFE] hover:border-[#1D4ED8]'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Product grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+          {productCategories[activeTab].map((product) => (
+            <div
+              key={product.id}
+              className="bg-white rounded-lg p-5 flex flex-col items-center text-center hover:shadow-xl transition-shadow border-l-4 border-l-[#1D4ED8] border border-[#BFDBFE]"
+            >
+              <div className="mb-4">
+                <img src={product.image} alt={product.name} className="h-40 w-auto mx-auto object-contain" />
+              </div>
+              <h3 className="text-xs font-bold text-[#0F172A] mb-1 leading-snug flex-1">{product.name}</h3>
+              <p className="text-xs text-[#3B82F6] font-medium mb-4">{product.price}</p>
+              <button
+                onClick={() => setSelectedProduct(product)}
+                className="mt-auto border border-[#1D4ED8] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white text-xs font-semibold px-5 py-2 rounded transition-colors w-full"
+              >
+                Inquire
+              </button>
+            </div>
+          ))}
+        </div>
+
+      </div>
+
+      {/* Modal */}
+      {selectedProduct && (
+        <InquireModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
+
+    </section>
+  )
+}
+
+export default Products
