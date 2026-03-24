@@ -27,7 +27,7 @@ const Home = () => {
 
       {/* WhatsApp Floating Button */}
       <a
-        href={`https://wa.me/919825156800?text=${encodeURIComponent('Hello! I found your website https://www.jadkohealthcare.com and am interested in your products.')}`}
+        href={`https://wa.me/919825156800?text=${encodeURIComponent('Hello! I found your website https://www.hreedrakbioscience.in and am interested in your products.')}`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition-colors"

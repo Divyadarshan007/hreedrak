@@ -36,7 +36,7 @@ const Hero = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 mb-10">
           <a
-            href={`https://wa.me/919825156800?text=${encodeURIComponent('Hello! I found your website https://www.jadkohealthcare.com and am interested in your products.')}`}
+            href={`https://wa.me/919825156800?text=${encodeURIComponent('Hello! I found your website https://www.hreedrakbioscience.in and am interested in your products.')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#1D4ED8] hover:bg-[#3B82F6] text-white font-semibold px-7 py-3 rounded transition-colors"
