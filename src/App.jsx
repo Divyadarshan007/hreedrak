@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Home from './pages/Home'
 import About from './pages/About'
 import VacuumBloodCollectionTubes from './pages/products/vacuum-blood-collection-tubes'
@@ -11,9 +12,18 @@ import Certificates from './pages/Certificates'
 import Catalogue from './pages/Catalogue'
 import RequestQuote from './pages/RequestQuote'
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [pathname])
+  return null
+}
+
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
