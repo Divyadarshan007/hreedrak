@@ -15,10 +15,10 @@ const features = [
 ]
 
 const statColors = [
-  'bg-[#EFF6FF] border border-[#BFDBFE]',
-  'bg-[#DBEAFE] border border-[#93C5FD]',
-  'bg-[#E0F2FE] border border-[#7DD3FC]',
-  'bg-[#F0F9FF] border border-[#BAE6FD]',
+  { card: 'bg-indigo-100 border border-indigo-200', value: 'text-indigo-700', line: 'bg-indigo-300/50', label: 'text-indigo-600' },
+  { card: 'bg-cyan-100 border border-cyan-200', value: 'text-cyan-700', line: 'bg-cyan-300/50', label: 'text-cyan-600' },
+  { card: 'bg-sky-100 border border-sky-200', value: 'text-sky-700', line: 'bg-sky-300/50', label: 'text-sky-600' },
+  { card: 'bg-purple-100 border border-purple-200', value: 'text-purple-700', line: 'bg-purple-300/50', label: 'text-purple-600' },
 ]
 
 const WhyChooseUs = () => {
@@ -43,14 +43,14 @@ const WhyChooseUs = () => {
             {stats.map((stat, i) => (
               <div
                 key={i}
-                className={`${statColors[i]} rounded-lg p-6 flex flex-col justify-between min-h-[140px] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-default`}
+                className={`${statColors[i].card} rounded-lg p-6 flex flex-col justify-between min-h-[140px] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-default`}
               >
-                <span className="text-4xl lg:text-5xl font-extrabold text-[#1D4ED8] leading-none">
+                <span className={`text-4xl lg:text-5xl font-extrabold ${statColors[i].value} leading-none`}>
                   {stat.value}
                 </span>
                 <div>
-                  <div className="w-6 h-0.5 bg-[#1D4ED8]/30 mb-2" />
-                  <span className="text-[#1E40AF] text-xs font-medium leading-tight">{stat.label}</span>
+                  <div className={`w-6 h-0.5 ${statColors[i].line} mb-2`} />
+                  <span className={`${statColors[i].label} text-xs font-medium leading-tight`}>{stat.label}</span>
                 </div>
               </div>
             ))}

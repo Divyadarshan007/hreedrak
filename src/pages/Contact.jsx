@@ -79,8 +79,7 @@ const Contact = () => {
     const errs = {}
     if (!form.product.trim()) errs.product = 'This field is required'
     if (!form.name.trim()) errs.name = 'Name is required'
-    if (!form.email.trim()) errs.email = 'Email is required'
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = 'Enter a valid email address'
+    if (form.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = 'Enter a valid email address'
     if (!form.mobile.trim()) errs.mobile = 'Mobile number is required'
     else if (!/^\d{7,15}$/.test(form.mobile)) errs.mobile = 'Enter a valid mobile number (digits only)'
     if (!form.enquiry.trim()) errs.enquiry = 'Enquiry details are required'
@@ -98,7 +97,7 @@ const Contact = () => {
       `*New Enquiry from Website*\n` +
       `Product/Service: ${form.product}\n` +
       `Name: ${form.name}\n` +
-      `Email: ${form.email}\n` +
+      (form.email ? `Email: ${form.email}\n` : '') +
       `Mobile: ${form.countryCode} ${form.mobile}\n` +
       `Enquiry: ${form.enquiry}`
     window.open(`https://wa.me/919825156800?text=${encodeURIComponent(msg)}`, '_blank')
@@ -265,7 +264,7 @@ const Contact = () => {
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                        Email <span className="text-red-500">*</span>
+                        Email <span className="text-gray-400">(Optional)</span>
                       </label>
                       <input
                         type="email"
@@ -345,24 +344,6 @@ const Contact = () => {
           </div>
         </div>
       </main>
-
-      {/* CTA Banner */}
-      <section className="py-14 bg-[#1D4ED8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <p className="text-white text-lg sm:text-xl font-semibold text-center sm:text-left">
-            Our products consist of all aspects of the international materials guidelines!
-          </p>
-          <a
-            href="mailto:hreedrakbioscience@gmail.com"
-            className="flex-shrink-0 inline-flex items-center gap-2 bg-white text-[#1D4ED8] font-bold text-sm px-6 py-3 rounded-full hover:bg-blue-50 transition-colors"
-          >
-            Inquiry
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-      </section>
 
       <Footer />
     </div>

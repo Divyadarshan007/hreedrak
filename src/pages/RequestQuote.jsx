@@ -56,8 +56,7 @@ const RequestQuote = () => {
   const validate = () => {
     const errs = {}
     if (!form.name.trim()) errs.name = 'Name is required'
-    if (!form.email.trim()) errs.email = 'Email is required'
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = 'Enter a valid email address'
+    if (form.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = 'Enter a valid email address'
     if (!form.mobile.trim()) errs.mobile = 'Mobile number is required'
     else if (!/^\d{7,15}$/.test(form.mobile)) errs.mobile = 'Enter a valid mobile number (digits only)'
     return errs
@@ -83,7 +82,7 @@ const RequestQuote = () => {
       `*Quote Request from Website*\n` +
       `Name: ${form.name}\n` +
       (form.company ? `Company: ${form.company}\n` : '') +
-      `Email: ${form.email}\n` +
+      (form.email ? `Email: ${form.email}\n` : '') +
       `Mobile: ${form.countryCode} ${form.mobile}\n` +
       (form.country ? `Country: ${form.country}\n` : '') +
       (selectedProductLines ? `Selected Products:\n${selectedProductLines}\n` : '') +
@@ -173,7 +172,7 @@ const RequestQuote = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1.5">Email <span className="text-red-500">*</span></label>
+                  <label className="block text-xs font-semibold text-gray-600 mb-1.5">Email <span className="text-gray-400">(Optional)</span></label>
                   <input
                     name="email"
                     type="email"

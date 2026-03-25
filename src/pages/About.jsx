@@ -279,24 +279,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* CTA Banner */}
-        <section className="py-12 bg-primary">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <p className="text-white text-lg sm:text-xl font-semibold text-center sm:text-left">
-              Our products consist of all aspects of the international materials guidelines!
-            </p>
-            <a
-              href="mailto:hreedrakbioscience@gmail.com"
-              className="flex-shrink-0 inline-flex items-center gap-2 bg-white text-primary font-bold text-sm px-6 py-3 rounded-full hover:bg-blue-50 transition-colors"
-            >
-              Inquiry
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </section>
-
       </main>
 
       <Footer />

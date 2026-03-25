@@ -42,8 +42,7 @@ const OemServices = () => {
   const validateOemForm = () => {
     const errs = {}
     if (!oemForm.name.trim()) errs.name = 'Name is required'
-    if (!oemForm.email.trim()) errs.email = 'Email is required'
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(oemForm.email)) errs.email = 'Enter a valid email address'
+    if (oemForm.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(oemForm.email)) errs.email = 'Enter a valid email address'
     if (!oemForm.mobile.trim()) errs.mobile = 'Mobile number is required'
     else if (!/^\d{7,15}$/.test(oemForm.mobile)) errs.mobile = 'Enter a valid mobile number (digits only)'
     if (!oemForm.requirement.trim()) errs.requirement = 'Requirement details are required'
@@ -69,7 +68,7 @@ const OemServices = () => {
     const msg =
       `*OEM Services Enquiry*\n` +
       `Name: ${oemForm.name}\n` +
-      `Email: ${oemForm.email}\n` +
+      (oemForm.email ? `Email: ${oemForm.email}\n` : '') +
       `Mobile: +91 ${oemForm.mobile}\n` +
       `Requirement: ${oemForm.requirement}`
     window.open(`https://wa.me/919825156800?text=${encodeURIComponent(msg)}`, '_blank')
@@ -120,9 +119,6 @@ const OemServices = () => {
               <div className="flex items-center gap-3 mb-4 flex-wrap">
                 <span className="text-primary font-bold text-xl">₹ 1.00 - 3.00</span>
                 <span className="text-gray-500 text-sm">/ Piece</span>
-                <button onClick={openModal} className="border border-gray-300 text-gray-700 text-xs px-3 py-1 rounded hover:border-primary hover:text-primary transition-colors">
-                  Get Best Price
-                </button>
               </div>
 
               <div className="text-sm text-gray-600 leading-relaxed space-y-3">
@@ -175,7 +171,7 @@ const OemServices = () => {
                 {oemErrors.name && <p className="mt-1 text-xs text-red-500">{oemErrors.name}</p>}
               </div>
               <div>
-                <label className="block text-sm text-gray-600 mb-1">Email <span className="text-red-500">*</span></label>
+                <label className="block text-sm text-gray-600 mb-1">Email <span className="text-gray-400">(Optional)</span></label>
                 <input
                   type="email"
                   name="email"
@@ -284,19 +280,6 @@ const OemServices = () => {
                       <label className="text-xs text-gray-500 mb-1 block">Measurement Units</label>
                       <div className="flex items-center border border-gray-300 rounded px-3 py-2 text-sm gap-2 bg-white">
                         <span className="flex-1 text-gray-700">{modalForm.unit}</span>
-                        <button
-                          type="button"
-                          className="text-orange-500 text-xs font-semibold flex items-center gap-1 hover:text-orange-600"
-                          onClick={() => {
-                            const u = window.prompt('Enter unit', modalForm.unit)
-                            if (u) setModalForm({ ...modalForm, unit: u })
-                          }}
-                        >
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                          </svg>
-                          Edit
-                        </button>
                       </div>
                     </div>
                   </div>
