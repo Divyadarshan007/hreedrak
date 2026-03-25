@@ -97,16 +97,16 @@ const OemServices = () => {
 
             {/* Image column */}
             <div className="md:w-80 flex-shrink-0 bg-gray-50 flex items-center justify-center p-10 border-b md:border-b-0 md:border-r border-gray-100">
-              <svg viewBox="0 0 200 160" className="w-full max-w-[260px]" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="-15 15 230 130" className="w-full max-w-[260px]" xmlns="http://www.w3.org/2000/svg">
                 <rect x="5" y="30" width="55" height="55" rx="6" fill="none" stroke="#1e3a8a" strokeWidth="3" transform="rotate(45 32.5 57.5)" />
                 <text x="32" y="62" textAnchor="middle" fontSize="22" fontWeight="bold" fill="#1e3a8a">O</text>
-                <text x="32" y="100" textAnchor="middle" fontSize="8" fill="#1e3a8a">ORIGINAL</text>
+                <text x="32" y="103" textAnchor="middle" fontSize="8" fill="#1e3a8a">ORIGINAL</text>
                 <rect x="73" y="30" width="55" height="55" rx="6" fill="none" stroke="#1e3a8a" strokeWidth="3" transform="rotate(45 100.5 57.5)" />
                 <text x="100" y="62" textAnchor="middle" fontSize="22" fontWeight="bold" fill="#1e3a8a">E</text>
-                <text x="100" y="100" textAnchor="middle" fontSize="8" fill="#1e3a8a">EQUIPMENT</text>
+                <text x="100" y="103" textAnchor="middle" fontSize="8" fill="#1e3a8a">EQUIPMENT</text>
                 <rect x="141" y="30" width="55" height="55" rx="6" fill="none" stroke="#1e3a8a" strokeWidth="3" transform="rotate(45 168.5 57.5)" />
                 <text x="168" y="62" textAnchor="middle" fontSize="22" fontWeight="bold" fill="#1e3a8a">M</text>
-                <text x="168" y="100" textAnchor="middle" fontSize="8" fill="#1e3a8a">MANUFACTURER</text>
+                <text x="168" y="103" textAnchor="middle" fontSize="8" fill="#1e3a8a">MANUFACTURER</text>
               </svg>
             </div>
 
