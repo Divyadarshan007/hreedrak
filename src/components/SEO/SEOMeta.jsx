@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
-const BASE_URL = 'https://www.jadkohealthcare.com'
+const BASE_URL = 'https://www.hreedrakbioscience.com'
 const DEFAULT_IMAGE = `${BASE_URL}/12577-comp-image.png`
 
 const SEOMeta = ({

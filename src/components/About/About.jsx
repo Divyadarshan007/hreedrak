@@ -1,14 +1,20 @@
+import { useNavigate } from 'react-router-dom'
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 
 const features = [
-  { title: 'ISO 7 Clean Room Facility', desc: 'Contamination-free manufacturing environment certified to international standards.' },
-  { title: 'CDSCO Certified', desc: "Full regulatory compliance with India's Central Drugs Standard Control Organisation." },
-  { title: 'Premium Lab Disposables', desc: 'Precision-engineered tubes and collection solutions trusted by hospitals nationwide.' },
-  { title: 'Custom OEM Solutions', desc: 'Tailored manufacturing to your exact specifications with full compliance support.' },
+  { title: 'Nature of Business', desc: 'Manufacturers, Exporters, Wholesaler, Retailer' },
+  { title: 'Year of Establishment', desc: '2024' },
+  { title: 'Market Covered', desc: 'Worldwide' },
+  { title: 'GST No', desc: '24AAHCH3979H1ZA' },
 ]
+
+const fullText = `Established in the year 2024, HREEDRAK BIOSCIENCE PRIVATE LIMITED is among the leading and trustworthy organizations of this domain, engaged in Manufacturers, Exporters, Wholesaler, Retailer a wide range of products. Our offered assortment of products is comprises of K3 EDTA Vacuum Blood Collection Tube, K2 EDTA Vacuum Blood Collection Tube, Clot Activator Vacuum Blood Collection Tube, Fluoride Vacuum Blood Collection Tube, Plain Serum Vacuum Blood Collection Tube, K3 EDTA Single Cap Non Vacuum Blood Collection Tube, K2 EDTA Non Vacuum Blood Collection Tube, Clot Activator Non Vacuum Blood Collection Tube, Double Cap Non Vacuum Blood Collection Tube, Clot Activator Single Cap Blood Collection Tube etc. Offered products are manufactured from supreme grade basic material by using modern tools and technology. All these products are made as per the industry approved parameters with the supervision of our skilled and experienced workforce. Our offered products are highly demanded across the market for their optimum quality. Our organization is growing with a fast rate because of valuable assistance of our mentor. His management skills, ability to handle crucial situation and regular motivation, enabled us to achieve such a remarkable peak of success in the market.`
+
+const halfText = fullText.slice(0, Math.floor(fullText.length / 2))
 
 const About = () => {
   const ref = useScrollAnimation()
+  const navigate = useNavigate()
   return (
     <section id="about">
 
@@ -28,22 +34,13 @@ const About = () => {
               <h2 className="text-3xl lg:text-4xl font-extrabold text-[#0F172A] mb-6 leading-tight">
                 Hreedrak Bioscience Private Limited
               </h2>
-              <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-4">
-                Hreedrak Bioscience Private Limited is a trusted{' '}
-                <strong className="text-[#0F172A]">Manufacturer of high-quality medical devices</strong>,
-                certified by <strong className="text-[#0F172A]">CDSCO</strong>, and based in{' '}
-                <strong className="text-[#0F172A]">Surendranagar, Gujarat</strong>. We specialize in
-                producing premium lab disposable products in a state-of-the-art{' '}
-                <strong className="text-[#0F172A]">ISO 7</strong> clean room facility, which ensures a
-                contamination-free environment for all our products.
-              </p>
               <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-8">
-                Our product offerings include professional collection solutions, such as{' '}
-                <strong className="text-[#0F172A]">Vacuum and Non-Vacuum Collection Tubes,
-                Micro/Paediatric Tubes,</strong>{' '}and{' '}
-                <strong className="text-[#0F172A]">Advanced Cell-Free DNA tubes.</strong>
+                {halfText}...
               </p>
-              <button className="bg-[#1D4ED8] hover:bg-[#1E3A8A] text-white font-semibold px-7 py-2.5 rounded transition-colors">
+              <button
+                onClick={() => navigate('/about')}
+                className="bg-[#1D4ED8] hover:bg-[#1E3A8A] text-white font-semibold px-7 py-2.5 rounded transition-colors"
+              >
                 Read More
               </button>
             </div>

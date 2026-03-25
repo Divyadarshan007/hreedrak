@@ -27,9 +27,11 @@ const RequestQuote = () => {
   })
   const [selections, setSelections] = useState({}) // { productId: quantity }
   const [submitted, setSubmitted] = useState(false)
+  const [errors, setErrors] = useState({})
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+    setErrors((prev) => ({ ...prev, [e.target.name]: '' }))
   }
 
   const toggleProduct = (id) => {
@@ -51,8 +53,43 @@ const RequestQuote = () => {
   const [showAllProducts, setShowAllProducts] = useState(false)
   const INITIAL_PRODUCT_COUNT = 5
 
+  const validate = () => {
+    const errs = {}
+    if (!form.name.trim()) errs.name = 'Name is required'
+    if (!form.email.trim()) errs.email = 'Email is required'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = 'Enter a valid email address'
+    if (!form.mobile.trim()) errs.mobile = 'Mobile number is required'
+    else if (!/^\d{7,15}$/.test(form.mobile)) errs.mobile = 'Enter a valid mobile number (digits only)'
+    return errs
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    const errs = validate()
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs)
+      return
+    }
+
+    const selectedProductLines = Object.entries(selections)
+      .map(([id, qty]) => {
+        const product = allProducts.find((p) => String(p.id) === String(id))
+        return product ? `  - ${product.name}${qty ? ` (Qty: ${qty})` : ''}` : null
+      })
+      .filter(Boolean)
+      .join('\n')
+
+    const msg =
+      `*Quote Request from Website*\n` +
+      `Name: ${form.name}\n` +
+      (form.company ? `Company: ${form.company}\n` : '') +
+      `Email: ${form.email}\n` +
+      `Mobile: ${form.countryCode} ${form.mobile}\n` +
+      (form.country ? `Country: ${form.country}\n` : '') +
+      (selectedProductLines ? `Selected Products:\n${selectedProductLines}\n` : '') +
+      (form.message ? `Additional Requirements: ${form.message}` : '')
+
+    window.open(`https://wa.me/919825156800?text=${encodeURIComponent(msg)}`, '_blank')
     setSubmitted(true)
   }
 
@@ -108,7 +145,7 @@ const RequestQuote = () => {
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <form onSubmit={handleSubmit} noValidate className="space-y-8">
 
             {/* Contact Details */}
             <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
@@ -118,12 +155,12 @@ const RequestQuote = () => {
                   <label className="block text-xs font-semibold text-gray-600 mb-1.5">Full Name <span className="text-red-500">*</span></label>
                   <input
                     name="name"
-                    required
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Your name"
-                    className="w-full border border-gray-200 rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors"
+                    className={`w-full border rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors ${errors.name ? 'border-red-400' : 'border-gray-200'}`}
                   />
+                  {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-gray-600 mb-1.5">Company / Hospital / Lab</label>
@@ -140,12 +177,12 @@ const RequestQuote = () => {
                   <input
                     name="email"
                     type="email"
-                    required
                     value={form.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
-                    className="w-full border border-gray-200 rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors"
+                    className={`w-full border rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors ${errors.email ? 'border-red-400' : 'border-gray-200'}`}
                   />
+                  {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-gray-600 mb-1.5">Mobile <span className="text-red-500">*</span></label>
@@ -160,14 +197,16 @@ const RequestQuote = () => {
                         <option key={c.code} value={c.code}>{c.code} {c.name}</option>
                       ))}
                     </select>
-                    <input
-                      name="mobile"
-                      required
-                      value={form.mobile}
-                      onChange={handleChange}
-                      placeholder="Mobile number"
-                      className="flex-1 border border-gray-200 rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors"
-                    />
+                    <div className="flex-1">
+                      <input
+                        name="mobile"
+                        value={form.mobile}
+                        onChange={handleChange}
+                        placeholder="Mobile number"
+                        className={`w-full border rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors ${errors.mobile ? 'border-red-400' : 'border-gray-200'}`}
+                      />
+                      {errors.mobile && <p className="mt-1 text-xs text-red-500">{errors.mobile}</p>}
+                    </div>
                   </div>
                 </div>
                 <div className="sm:col-span-2">

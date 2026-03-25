@@ -1,20 +1,25 @@
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 
 const stats = [
-  { value: '3+', label: 'Years of Experience' },
+  { value: '2024', label: 'Year of Establishment' },
   { value: '150+', label: 'Happy Customers' },
   { value: '25+', label: 'Products' },
-  { value: '98%', label: 'Customer Satisfaction' },
+  { value: '100%', label: 'Made in India' },
 ]
 
 const features = [
-  { title: 'Certified Manufacturing Standards', desc: 'CDSCO certified facility with ISO 7 clean room. Every tube meets international regulatory requirements.' },
-  { title: 'Innovative Product Designs', desc: 'Engineered for precision collection with consistent vacuum draw and tamper-evident closures.' },
-  { title: 'Affordable Pricing Models', desc: 'Competitive bulk pricing for distributors, hospitals, and diagnostic chains across India.' },
-  { title: 'Reliable Customer Support', desc: 'Dedicated account managers and rapid response teams for technical and logistics queries.' },
+  { title: 'Made in India, Exported Worldwide', desc: 'Manufacturer, Exporter, Wholesaler & Retailer of blood collection tubes, serving diagnostic labs and hospitals globally.' },
+  { title: 'Premium PET Construction', desc: 'Made from supreme-grade PET material — sterile, single-use, crack-proof, durable, and eco-friendly.' },
+  { title: 'Automated Analyzer Compatible', desc: 'Engineered for seamless integration with automated analyzers to streamline laboratory workflows and ensure accurate diagnostics.' },
+  { title: 'Competitive Bulk Pricing', desc: 'Starting at ₹2.75 per unit with an MOQ of 6,000 pieces — ideal for distributors, hospitals, and diagnostic chains.' },
 ]
 
-const statColors = ['bg-[#0F172A]', 'bg-[#1D4ED8]', 'bg-[#1E3A8A]', 'bg-[#0F172A]']
+const statColors = [
+  'bg-[#EFF6FF] border border-[#BFDBFE]',
+  'bg-[#DBEAFE] border border-[#93C5FD]',
+  'bg-[#E0F2FE] border border-[#7DD3FC]',
+  'bg-[#F0F9FF] border border-[#BAE6FD]',
+]
 
 const WhyChooseUs = () => {
   const ref = useScrollAnimation()
@@ -38,14 +43,14 @@ const WhyChooseUs = () => {
             {stats.map((stat, i) => (
               <div
                 key={i}
-                className={`${statColors[i]} rounded-lg p-6 flex flex-col justify-between min-h-[140px]`}
+                className={`${statColors[i]} rounded-lg p-6 flex flex-col justify-between min-h-[140px] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-default`}
               >
-                <span className="text-4xl lg:text-5xl font-extrabold text-white leading-none">
+                <span className="text-4xl lg:text-5xl font-extrabold text-[#1D4ED8] leading-none">
                   {stat.value}
                 </span>
                 <div>
-                  <div className="w-6 h-0.5 bg-white/40 mb-2" />
-                  <span className="text-[#BFDBFE] text-xs font-medium leading-tight">{stat.label}</span>
+                  <div className="w-6 h-0.5 bg-[#1D4ED8]/30 mb-2" />
+                  <span className="text-[#1E40AF] text-xs font-medium leading-tight">{stat.label}</span>
                 </div>
               </div>
             ))}

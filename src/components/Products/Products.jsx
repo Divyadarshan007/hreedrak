@@ -23,12 +23,16 @@ const productCategories = {
     { id: 14, name: 'K3 EDTA Single Cap Non Vacuum Blood Collection Tube', image: '/productImage/single_cap_tubes/k3-edta-single-cap-tube-1740497811-7886427.jpg', price: '₹1.20 – ₹1.60 / unit', moq: '12000 piece' },
     { id: 15, name: 'Plain Serum Blood Collection Tube', image: '/productImage/single_cap_tubes/plain-serum-blood-collection-tubes-1740637606-7886572.jpg', price: '₹1.20 – ₹1.60 / unit', moq: '12000 piece' },
   ],
+  esrPipette: [
+    { id: 16, name: 'Polystyrene Disposable ESR Pipette', image: '/productImage/polystyrene-disposable-esr-pipette-1740635071-7886616.jpg', price: '₹3.50 – ₹5.50 / unit', moq: '3000 piece' },
+  ],
 }
 
 const tabs = [
   { key: 'vacuum', label: 'Vacuum Tubes' },
   { key: 'nonVacuum', label: 'Non-Vacuum Tubes' },
   { key: 'singleCap', label: 'Single Cap Tubes' },
+  { key: 'esrPipette', label: 'Polystyrene Disposable ESR Pipette' },
 ]
 
 const countryCodes = [
@@ -48,11 +52,26 @@ function InquireModal({ product, onClose }) {
   const [editingUnit, setEditingUnit] = useState(false)
   const [countryCode, setCountryCode] = useState('+91')
   const [mobile, setMobile] = useState('')
+  const [errors, setErrors] = useState({})
+
+  const validate = () => {
+    const errs = {}
+    if (!quantity.trim()) errs.quantity = 'Quantity is required'
+    else if (isNaN(quantity) || Number(quantity) <= 0) errs.quantity = 'Enter a valid quantity'
+    if (!mobile.trim()) errs.mobile = 'Mobile number is required'
+    else if (!/^\d{7,15}$/.test(mobile)) errs.mobile = 'Enter a valid mobile number (digits only)'
+    return errs
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Form submission logic can be wired here
-    alert(`Enquiry sent for ${product.name}!\nQty: ${quantity} ${unit}\nMobile: ${countryCode} ${mobile}`)
+    const errs = validate()
+    if (Object.keys(errs).length > 0) { setErrors(errs); return }
+    const msg =
+      `*Quick Quote - ${product.name}*\n` +
+      `Quantity: ${quantity} ${unit}\n` +
+      `Mobile: ${countryCode} ${mobile}`
+    window.open(`https://wa.me/919825156800?text=${encodeURIComponent(msg)}`, '_blank')
     onClose()
   }
 
@@ -100,20 +119,20 @@ function InquireModal({ product, onClose }) {
               <h2 className="text-lg font-bold">Get a Quick Quote</h2>
             </div>
 
-            <form onSubmit={handleSubmit} className="p-5 flex flex-col gap-4">
+            <form onSubmit={handleSubmit} noValidate className="p-5 flex flex-col gap-4">
 
               {/* Quantity + Unit row */}
               <div className="flex gap-3">
                 <div className="flex-1">
-                  <label className="block text-xs text-gray-600 mb-1">Quantity</label>
+                  <label className="block text-xs text-gray-600 mb-1">Quantity <span className="text-red-500">*</span></label>
                   <input
                     type="number"
                     placeholder="Quantity"
                     value={quantity}
-                    onChange={(e) => setQuantity(e.target.value)}
-                    required
-                    className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-[#1D4ED8]"
+                    onChange={(e) => { setQuantity(e.target.value); setErrors((p) => ({ ...p, quantity: '' })) }}
+                    className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-[#1D4ED8] ${errors.quantity ? 'border-red-400' : 'border-gray-300'}`}
                   />
+                  {errors.quantity && <p className="mt-1 text-xs text-red-500">{errors.quantity}</p>}
                 </div>
                 <div className="flex-1">
                   <label className="block text-xs text-gray-600 mb-1">Measurement Units</label>
@@ -143,7 +162,7 @@ function InquireModal({ product, onClose }) {
 
               {/* Mobile */}
               <div>
-                <label className="block text-xs text-gray-600 mb-1">Mobile No.</label>
+                <label className="block text-xs text-gray-600 mb-1">Mobile No. <span className="text-red-500">*</span></label>
                 <div className="flex gap-2">
                   <select
                     value={countryCode}
@@ -154,14 +173,16 @@ function InquireModal({ product, onClose }) {
                       <option key={c.code} value={c.code}>{c.flag} {c.code}</option>
                     ))}
                   </select>
-                  <input
-                    type="tel"
-                    placeholder="Enter Mobile No."
-                    value={mobile}
-                    onChange={(e) => setMobile(e.target.value)}
-                    required
-                    className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-[#1D4ED8]"
-                  />
+                  <div className="flex-1">
+                    <input
+                      type="tel"
+                      placeholder="Enter Mobile No."
+                      value={mobile}
+                      onChange={(e) => { setMobile(e.target.value); setErrors((p) => ({ ...p, mobile: '' })) }}
+                      className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-[#1D4ED8] ${errors.mobile ? 'border-red-400' : 'border-gray-300'}`}
+                    />
+                    {errors.mobile && <p className="mt-1 text-xs text-red-500">{errors.mobile}</p>}
+                  </div>
                 </div>
               </div>
 
@@ -221,7 +242,7 @@ const Products = () => {
           {productCategories[activeTab].map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-lg p-5 flex flex-col items-center text-center hover:shadow-xl transition-shadow border-l-4 border-l-[#1D4ED8] border border-[#BFDBFE]"
+              className="bg-white rounded-lg p-5 flex flex-col items-center text-center hover:shadow-xl transition-shadow border border-[#BFDBFE]"
             >
               <div className="mb-4">
                 <img src={product.image} alt={product.name} className="h-40 w-auto mx-auto object-contain" />

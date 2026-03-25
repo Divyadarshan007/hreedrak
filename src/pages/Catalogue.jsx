@@ -7,6 +7,7 @@ const categories = [
   'Vacuum Blood Collection Tubes',
   'Non Vacuum Blood Collection Tubes',
   'Single Cap Blood Collection Tubes',
+  'Polystyrene Disposable ESR Pipette',
 ]
 
 const Catalogue = () => {
@@ -65,7 +66,7 @@ const Catalogue = () => {
             </div>
             <div className="text-right text-sm text-gray-500">
               <p className="font-bold text-black">Product Catalogue</p>
-              <p>www.jadkohealthcare.com</p>
+              <p>www.hreedrakbioscience.com</p>
             </div>
           </div>
         </div>

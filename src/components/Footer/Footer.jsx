@@ -57,7 +57,7 @@ const Footer = () => {
               </div>
             </a>
             <p className="text-gray-400 text-xs leading-relaxed mb-6">
-              Manufacturer of high-quality blood collection tubes, CDSCO certified. Based in Surendranagar, Gujarat, India.
+              Established in 2024, we are manufacturers, exporters & wholesalers of CDSCO-certified blood collection tubes — serving diagnostic labs and hospitals worldwide from Surat, Gujarat, India.
             </p>
             <p className="text-gray-500 text-[10px] font-semibold uppercase tracking-widest mb-3">Follow Us</p>
             <div className="flex gap-2 flex-wrap">

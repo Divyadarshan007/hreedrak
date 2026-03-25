@@ -10,19 +10,29 @@ const ProductDetail = () => {
   const { categorySlug, productSlug } = useParams()
   const product = findProduct(categorySlug, productSlug)
 
-  useLayoutEffect(() => { window.scrollTo(0, 0) }, [productSlug])
+  useLayoutEffect(() => { window.scrollTo(0, 0); setActiveImg(0) }, [productSlug])
+
+  const [activeImg, setActiveImg] = useState(0)
+
+  const images = product?.images ?? [product?.image]
 
   const [form, setForm] = useState({
     name: '', email: '', mobile: '', quantity: '', purpose: '',
     requirement: 'I am interested. Kindly send the quotation for the same.',
   })
+  const [errors, setErrors] = useState({})
   const [showSticky, setShowSticky] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const [modalForm, setModalForm] = useState({ quantity: '', unit: 'piece', mobile: '' })
+  const [modalErrors, setModalErrors] = useState({})
 
   const openModal = (e) => { e.preventDefault(); setShowModal(true) }
-  const closeModal = () => setShowModal(false)
-  const handleModalChange = (e) => setModalForm({ ...modalForm, [e.target.name]: e.target.value })
+  const closeModal = () => { setShowModal(false); setModalErrors({}) }
+
+  const handleModalChange = (e) => {
+    setModalForm({ ...modalForm, [e.target.name]: e.target.value })
+    setModalErrors((prev) => ({ ...prev, [e.target.name]: '' }))
+  }
 
   useEffect(() => {
     const handleScroll = () => setShowSticky(window.scrollY > 400)
@@ -36,13 +46,63 @@ const ProductDetail = () => {
   const categoryPath = `/products/${categorySlug}`
   const quickSpecs = product.specs.slice(0, 4)
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+    setErrors((prev) => ({ ...prev, [e.target.name]: '' }))
+  }
+
+  const validateForm = () => {
+    const errs = {}
+    if (!form.name.trim()) errs.name = 'Name is required'
+    if (!form.email.trim()) errs.email = 'Email is required'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = 'Enter a valid email address'
+    if (!form.mobile.trim()) errs.mobile = 'Mobile number is required'
+    else if (!/^\d{7,15}$/.test(form.mobile)) errs.mobile = 'Enter a valid mobile number (digits only)'
+    if (!form.requirement.trim()) errs.requirement = 'Requirement details are required'
+    return errs
+  }
+
+  const validateModal = () => {
+    const errs = {}
+    if (!modalForm.quantity.trim()) errs.quantity = 'Quantity is required'
+    else if (isNaN(modalForm.quantity) || Number(modalForm.quantity) <= 0) errs.quantity = 'Enter a valid quantity'
+    if (!modalForm.mobile.trim()) errs.mobile = 'Mobile number is required'
+    else if (!/^\d{7,15}$/.test(modalForm.mobile)) errs.mobile = 'Enter a valid mobile number (digits only)'
+    return errs
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const errs = validateForm()
+    if (Object.keys(errs).length > 0) { setErrors(errs); return }
+    const msg =
+      `*Product Enquiry - ${product.name}*\n` +
+      `Name: ${form.name}\n` +
+      `Email: ${form.email}\n` +
+      `Mobile: +91 ${form.mobile}\n` +
+      (form.quantity ? `Quantity: ${form.quantity} piece\n` : '') +
+      (form.purpose ? `Purpose: ${form.purpose}\n` : '') +
+      `Requirement: ${form.requirement}`
+    window.open(`https://wa.me/919825156800?text=${encodeURIComponent(msg)}`, '_blank')
+  }
+
+  const handleModalSubmit = (e) => {
+    e.preventDefault()
+    const errs = validateModal()
+    if (Object.keys(errs).length > 0) { setModalErrors(errs); return }
+    const msg =
+      `*Quick Quote - ${product.name}*\n` +
+      `Quantity: ${modalForm.quantity} ${modalForm.unit}\n` +
+      `Mobile: +91 ${modalForm.mobile}`
+    window.open(`https://wa.me/919825156800?text=${encodeURIComponent(msg)}`, '_blank')
+    closeModal()
+  }
 
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
-    image: `https://www.jadkohealthcare.com${product.image}`,
+    image: `https://www.hreedrakbioscience.com${product.image}`,
     description: product.description,
     brand: { '@type': 'Brand', name: 'Hreedrak Bioscience' },
     offers: {
@@ -60,7 +120,7 @@ const ProductDetail = () => {
         title={product.name}
         description={`Buy ${product.name} from Hreedrak Bioscience. Price: ${product.price}. MOQ: ${product.moq}. CDSCO certified, CE marked, manufactured in ISO 7 clean room, Surat, India.`}
         canonical={`/products/${categorySlug}/${productSlug}`}
-        ogImage={`https://www.jadkohealthcare.com${product.image}`}
+        ogImage={`https://www.hreedrakbioscience.com${product.image}`}
         structuredData={structuredData}
       />
       <Navbar />
@@ -101,18 +161,23 @@ const ProductDetail = () => {
             {/* Left – image + thumbnails */}
             <div className="md:w-72 flex-shrink-0">
               <div className="border border-gray-200 rounded-lg bg-gray-50 flex items-center justify-center h-64">
-                <img src={product.image} alt={product.name} className="h-56 w-auto object-contain mx-auto" />
+                <img src={images[activeImg]} alt={product.name} className="h-56 w-auto object-contain mx-auto" />
               </div>
-              <div className="flex gap-2 mt-3">
-                {[0, 1, 2, 3].map((i) => (
-                  <div
-                    key={i}
-                    className="w-16 h-16 border border-gray-200 rounded bg-gray-50 flex items-center justify-center cursor-pointer hover:border-primary transition-colors"
-                  >
-                    <img src={product.image} alt={product.name} className="h-12 w-auto object-contain" />
-                  </div>
-                ))}
-              </div>
+              {images.length > 1 && (
+                <div className="flex gap-2 mt-3 flex-wrap">
+                  {images.map((img, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveImg(i)}
+                      className={`w-16 h-16 border-2 rounded bg-gray-50 flex items-center justify-center transition-colors ${
+                        activeImg === i ? 'border-primary' : 'border-gray-200 hover:border-primary'
+                      }`}
+                    >
+                      <img src={img} alt={product.name} className="h-12 w-auto object-contain" />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Right – details */}
@@ -207,36 +272,61 @@ const ProductDetail = () => {
             Looking for &quot;{product.name}&quot; ?
           </h2>
 
-          <div className="max-w-2xl mx-auto space-y-4">
+          <form onSubmit={handleSubmit} noValidate className="max-w-2xl mx-auto space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm text-gray-500 mb-1 block">Name</label>
-                <input name="name" value={form.name} onChange={handleChange} placeholder="Name"
-                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-primary" />
+                <label className="text-sm text-gray-500 mb-1 block">Name <span className="text-red-500">*</span></label>
+                <input
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Name"
+                  className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-primary ${errors.name ? 'border-red-400' : 'border-gray-300'}`}
+                />
+                {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
               </div>
               <div>
-                <label className="text-sm text-gray-500 mb-1 block">Email</label>
-                <input name="email" value={form.email} onChange={handleChange} placeholder="Email"
-                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-primary" />
+                <label className="text-sm text-gray-500 mb-1 block">Email <span className="text-red-500">*</span></label>
+                <input
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="Email"
+                  className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-primary ${errors.email ? 'border-red-400' : 'border-gray-300'}`}
+                />
+                {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm text-gray-500 mb-1 block">Mobile No.</label>
+                <label className="text-sm text-gray-500 mb-1 block">Mobile No. <span className="text-red-500">*</span></label>
                 <div className="flex gap-2">
                   <select className="border border-gray-300 rounded px-2 py-2 text-sm focus:outline-none focus:border-primary bg-white">
                     <option>+91</option>
                   </select>
-                  <input name="mobile" value={form.mobile} onChange={handleChange} placeholder="Enter Mobile No."
-                    className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-primary" />
+                  <div className="flex-1">
+                    <input
+                      name="mobile"
+                      value={form.mobile}
+                      onChange={handleChange}
+                      placeholder="Enter Mobile No."
+                      className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-primary ${errors.mobile ? 'border-red-400' : 'border-gray-300'}`}
+                    />
+                    {errors.mobile && <p className="mt-1 text-xs text-red-500">{errors.mobile}</p>}
+                  </div>
                 </div>
               </div>
               <div>
                 <label className="text-sm text-gray-500 mb-1 block">Quantity</label>
                 <div className="flex gap-2">
-                  <input name="quantity" value={form.quantity} onChange={handleChange} placeholder="Estimated Quantity"
-                    className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-primary" />
+                  <input
+                    name="quantity"
+                    value={form.quantity}
+                    onChange={handleChange}
+                    placeholder="Estimated Quantity"
+                    className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-primary"
+                  />
                   <span className="border border-gray-300 rounded px-3 py-2 text-sm text-gray-500 bg-gray-50">piece</span>
                 </div>
               </div>
@@ -256,17 +346,23 @@ const ProductDetail = () => {
             </div>
 
             <div>
-              <label className="text-sm text-gray-500 mb-1 block">Requirement Details</label>
-              <textarea name="requirement" value={form.requirement} onChange={handleChange} rows={3}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-primary resize-none" />
+              <label className="text-sm text-gray-500 mb-1 block">Requirement Details <span className="text-red-500">*</span></label>
+              <textarea
+                name="requirement"
+                value={form.requirement}
+                onChange={handleChange}
+                rows={3}
+                className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-primary resize-none ${errors.requirement ? 'border-red-400' : 'border-gray-300'}`}
+              />
+              {errors.requirement && <p className="mt-1 text-xs text-red-500">{errors.requirement}</p>}
             </div>
 
             <div className="text-center">
-              <button className="bg-primary hover:bg-primary-dark text-white text-sm font-semibold px-8 py-2.5 rounded transition-colors">
+              <button type="submit" className="bg-primary hover:bg-primary-dark text-white text-sm font-semibold px-8 py-2.5 rounded transition-colors">
                 Send Enquiry
               </button>
             </div>
-          </div>
+          </form>
         </div>
 
         {/* Explore More Products */}
@@ -335,7 +431,6 @@ const ProductDetail = () => {
             className="relative bg-white rounded-xl shadow-2xl w-full max-w-lg overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Left + Right layout */}
             <div className="flex flex-col sm:flex-row">
 
               {/* Left – product info */}
@@ -352,7 +447,6 @@ const ProductDetail = () => {
 
               {/* Right – form */}
               <div className="flex-1 flex flex-col">
-                {/* Header */}
                 <div className="bg-[#1D3A7A] flex items-center justify-between px-5 py-3">
                   <h3 className="text-white font-bold text-base">Get a Quick Quote</h3>
                   <button onClick={closeModal} className="text-white/80 hover:text-white bg-gray-700 hover:bg-gray-600 rounded-full w-7 h-7 flex items-center justify-center transition-colors">
@@ -362,24 +456,25 @@ const ProductDetail = () => {
                   </button>
                 </div>
 
-                {/* Form body */}
-                <div className="p-5 space-y-4">
+                <form onSubmit={handleModalSubmit} noValidate className="p-5 space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs text-gray-500 mb-1 block">Quantity</label>
+                      <label className="text-xs text-gray-500 mb-1 block">Quantity <span className="text-red-500">*</span></label>
                       <input
                         name="quantity"
                         value={modalForm.quantity}
                         onChange={handleModalChange}
                         placeholder="Quantity"
-                        className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-primary"
+                        className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-primary ${modalErrors.quantity ? 'border-red-400' : 'border-gray-300'}`}
                       />
+                      {modalErrors.quantity && <p className="mt-1 text-xs text-red-500">{modalErrors.quantity}</p>}
                     </div>
                     <div>
                       <label className="text-xs text-gray-500 mb-1 block">Measurement Units</label>
                       <div className="flex items-center border border-gray-300 rounded px-3 py-2 text-sm gap-2 bg-white">
                         <span className="flex-1 text-gray-700">{modalForm.unit}</span>
                         <button
+                          type="button"
                           className="text-orange-500 text-xs font-semibold flex items-center gap-1 hover:text-orange-600"
                           onClick={() => {
                             const u = window.prompt('Enter unit', modalForm.unit)
@@ -396,25 +491,28 @@ const ProductDetail = () => {
                   </div>
 
                   <div>
-                    <label className="text-xs text-gray-500 mb-1 block">Mobile No.</label>
+                    <label className="text-xs text-gray-500 mb-1 block">Mobile No. <span className="text-red-500">*</span></label>
                     <div className="flex gap-2">
                       <select className="border border-gray-300 rounded px-2 py-2 text-sm focus:outline-none focus:border-primary bg-white">
                         <option>IN +91</option>
                       </select>
-                      <input
-                        name="mobile"
-                        value={modalForm.mobile}
-                        onChange={handleModalChange}
-                        placeholder="Enter Mobile No."
-                        className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-primary"
-                      />
+                      <div className="flex-1">
+                        <input
+                          name="mobile"
+                          value={modalForm.mobile}
+                          onChange={handleModalChange}
+                          placeholder="Enter Mobile No."
+                          className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-primary ${modalErrors.mobile ? 'border-red-400' : 'border-gray-300'}`}
+                        />
+                        {modalErrors.mobile && <p className="mt-1 text-xs text-red-500">{modalErrors.mobile}</p>}
+                      </div>
                     </div>
                   </div>
 
-                  <button className="w-full bg-[#0F172A] hover:bg-[#1D3A7A] text-white text-sm font-semibold py-3 rounded transition-colors">
+                  <button type="submit" className="w-full bg-[#0F172A] hover:bg-[#1D3A7A] text-white text-sm font-semibold py-3 rounded transition-colors">
                     Send Enquiry
                   </button>
-                </div>
+                </form>
               </div>
             </div>
           </div>

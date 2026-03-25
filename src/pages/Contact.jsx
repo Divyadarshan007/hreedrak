@@ -51,7 +51,7 @@ const contactDetails = [
       </svg>
     ),
     label: 'Web Address',
-    value: 'www.jadkohealthcare.com',
+    value: 'www.hreedrakbioscience.com',
     href: '#',
   },
 ]
@@ -68,18 +68,46 @@ const Contact = () => {
     enquiry: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [errors, setErrors] = useState({})
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+    setErrors((prev) => ({ ...prev, [e.target.name]: '' }))
+  }
+
+  const validate = () => {
+    const errs = {}
+    if (!form.product.trim()) errs.product = 'This field is required'
+    if (!form.name.trim()) errs.name = 'Name is required'
+    if (!form.email.trim()) errs.email = 'Email is required'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = 'Enter a valid email address'
+    if (!form.mobile.trim()) errs.mobile = 'Mobile number is required'
+    else if (!/^\d{7,15}$/.test(form.mobile)) errs.mobile = 'Enter a valid mobile number (digits only)'
+    if (!form.enquiry.trim()) errs.enquiry = 'Enquiry details are required'
+    return errs
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const errs = validate()
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs)
+      return
+    }
+    const msg =
+      `*New Enquiry from Website*\n` +
+      `Product/Service: ${form.product}\n` +
+      `Name: ${form.name}\n` +
+      `Email: ${form.email}\n` +
+      `Mobile: ${form.countryCode} ${form.mobile}\n` +
+      `Enquiry: ${form.enquiry}`
+    window.open(`https://wa.me/919825156800?text=${encodeURIComponent(msg)}`, '_blank')
     setSubmitted(true)
   }
 
   const handleCancel = () => {
     setForm({ product: '', name: '', email: '', countryCode: '+91', mobile: '', enquiry: '' })
+    setErrors({})
     setSubmitted(false)
   }
 
@@ -204,7 +232,7 @@ const Contact = () => {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={handleSubmit} noValidate className="space-y-5">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1.5">
                         Product / Service Looking for <span className="text-red-500">*</span>
@@ -215,9 +243,9 @@ const Contact = () => {
                         value={form.product}
                         onChange={handleChange}
                         placeholder="Product / Service Looking for"
-                        required
-                        className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8] focus:ring-1 focus:ring-[#1D4ED8] transition-colors"
+                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.product ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#1D4ED8] focus:ring-[#1D4ED8]'}`}
                       />
+                      {errors.product && <p className="mt-1 text-xs text-red-500">{errors.product}</p>}
                     </div>
 
                     <div>
@@ -230,9 +258,9 @@ const Contact = () => {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="Your Name"
-                        required
-                        className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8] focus:ring-1 focus:ring-[#1D4ED8] transition-colors"
+                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.name ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#1D4ED8] focus:ring-[#1D4ED8]'}`}
                       />
+                      {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
                     </div>
 
                     <div>
@@ -245,9 +273,9 @@ const Contact = () => {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="Email"
-                        required
-                        className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8] focus:ring-1 focus:ring-[#1D4ED8] transition-colors"
+                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.email ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#1D4ED8] focus:ring-[#1D4ED8]'}`}
                       />
+                      {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
                     </div>
 
                     <div>
@@ -265,15 +293,17 @@ const Contact = () => {
                             <option key={code} value={code}>{code}</option>
                           ))}
                         </select>
-                        <input
-                          type="tel"
-                          name="mobile"
-                          value={form.mobile}
-                          onChange={handleChange}
-                          placeholder="Mobile"
-                          required
-                          className="flex-1 border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8] focus:ring-1 focus:ring-[#1D4ED8] transition-colors"
-                        />
+                        <div className="flex-1">
+                          <input
+                            type="tel"
+                            name="mobile"
+                            value={form.mobile}
+                            onChange={handleChange}
+                            placeholder="Mobile"
+                            className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.mobile ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#1D4ED8] focus:ring-[#1D4ED8]'}`}
+                          />
+                          {errors.mobile && <p className="mt-1 text-xs text-red-500">{errors.mobile}</p>}
+                        </div>
                       </div>
                     </div>
 
@@ -286,10 +316,10 @@ const Contact = () => {
                         value={form.enquiry}
                         onChange={handleChange}
                         placeholder="Your Requirement"
-                        required
                         rows={4}
-                        className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8] focus:ring-1 focus:ring-[#1D4ED8] transition-colors resize-none"
+                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors resize-none ${errors.enquiry ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#1D4ED8] focus:ring-[#1D4ED8]'}`}
                       />
+                      {errors.enquiry && <p className="mt-1 text-xs text-red-500">{errors.enquiry}</p>}
                     </div>
 
                     <div className="flex gap-3 pt-1">
