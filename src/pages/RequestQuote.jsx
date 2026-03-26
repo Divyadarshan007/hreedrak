@@ -96,16 +96,16 @@ const RequestQuote = () => {
     return (
       <>
         <Navbar />
-        <main className="min-h-screen bg-[#EFF6FF] flex items-center justify-center px-4">
+        <main className="min-h-screen bg-[#EEF3FA] flex items-center justify-center px-4">
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-10 max-w-md w-full text-center">
-            <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-5">
-              <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-14 h-14 rounded-full bg-[#E6F6ED] flex items-center justify-center mx-auto mb-5">
+              <svg className="w-7 h-7 text-[#008040]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="text-2xl font-extrabold text-[#0F172A] mb-2">Quote Requested!</h2>
+            <h2 className="text-2xl font-extrabold text-[#231F20] mb-2">Quote Requested!</h2>
             <p className="text-gray-500 text-sm mb-6">Thank you, <strong>{form.name}</strong>. We have received your quote request and will get back to you within 24 hours.</p>
-            <Link to="/" className="bg-[#1D4ED8] hover:bg-[#1E3A8A] text-white font-semibold px-7 py-2.5 rounded transition-colors">
+            <Link to="/" className="bg-[#034DA2] hover:bg-[#023585] text-white font-semibold px-7 py-2.5 rounded transition-colors">
               Back to Home
             </Link>
           </div>
@@ -118,15 +118,16 @@ const RequestQuote = () => {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#EFF6FF]">
+      <main className="min-h-screen bg-white">
 
         {/* Hero Banner */}
-        <div className="bg-blue-50 border-b border-blue-100 py-12">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">
+        <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #034DA2 0%, #023585 55%, #231F20 100%)' }}>
+          <div className="absolute top-0 right-0 w-72 h-72 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" style={{ backgroundColor: '#ffffff07' }} />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center relative">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] mb-2" style={{ color: '#A8C4E8' }}>
               HREEDRAK BIOSCIENCE PRIVATE LIMITED
             </p>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900">Request a Quote</h1>
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Request a Quote</h1>
           </div>
         </div>
 
@@ -134,7 +135,7 @@ const RequestQuote = () => {
         <div className="bg-gray-50 border-b border-gray-100 py-3">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex items-center gap-2 text-xs text-gray-500">
-              <Link to="/" className="hover:text-[#1D4ED8] transition-colors">Home</Link>
+              <Link to="/" className="hover:text-[#034DA2] transition-colors">Home</Link>
               <svg className="w-3 h-3 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
               </svg>
@@ -148,7 +149,7 @@ const RequestQuote = () => {
 
             {/* Contact Details */}
             <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-              <h2 className="text-base font-bold text-[#0F172A] mb-5 pb-3 border-b border-gray-100">Your Contact Details</h2>
+              <h2 className="text-base font-bold text-[#231F20] mb-5 pb-3 border-b border-gray-100">Your Contact Details</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-gray-600 mb-1.5">Full Name <span className="text-red-500">*</span></label>
@@ -157,7 +158,7 @@ const RequestQuote = () => {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Your name"
-                    className={`w-full border rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors ${errors.name ? 'border-red-400' : 'border-gray-200'}`}
+                    className={`w-full border rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#034DA2] transition-colors ${errors.name ? 'border-red-400' : 'border-gray-200'}`}
                   />
                   {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
                 </div>
@@ -168,7 +169,7 @@ const RequestQuote = () => {
                     value={form.company}
                     onChange={handleChange}
                     placeholder="Organisation name"
-                    className="w-full border border-gray-200 rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors"
+                    className="w-full border border-gray-200 rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#034DA2] transition-colors"
                   />
                 </div>
                 <div>
@@ -179,7 +180,7 @@ const RequestQuote = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
-                    className={`w-full border rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors ${errors.email ? 'border-red-400' : 'border-gray-200'}`}
+                    className={`w-full border rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#034DA2] transition-colors ${errors.email ? 'border-red-400' : 'border-gray-200'}`}
                   />
                   {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
                 </div>
@@ -190,7 +191,7 @@ const RequestQuote = () => {
                       name="countryCode"
                       value={form.countryCode}
                       onChange={handleChange}
-                      className="border border-gray-200 rounded px-2 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors bg-white"
+                      className="border border-gray-200 rounded px-2 py-2.5 text-sm text-gray-700 outline-none focus:border-[#034DA2] transition-colors bg-white"
                     >
                       {countryCodes.map((c) => (
                         <option key={c.code} value={c.code}>{c.code} {c.name}</option>
@@ -202,7 +203,7 @@ const RequestQuote = () => {
                         value={form.mobile}
                         onChange={handleChange}
                         placeholder="Mobile number"
-                        className={`w-full border rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors ${errors.mobile ? 'border-red-400' : 'border-gray-200'}`}
+                        className={`w-full border rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#034DA2] transition-colors ${errors.mobile ? 'border-red-400' : 'border-gray-200'}`}
                       />
                       {errors.mobile && <p className="mt-1 text-xs text-red-500">{errors.mobile}</p>}
                     </div>
@@ -215,7 +216,7 @@ const RequestQuote = () => {
                     value={form.country}
                     onChange={handleChange}
                     placeholder="Your country"
-                    className="w-full border border-gray-200 rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors"
+                    className="w-full border border-gray-200 rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#034DA2] transition-colors"
                   />
                 </div>
               </div>
@@ -224,9 +225,9 @@ const RequestQuote = () => {
             {/* Product Selection */}
             <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
               <div className="flex items-center justify-between mb-5 pb-3 border-b border-gray-100">
-                <h2 className="text-base font-bold text-[#0F172A]">Select Products</h2>
+                <h2 className="text-base font-bold text-[#231F20]">Select Products</h2>
                 {selectedCount > 0 && (
-                  <span className="bg-[#1D4ED8] text-white text-xs font-bold px-2.5 py-1 rounded-full">{selectedCount} selected</span>
+                  <span className="bg-[#034DA2] text-white text-xs font-bold px-2.5 py-1 rounded-full">{selectedCount} selected</span>
                 )}
               </div>
               <div className="space-y-2">
@@ -235,7 +236,7 @@ const RequestQuote = () => {
                   return (
                     <div
                       key={product.id}
-                      className={`flex items-center gap-3 p-3 rounded-lg border transition-colors cursor-pointer ${checked ? 'border-[#1D4ED8] bg-[#EFF6FF]' : 'border-gray-100 hover:border-gray-200 hover:bg-gray-50'}`}
+                      className={`flex items-center gap-3 p-3 rounded-lg border transition-colors cursor-pointer ${checked ? 'border-[#034DA2] bg-[#EEF3FA]' : 'border-gray-100 hover:border-gray-200 hover:bg-gray-50'}`}
                       onClick={() => toggleProduct(product.id)}
                     >
                       <input
@@ -243,11 +244,11 @@ const RequestQuote = () => {
                         checked={checked}
                         onChange={() => toggleProduct(product.id)}
                         onClick={(e) => e.stopPropagation()}
-                        className="w-4 h-4 accent-[#1D4ED8] flex-shrink-0"
+                        className="w-4 h-4 accent-[#034DA2] flex-shrink-0"
                       />
                       <img src={product.image} alt={product.name} className="w-10 h-10 object-contain rounded border border-gray-100 bg-white flex-shrink-0" />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-[#0F172A] leading-snug truncate">{product.name}</p>
+                        <p className="text-sm font-medium text-[#231F20] leading-snug truncate">{product.name}</p>
                         <p className="text-xs text-gray-400 mt-0.5">{product.price} &nbsp;·&nbsp; MOQ: {product.moq}</p>
                       </div>
                       {checked && (
@@ -259,7 +260,7 @@ const RequestQuote = () => {
                             placeholder="0"
                             value={selections[product.id]}
                             onChange={(e) => setQty(product.id, e.target.value)}
-                            className="w-20 border border-[#1D4ED8] rounded px-2 py-1 text-sm text-center outline-none focus:border-[#1E3A8A]"
+                            className="w-20 border border-[#034DA2] rounded px-2 py-1 text-sm text-center outline-none focus:border-[#023585]"
                           />
                         </div>
                       )}
@@ -271,7 +272,7 @@ const RequestQuote = () => {
                 <button
                   type="button"
                   onClick={() => setShowAllProducts((prev) => !prev)}
-                  className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-[#1D4ED8] hover:text-[#1E3A8A] transition-colors"
+                  className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-[#034DA2] hover:text-[#023585] transition-colors"
                 >
                   {showAllProducts ? (
                     <>
@@ -294,14 +295,14 @@ const RequestQuote = () => {
 
             {/* Message */}
             <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-              <h2 className="text-base font-bold text-[#0F172A] mb-4 pb-3 border-b border-gray-100">Additional Requirements</h2>
+              <h2 className="text-base font-bold text-[#231F20] mb-4 pb-3 border-b border-gray-100">Additional Requirements</h2>
               <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
                 rows={4}
                 placeholder="Describe any special requirements, customisations, delivery location, or packaging preferences..."
-                className="w-full border border-gray-200 rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#1D4ED8] transition-colors resize-none"
+                className="w-full border border-gray-200 rounded px-3 py-2.5 text-sm text-gray-700 outline-none focus:border-[#034DA2] transition-colors resize-none"
               />
             </div>
 
@@ -309,7 +310,7 @@ const RequestQuote = () => {
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <button
                 type="submit"
-                className="w-full sm:w-auto bg-[#1D4ED8] hover:bg-[#1E3A8A] text-white font-semibold px-10 py-3.5 rounded transition-colors"
+                className="w-full sm:w-auto bg-[#034DA2] hover:bg-[#023585] text-white font-semibold px-10 py-3.5 rounded transition-colors"
               >
                 Submit Quote Request
               </button>

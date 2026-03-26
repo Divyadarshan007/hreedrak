@@ -15,23 +15,23 @@ const features = [
 ]
 
 const statColors = [
-  { card: 'bg-indigo-100 border border-indigo-200', value: 'text-indigo-700', line: 'bg-indigo-300/50', label: 'text-indigo-600' },
-  { card: 'bg-cyan-100 border border-cyan-200', value: 'text-cyan-700', line: 'bg-cyan-300/50', label: 'text-cyan-600' },
-  { card: 'bg-sky-100 border border-sky-200', value: 'text-sky-700', line: 'bg-sky-300/50', label: 'text-sky-600' },
-  { card: 'bg-purple-100 border border-purple-200', value: 'text-purple-700', line: 'bg-purple-300/50', label: 'text-purple-600' },
+  { card: 'bg-[#EEF3FA] border border-[#A8C4E8]', value: 'text-[#034DA2]', line: 'bg-[#034DA2]/30', label: 'text-[#034DA2]' },
+  { card: 'bg-[#E6F6ED] border border-[#A8D5B8]', value: 'text-[#00A650]', line: 'bg-[#00A650]/30', label: 'text-[#00A650]' },
+  { card: 'bg-[#FEF6E0] border border-[#FDB813]/50', value: 'text-[#C8960F]', line: 'bg-[#FDB813]/40', label: 'text-[#C8960F]' },
+  { card: 'bg-[#F5EBF5] border border-[#993F97]/30', value: 'text-[#993F97]', line: 'bg-[#993F97]/30', label: 'text-[#993F97]' },
 ]
 
 const WhyChooseUs = () => {
   const ref = useScrollAnimation()
   return (
-    <section className="py-16 lg:py-24 bg-[#EFF6FF]" id="why-us">
+    <section className="py-16 lg:py-24 bg-[#EEF3FA]" id="why-us">
       <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
 
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-0.5 bg-[#1D4ED8]" />
-          <p className="text-[#1D4ED8] text-xs font-bold uppercase tracking-[0.3em]">WHY CHOOSE US</p>
+          <div className="w-8 h-0.5 bg-[#FDB813]" />
+          <p className="text-[#FDB813] text-xs font-bold uppercase tracking-[0.3em]">WHY CHOOSE US</p>
         </div>
-        <h2 className="text-3xl lg:text-4xl font-extrabold text-[#0F172A] mb-12 leading-tight">
+        <h2 className="text-3xl lg:text-4xl font-extrabold text-[#231F20] mb-12 leading-tight">
           Unmatched Quality<br />
           And Service
         </h2>
@@ -60,11 +60,11 @@ const WhyChooseUs = () => {
           <div className="space-y-4">
             {features.map((feat, i) => (
               <div key={i} className="flex items-start gap-4 bg-white rounded-lg p-5 hover:shadow-md transition-shadow">
-                <span className="text-3xl font-extrabold text-[#0F172A] opacity-10 leading-none mt-0.5 min-w-[2.5rem] text-right tabular-nums">
+                <span className="text-3xl font-extrabold text-[#231F20] opacity-10 leading-none mt-0.5 min-w-[2.5rem] text-right tabular-nums">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <div className="border-l-2 border-[#1D4ED8] pl-4">
-                  <h4 className="font-bold text-[#0F172A] text-sm mb-1">{feat.title}</h4>
+                <div className="border-l-2 border-[#034DA2] pl-4">
+                  <h4 className="font-bold text-[#231F20] text-sm mb-1">{feat.title}</h4>
                   <p className="text-gray-500 text-sm leading-relaxed">{feat.desc}</p>
                 </div>
               </div>

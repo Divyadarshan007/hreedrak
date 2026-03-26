@@ -120,12 +120,13 @@ const Contact = () => {
       <Navbar />
 
       {/* Hero Banner */}
-      <div className="bg-blue-50 border-b border-blue-100 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">
+      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #034DA2 0%, #023585 55%, #231F20 100%)' }}>
+        <div className="absolute top-0 right-0 w-72 h-72 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" style={{ backgroundColor: '#ffffff07' }} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center relative">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] mb-2" style={{ color: '#A8C4E8' }}>
             HREEDRAK BIOSCIENCE PRIVATE LIMITED
           </p>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900">Contact Us</h1>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Contact Us</h1>
         </div>
       </div>
 
@@ -133,7 +134,7 @@ const Contact = () => {
       <div className="bg-gray-50 border-b border-gray-100 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-xs text-gray-500">
-            <Link to="/" className="hover:text-[#1D4ED8] transition-colors">Home</Link>
+            <Link to="/" className="hover:text-[#034DA2] transition-colors">Home</Link>
             <svg className="w-3 h-3 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
             </svg>
@@ -149,22 +150,22 @@ const Contact = () => {
 
               {/* Left: Contact Info */}
               <div className="p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-gray-100">
-                <p className="text-[#1D4ED8] text-xs font-bold uppercase tracking-[0.2em] mb-2">
+                <p className="text-[#034DA2] text-xs font-bold uppercase tracking-[0.2em] mb-2">
                   GET IN TOUCH
                 </p>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] mb-1">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#231F20] mb-1">
                   Hreedrak Bioscience
                 </h2>
                 <p className="text-sm font-semibold text-gray-500 mb-6 uppercase tracking-wider">
                   Private Limited
                 </p>
-                <div className="w-10 h-0.5 bg-[#1D4ED8] mb-8" />
+                <div className="w-10 h-0.5 bg-[#034DA2] mb-8" />
 
                 <div className="space-y-0">
                   {contactDetails.map((item, i) => (
                     <div key={item.label}>
                       <div className="flex items-start gap-4 py-5">
-                        <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-10 h-10 rounded-full bg-[#231F20] flex items-center justify-center flex-shrink-0 mt-0.5">
                           {item.icon}
                         </div>
                         <div>
@@ -174,12 +175,12 @@ const Contact = () => {
                           {item.href ? (
                             <a
                               href={item.href}
-                              className="text-sm text-[#0F172A] hover:text-[#1D4ED8] transition-colors font-medium"
+                              className="text-sm text-[#231F20] hover:text-[#034DA2] transition-colors font-medium"
                             >
                               {item.value}
                             </a>
                           ) : (
-                            <p className="text-sm text-[#0F172A] font-medium leading-relaxed">
+                            <p className="text-sm text-[#231F20] font-medium leading-relaxed">
                               {item.value}
                             </p>
                           )}
@@ -193,7 +194,7 @@ const Contact = () => {
                 </div>
 
                 {/* Map */}
-                <div className="mt-8 rounded-xl overflow-hidden border border-[#BFDBFE] h-44">
+                <div className="mt-8 rounded-xl overflow-hidden border border-[#A8C4E8] h-44">
                   <iframe
                     title="Hreedrak Bioscience Private Limited Location"
                     src="https://www.openstreetmap.org/export/embed.html?bbox=72.78%2C21.16%2C72.95%2C21.24&layer=mapnik&marker=21.2007%2C72.8577"
@@ -205,17 +206,17 @@ const Contact = () => {
 
               {/* Right: Contact Form */}
               <div className="p-8 lg:p-12">
-                <p className="text-[#1D4ED8] text-xs font-bold uppercase tracking-[0.2em] mb-2">
+                <p className="text-[#034DA2] text-xs font-bold uppercase tracking-[0.2em] mb-2">
                   SEND A MESSAGE
                 </p>
-                <h2 className="text-2xl font-extrabold text-[#0F172A] mb-8">
+                <h2 className="text-2xl font-extrabold text-[#231F20] mb-8">
                   Submit Your Requirement
                 </h2>
 
                 {submitted ? (
                   <div className="flex flex-col items-center justify-center py-16 text-center">
-                    <div className="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mb-4">
-                      <svg className="w-8 h-8 text-[#1D4ED8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-16 h-16 rounded-full bg-[#EEF3FA] flex items-center justify-center mb-4">
+                      <svg className="w-8 h-8 text-[#034DA2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -225,7 +226,7 @@ const Contact = () => {
                     </p>
                     <button
                       onClick={handleCancel}
-                      className="bg-[#1D4ED8] hover:bg-[#1E3A8A] text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-colors"
+                      className="bg-[#034DA2] hover:bg-[#023585] text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-colors"
                     >
                       Submit Another Enquiry
                     </button>
@@ -242,7 +243,7 @@ const Contact = () => {
                         value={form.product}
                         onChange={handleChange}
                         placeholder="Product / Service Looking for"
-                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.product ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#1D4ED8] focus:ring-[#1D4ED8]'}`}
+                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.product ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
                       />
                       {errors.product && <p className="mt-1 text-xs text-red-500">{errors.product}</p>}
                     </div>
@@ -257,7 +258,7 @@ const Contact = () => {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="Your Name"
-                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.name ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#1D4ED8] focus:ring-[#1D4ED8]'}`}
+                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.name ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
                       />
                       {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
                     </div>
@@ -272,7 +273,7 @@ const Contact = () => {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="Email"
-                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.email ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#1D4ED8] focus:ring-[#1D4ED8]'}`}
+                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.email ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
                       />
                       {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
                     </div>
@@ -286,7 +287,7 @@ const Contact = () => {
                           name="countryCode"
                           value={form.countryCode}
                           onChange={handleChange}
-                          className="border border-gray-200 rounded-lg px-3 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#1D4ED8] focus:ring-1 focus:ring-[#1D4ED8] transition-colors bg-white"
+                          className="border border-gray-200 rounded-lg px-3 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#034DA2] focus:ring-1 focus:ring-[#034DA2] transition-colors bg-white"
                         >
                           {countryCodes.map((code) => (
                             <option key={code} value={code}>{code}</option>
@@ -299,7 +300,7 @@ const Contact = () => {
                             value={form.mobile}
                             onChange={handleChange}
                             placeholder="Mobile"
-                            className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.mobile ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#1D4ED8] focus:ring-[#1D4ED8]'}`}
+                            className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.mobile ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
                           />
                           {errors.mobile && <p className="mt-1 text-xs text-red-500">{errors.mobile}</p>}
                         </div>
@@ -316,7 +317,7 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="Your Requirement"
                         rows={4}
-                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors resize-none ${errors.enquiry ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#1D4ED8] focus:ring-[#1D4ED8]'}`}
+                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors resize-none ${errors.enquiry ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
                       />
                       {errors.enquiry && <p className="mt-1 text-xs text-red-500">{errors.enquiry}</p>}
                     </div>
@@ -324,7 +325,7 @@ const Contact = () => {
                     <div className="flex gap-3 pt-1">
                       <button
                         type="submit"
-                        className="bg-[#1D4ED8] hover:bg-[#1E3A8A] text-white text-sm font-semibold px-7 py-3 rounded-lg transition-colors"
+                        className="bg-[#034DA2] hover:bg-[#023585] text-white text-sm font-semibold px-7 py-3 rounded-lg transition-colors"
                       >
                         Submit
                       </button>

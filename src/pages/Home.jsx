@@ -5,6 +5,7 @@ import About from '../components/About/About'
 import Products from '../components/Products/Products'
 import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs'
 import Solutions from '../components/Solutions/Solutions'
+import Certifications from '../components/Certifications/Certifications'
 import Testimonials from '../components/Testimonials/Testimonials'
 import Footer from '../components/Footer/Footer'
 
@@ -22,6 +23,7 @@ const Home = () => {
       <Products />
       <WhyChooseUs />
       <Solutions />
+      <Certifications />
       <Testimonials />
       <Footer />
 
@@ -30,7 +32,7 @@ const Home = () => {
         href={`https://wa.me/919825156800?text=${encodeURIComponent('Hello! I found your website https://www.hreedrakbioscience.in and am interested in your products.')}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition-colors"
+        className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-[#00A650] hover:bg-[#008040] rounded-full flex items-center justify-center shadow-lg transition-colors"
         title="Chat on WhatsApp"
       >
         <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">

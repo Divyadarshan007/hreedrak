@@ -15,8 +15,8 @@ export const allProducts = [
     ],
     price: '₹2.75 – 4.00',
     moq: '6000 Piece',
-    capColor: '#1D4ED8',
-    bodyColor: '#1D4ED8',
+    capColor: '#034DA2',
+    bodyColor: '#034DA2',
     specs: [
       { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
       { label: 'Brand Name', value: 'Hreedrak Bioscience' },
@@ -248,8 +248,8 @@ export const allProducts = [
     ],
     price: '₹1.40 – 1.80',
     moq: '12000 Pack',
-    capColor: '#1D4ED8',
-    bodyColor: '#1D4ED8',
+    capColor: '#034DA2',
+    bodyColor: '#034DA2',
     specs: [
       { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
       { label: 'Brand Name', value: 'Hreedrak Bioscience' },
@@ -401,8 +401,8 @@ export const allProducts = [
     ],
     price: '₹1.20 – 1.60',
     moq: '12000 Piece',
-    capColor: '#1D4ED8',
-    bodyColor: '#1D4ED8',
+    capColor: '#034DA2',
+    bodyColor: '#034DA2',
     specs: [
       { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
       { label: 'Height', value: '13 X 75 Mm / 13 X 100 Mm' },
@@ -591,7 +591,7 @@ export const allProducts = [
     image: '/productImage/polystyrene-disposable-esr-pipette-1740635071-7886616.jpg',
     price: '₹3.50 – 5.50',
     moq: '3000 Piece',
-    capColor: '#3B82F6',
+    capColor: '#034DA2',
     bodyColor: '#93C5FD',
     specs: [
       { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },

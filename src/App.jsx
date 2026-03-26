@@ -8,7 +8,6 @@ import SingleCapBloodCollectionTubes from './pages/products/single-cap-blood-col
 import ProductDetail from './pages/products/ProductDetail'
 import OemServices from './pages/OemServices'
 import Contact from './pages/Contact'
-import Certificates from './pages/Certificates'
 import Catalogue from './pages/Catalogue'
 import RequestQuote from './pages/RequestQuote'
 
@@ -33,7 +32,6 @@ const App = () => {
         <Route path="/products/:categorySlug/:productSlug" element={<ProductDetail />} />
         <Route path="/oem-services" element={<OemServices />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/certificates" element={<Certificates />} />
         <Route path="/catalogue" element={<Catalogue />} />
         <Route path="/request-quote" element={<RequestQuote />} />
       </Routes>

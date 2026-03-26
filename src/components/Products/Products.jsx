@@ -106,7 +106,7 @@ function InquireModal({ product, onClose }) {
               />
             </div>
             <div className="mt-4 text-sm text-gray-800">
-              <p><span className="font-semibold">Price :</span> <span className="font-bold text-[#1D4ED8]">{product.price}</span></p>
+              <p><span className="font-semibold">Price :</span> <span className="font-bold text-[#034DA2]">{product.price}</span></p>
               <p className="mt-1"><span className="font-semibold">MOQ :</span> {product.moq}</p>
             </div>
           </div>
@@ -115,7 +115,7 @@ function InquireModal({ product, onClose }) {
           <div className="sm:w-7/12 flex flex-col">
 
             {/* Header */}
-            <div className="bg-[#1E3A8A] text-white text-center py-4 px-6">
+            <div className="bg-[#023585] text-white text-center py-4 px-6">
               <h2 className="text-lg font-bold">Get a Quick Quote</h2>
             </div>
 
@@ -130,7 +130,7 @@ function InquireModal({ product, onClose }) {
                     placeholder="Quantity"
                     value={quantity}
                     onChange={(e) => { setQuantity(e.target.value); setErrors((p) => ({ ...p, quantity: '' })) }}
-                    className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-[#1D4ED8] ${errors.quantity ? 'border-red-400' : 'border-gray-300'}`}
+                    className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-[#034DA2] ${errors.quantity ? 'border-red-400' : 'border-gray-300'}`}
                   />
                   {errors.quantity && <p className="mt-1 text-xs text-red-500">{errors.quantity}</p>}
                 </div>
@@ -149,7 +149,7 @@ function InquireModal({ product, onClose }) {
                   <select
                     value={countryCode}
                     onChange={(e) => setCountryCode(e.target.value)}
-                    className="border border-gray-300 rounded px-2 py-2 text-sm focus:outline-none focus:border-[#1D4ED8] bg-white"
+                    className="border border-gray-300 rounded px-2 py-2 text-sm focus:outline-none focus:border-[#034DA2] bg-white"
                   >
                     {countryCodes.map((c) => (
                       <option key={c.code} value={c.code}>{c.flag} {c.code}</option>
@@ -161,7 +161,7 @@ function InquireModal({ product, onClose }) {
                       placeholder="Enter Mobile No."
                       value={mobile}
                       onChange={(e) => { setMobile(e.target.value); setErrors((p) => ({ ...p, mobile: '' })) }}
-                      className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-[#1D4ED8] ${errors.mobile ? 'border-red-400' : 'border-gray-300'}`}
+                      className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-[#034DA2] ${errors.mobile ? 'border-red-400' : 'border-gray-300'}`}
                     />
                     {errors.mobile && <p className="mt-1 text-xs text-red-500">{errors.mobile}</p>}
                   </div>
@@ -191,16 +191,16 @@ const Products = () => {
   const navigate = useNavigate()
 
   return (
-    <section className="py-16 lg:py-20 bg-[#EFF6FF]" id="products">
+    <section className="py-16 lg:py-20 bg-[#EEF3FA]" id="products">
       <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
 
         {/* Section header */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-0.5 bg-[#1D4ED8]" />
-            <p className="text-[#1D4ED8] text-xs font-bold uppercase tracking-[0.3em]">OUR PRODUCTS</p>
+            <div className="w-8 h-0.5 bg-[#034DA2]" />
+            <p className="text-[#034DA2] text-xs font-bold uppercase tracking-[0.3em]">OUR PRODUCTS</p>
           </div>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-[#0F172A]">Blood Collection Tubes</h2>
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-[#231F20]">Blood Collection Tubes</h2>
         </div>
 
         {/* Tab navigation */}
@@ -211,8 +211,8 @@ const Products = () => {
               onClick={() => setActiveTab(tab.key)}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
                 activeTab === tab.key
-                  ? 'bg-[#1D4ED8] text-white shadow-md'
-                  : 'bg-white text-[#1E3A8A] border border-[#BFDBFE] hover:border-[#1D4ED8]'
+                  ? 'bg-[#034DA2] text-white shadow-md'
+                  : 'bg-white text-[#023585] border border-[#A8C4E8] hover:border-[#034DA2]'
               }`}
             >
               {tab.label}
@@ -226,16 +226,16 @@ const Products = () => {
             <div
               key={product.id}
               onClick={() => navigate(`/products/${product.categorySlug}/${product.slug}`)}
-              className="bg-white rounded-lg p-5 flex flex-col items-center text-center hover:shadow-xl transition-shadow border border-[#BFDBFE] cursor-pointer"
+              className="bg-white rounded-lg p-5 flex flex-col items-center text-center hover:shadow-xl transition-shadow border border-[#A8C4E8] cursor-pointer"
             >
               <div className="mb-4">
                 <img src={product.image} alt={product.name} className="h-40 w-auto mx-auto object-contain" />
               </div>
-              <h3 className="text-xs font-bold text-[#0F172A] mb-1 leading-snug flex-1">{product.name}</h3>
-              <p className="text-xs text-[#3B82F6] font-medium mb-4">{product.price}</p>
+              <h3 className="text-xs font-bold text-[#231F20] mb-1 leading-snug flex-1">{product.name}</h3>
+              <p className="text-xs text-[#034DA2] font-medium mb-4">{product.price}</p>
               <button
                 onClick={(e) => { e.stopPropagation(); setSelectedProduct(product) }}
-                className="mt-auto border border-[#1D4ED8] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white text-xs font-semibold px-5 py-2 rounded transition-colors w-full"
+                className="mt-auto border border-[#034DA2] text-[#034DA2] hover:bg-[#034DA2] hover:text-white text-xs font-semibold px-5 py-2 rounded transition-colors w-full"
               >
                 Inquire
               </button>
