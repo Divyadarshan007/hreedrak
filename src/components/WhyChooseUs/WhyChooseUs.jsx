@@ -8,10 +8,10 @@ const stats = [
 ]
 
 const features = [
-  { title: 'Made in India, Exported Worldwide', desc: 'Manufacturer, Exporter, Wholesaler & Retailer of blood collection tubes, serving diagnostic labs and hospitals globally.' },
-  { title: 'Premium PET Construction', desc: 'Made from supreme-grade PET material — sterile, single-use, crack-proof, durable, and eco-friendly.' },
-  { title: 'Automated Analyzer Compatible', desc: 'Engineered for seamless integration with automated analyzers to streamline laboratory workflows and ensure accurate diagnostics.' },
-  { title: 'Competitive Bulk Pricing', desc: 'Starting at ₹2.75 per unit with an MOQ of 6,000 pieces — ideal for distributors, hospitals, and diagnostic chains.' },
+  { title: 'Made in India, Exported Worldwide', desc: 'Manufacturer, Exporter, Wholesaler & Retailer of blood collection tubes, serving diagnostic labs and hospitals globally.', bg: '#EEF3FA' },
+  { title: 'Premium PET Construction', desc: 'Made from supreme-grade PET material — sterile, single-use, crack-proof, durable, and eco-friendly.',bg: '#FDE8E9' },
+  { title: 'Automated Analyzer Compatible', desc: 'Engineered for seamless integration with automated analyzers to streamline laboratory workflows and ensure accurate diagnostics.',bg:'#E6F6ED' },
+  { title: 'Competitive Bulk Pricing', desc: 'Starting at ₹2.75 per unit with an MOQ of 6,000 pieces — ideal for distributors, hospitals, and diagnostic chains.', bg:'#F5EBF5' },
 ]
 
 const statColors = [
@@ -24,7 +24,7 @@ const statColors = [
 const WhyChooseUs = () => {
   const ref = useScrollAnimation()
   return (
-    <section className="py-16 lg:py-24 bg-[#EEF3FA]" id="why-us">
+    <section className="py-16 lg:py-24 bg-[#fff]" id="why-us">
       <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
 
         <div className="flex items-center gap-3 mb-4">
@@ -59,7 +59,7 @@ const WhyChooseUs = () => {
           {/* Right: numbered feature items */}
           <div className="space-y-4">
             {features.map((feat, i) => (
-              <div key={i} className="flex items-start gap-4 bg-white rounded-lg p-5 hover:shadow-md transition-shadow">
+              <div key={i} className="flex items-start gap-4 rounded-lg p-5 hover:shadow-md transition-shadow" style={{ backgroundColor: feat.bg }}>
                 <span className="text-3xl font-extrabold text-[#231F20] opacity-10 leading-none mt-0.5 min-w-[2.5rem] text-right tabular-nums">
                   {String(i + 1).padStart(2, '0')}
                 </span>

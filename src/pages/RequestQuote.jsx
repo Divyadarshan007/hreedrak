@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer/Footer'
 import { allProducts } from '../data/products'
 
 const countryCodes = [
@@ -95,7 +93,6 @@ const RequestQuote = () => {
   if (submitted) {
     return (
       <>
-        <Navbar />
         <main className="min-h-screen bg-[#EEF3FA] flex items-center justify-center px-4">
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-10 max-w-md w-full text-center">
             <div className="w-14 h-14 rounded-full bg-[#E6F6ED] flex items-center justify-center mx-auto mb-5">
@@ -110,15 +107,13 @@ const RequestQuote = () => {
             </Link>
           </div>
         </main>
-        <Footer />
       </>
     )
   }
 
   return (
     <>
-      <Navbar />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#EEF3FA]">
 
         {/* Hero Banner */}
         <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #034DA2 0%, #023585 55%, #231F20 100%)' }}>
@@ -321,7 +316,6 @@ const RequestQuote = () => {
         </div>
 
       </main>
-      <Footer />
     </>
   )
 }

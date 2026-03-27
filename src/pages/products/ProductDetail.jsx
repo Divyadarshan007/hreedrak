@@ -1,7 +1,5 @@
 import { useState, useLayoutEffect, useEffect, useRef } from 'react'
 import { Link, useParams, Navigate } from 'react-router-dom'
-import Navbar from '../../components/Navbar/Navbar'
-import Footer from '../../components/Footer/Footer'
 import { findProduct, getRelatedProducts } from '../../data/products'
 import SEOMeta from '../../components/SEO/SEOMeta'
 
@@ -173,7 +171,6 @@ const ProductDetail = () => {
         ogImage={`https://www.hreedrakbioscience.com${product.image}`}
         structuredData={structuredData}
       />
-      <Navbar />
 
       {/* ── Breadcrumb ── */}
       <div className="bg-gray-50 border-b border-gray-100 py-3">
@@ -455,7 +452,7 @@ const ProductDetail = () => {
 
         {/* ── Related products ── */}
         {related.length > 0 && (
-          <div className="border-t border-gray-100" style={{ backgroundColor: '#F9FAFB' }}>
+          <div className="border-t border-gray-100" style={{ backgroundColor: '#EEF3FA' }}>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-1 h-6 rounded-full flex-shrink-0" style={{ backgroundColor: ACCENT }} />
@@ -487,7 +484,7 @@ const ProductDetail = () => {
 
       </main>
 
-      <Footer />
+
 
       {/* ── Sticky inquiry bar ── */}
       <div

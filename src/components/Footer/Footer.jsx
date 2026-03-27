@@ -190,7 +190,7 @@ const Footer = () => {
               <span className="text-gray-300 font-bold">HREEDRAK BIOSCIENCE PRIVATE LIMITED</span>
             </p>
             <p className="text-gray-500 text-xs mt-0.5">
-              Developed &amp; Managed By Zaploom Technologies Pvt Ltd
+              Developed &amp; Managed By Zaploom Technologies
             </p>
           </div>
         </div>

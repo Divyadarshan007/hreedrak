@@ -43,7 +43,7 @@ const solutions = [
 const Solutions = () => {
   const ref = useScrollAnimation()
   return (
-    <section id="solutions" className="bg-white py-16 lg:py-24">
+    <section id="solutions" className="bg-[#EEF3FA] py-16 lg:py-24">
       <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
 
         {/* Section Header */}

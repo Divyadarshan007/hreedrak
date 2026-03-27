@@ -5,9 +5,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false)
   const [productsOpen, setProductsOpen] = useState(false)
-  const [moreOpen, setMoreOpen] = useState(false)
   const closeTimer = useRef(null)
-  const moreCloseTimer = useRef(null)
   const location = useLocation()
 
   const isActive = (path) => location.pathname === path
@@ -19,14 +17,6 @@ const Navbar = () => {
   const handleProductsLeave = () => {
     closeTimer.current = setTimeout(() => setProductsOpen(false), 180)
   }
-  const handleMoreEnter = () => {
-    if (moreCloseTimer.current) clearTimeout(moreCloseTimer.current)
-    setMoreOpen(true)
-  }
-  const handleMoreLeave = () => {
-    moreCloseTimer.current = setTimeout(() => setMoreOpen(false), 180)
-  }
-
   const moreItems = [
     { name: 'Contact Us',         href: '/contact'       },
     { name: 'Request a Quote',    href: '/request-quote' },
@@ -129,30 +119,9 @@ const Navbar = () => {
             </button>
 
             <Link to="/about" className={navLinkClass('/about')}>About Us</Link>
-
-            {/* More dropdown — small, anchored right */}
-            <div className="relative" onMouseEnter={handleMoreEnter} onMouseLeave={handleMoreLeave}>
-              <button className="text-gray-600 hover:text-[#231F20] text-sm font-medium flex items-center gap-1 transition-colors">
-                More
-                <svg className={`w-3 h-3 mt-0.5 transition-transform duration-150 ${moreOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </button>
-              {moreOpen && (
-                <div className="absolute top-full right-0 mt-2 bg-white shadow-xl rounded-lg border border-gray-100 py-2 min-w-[180px] z-50">
-                  {moreItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className="block px-4 py-3 text-sm text-[#231F20] hover:bg-[#EEF3FA] hover:text-[#034DA2] transition-colors"
-                      onClick={() => setMoreOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            {moreItems.map((item) => (
+              <Link key={item.name} to={item.href} className={navLinkClass(item.href)}>{item.name}</Link>
+            ))}
           </div>
 
           {/* Mobile hamburger */}

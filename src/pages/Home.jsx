@@ -1,31 +1,23 @@
-import Navbar from '../components/Navbar/Navbar'
 import SEOMeta from '../components/SEO/SEOMeta'
 import Hero from '../components/Hero/Hero'
 import About from '../components/About/About'
 import Products from '../components/Products/Products'
 import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs'
 import Solutions from '../components/Solutions/Solutions'
-import Certifications from '../components/Certifications/Certifications'
-import Testimonials from '../components/Testimonials/Testimonials'
-import Footer from '../components/Footer/Footer'
 
 const Home = () => {
   return (
-    <div className="overflow-x-hidden">
+    <>
       <SEOMeta
         title="Blood Collection Tube Manufacturer in India"
         description="Hreedrak Bioscience — CDSCO certified manufacturer of vacuum and non-vacuum blood collection tubes. ISO 9001:2015, ISO 13485:2016 certified. Based in Surat, Gujarat. OEM available."
         canonical="/"
       />
-      <Navbar />
       <Hero />
       <About />
       <Products />
       <WhyChooseUs />
       <Solutions />
-      <Certifications />
-      <Testimonials />
-      <Footer />
 
       {/* WhatsApp Floating Button */}
       <a
@@ -50,7 +42,7 @@ const Home = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
         </svg>
       </button>
-    </div>
+    </>
   )
 }
 

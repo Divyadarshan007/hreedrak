@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import Layout from './components/Layout/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
 import VacuumBloodCollectionTubes from './pages/products/vacuum-blood-collection-tubes'
@@ -23,18 +24,20 @@ const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products/vacuum-blood-collection-tubes" element={<VacuumBloodCollectionTubes />} />
-        <Route path="/products/non-vacuum-blood-collection-tubes" element={<NonVacuumBloodCollectionTubes />} />
-        <Route path="/products/single-cap-blood-collection-tubes" element={<SingleCapBloodCollectionTubes />} />
-        <Route path="/products/:categorySlug/:productSlug" element={<ProductDetail />} />
-        <Route path="/oem-services" element={<OemServices />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/catalogue" element={<Catalogue />} />
-        <Route path="/request-quote" element={<RequestQuote />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products/vacuum-blood-collection-tubes" element={<VacuumBloodCollectionTubes />} />
+          <Route path="/products/non-vacuum-blood-collection-tubes" element={<NonVacuumBloodCollectionTubes />} />
+          <Route path="/products/single-cap-blood-collection-tubes" element={<SingleCapBloodCollectionTubes />} />
+          <Route path="/products/:categorySlug/:productSlug" element={<ProductDetail />} />
+          <Route path="/oem-services" element={<OemServices />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/catalogue" element={<Catalogue />} />
+          <Route path="/request-quote" element={<RequestQuote />} />
+        </Routes>
+      </Layout>
     </BrowserRouter>
   )
 }

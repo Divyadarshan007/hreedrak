@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer/Footer'
 import SEOMeta from '../components/SEO/SEOMeta'
 
 /* ── Palette & roles ─────────────────────────────────────────────
@@ -167,7 +165,7 @@ const profileItems = [
 
 /* ── Sub-components ────────────────────────────────────────────── */
 const SectionLabel = ({ number, title }) => (
-  <div className="flex items-center gap-4 mb-6">
+  <div className="flex items-center  gap-4 mb-6">
     <div
       className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm"
       style={{ backgroundColor: PRIMARY }}
@@ -291,8 +289,6 @@ const About = () => {
         description="Learn about Hreedrak Bioscience Private Limited, a CDSCO-certified manufacturer of blood collection tubes in Surat, Gujarat. ISO 7 clean room, CE marked, ISO 9001 & 13485 certified."
         canonical="/about"
       />
-      <Navbar />
-
       {/* ── Hero Banner ── */}
       <div
         className="relative overflow-hidden"
@@ -543,17 +539,14 @@ const About = () => {
             </div>
 
             {/* ── Right: Sidebar ── */}
-            <div className="w-full lg:w-72 xl:w-80 flex-shrink-0">
-              <div className="lg:sticky lg:top-6">
-                <ContactSidebar />
-              </div>
+            <div className="w-full lg:w-72 xl:w-80 flex-shrink-0 lg:self-start lg:sticky lg:top-6">
+              <ContactSidebar />
             </div>
 
           </div>
         </div>
       </main>
 
-      <Footer />
     </div>
   )
 }

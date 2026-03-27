@@ -1,7 +1,4 @@
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer/Footer'
-
 const certs = [
   {
     acronym: 'CE',
@@ -35,7 +32,6 @@ const certs = [
 const Certificates = () => {
   return (
     <>
-      <Navbar />
       <main className="min-h-screen bg-white">
 
         {/* Hero Banner */}
@@ -133,7 +129,6 @@ const Certificates = () => {
         </div>
 
       </main>
-      <Footer />
     </>
   )
 }

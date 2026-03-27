@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer/Footer'
 import { allProducts } from '../data/products'
 
 const categories = [
@@ -18,11 +16,7 @@ const Catalogue = () => {
 
   return (
     <>
-      <div className="no-print">
-        <Navbar />
-      </div>
-
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#EEF3FA]">
 
         {/* Hero Banner — hidden during print */}
         <div className="no-print relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #034DA2 0%, #023585 55%, #231F20 100%)' }}>
@@ -182,9 +176,6 @@ const Catalogue = () => {
 
       </main>
 
-      <div className="no-print">
-        <Footer />
-      </div>
     </>
   )
 }

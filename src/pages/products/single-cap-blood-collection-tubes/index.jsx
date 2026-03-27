@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom'
-import Navbar from '../../../components/Navbar/Navbar'
-import Footer from '../../../components/Footer/Footer'
 import { getProductsByCategory } from '../../../data/products'
 
 const singleCapProducts = getProductsByCategory('single-cap-blood-collection-tubes')
@@ -9,7 +7,6 @@ const singleCapProducts = getProductsByCategory('single-cap-blood-collection-tub
 const SingleCapBloodCollectionTubes = () => {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Navbar />
 
       {/* Hero Banner */}
       <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #034DA2 0%, #023585 55%, #231F20 100%)' }}>
@@ -109,8 +106,6 @@ const SingleCapBloodCollectionTubes = () => {
           ))}
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }

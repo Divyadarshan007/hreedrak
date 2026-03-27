@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer/Footer'
 import SEOMeta from '../components/SEO/SEOMeta'
 
 const OemServices = () => {
@@ -81,8 +79,6 @@ const OemServices = () => {
         description="Custom OEM manufacturing of blood collection tubes by Hreedrak Bioscience. ISO 7 clean room, CE marked, CDSCO certified. Custom branding, packaging, and specifications available."
         canonical="/oem-services"
       />
-      <Navbar />
-
       {/* Hero Banner */}
       <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #034DA2 0%, #023585 55%, #231F20 100%)' }}>
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" style={{ backgroundColor: '#ffffff07' }} />
@@ -247,7 +243,6 @@ const OemServices = () => {
 
       </main>
 
-      <Footer />
 
       {/* Quick Quote Modal */}
       {showModal && (
