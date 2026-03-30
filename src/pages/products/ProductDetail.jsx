@@ -85,7 +85,6 @@ const ProductDetail = () => {
 
   const related    = getRelatedProducts(categorySlug, productSlug)
   const categoryPath = `/products/${categorySlug}`
-  const quickSpecs = product.specs ? product.specs.slice(0, 4) : []
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -209,42 +208,7 @@ const ProductDetail = () => {
                 <span className="text-2xl font-black" style={{ color: PRIMARY }}>{product.price}</span>
                 <span className="text-sm ml-1" style={{ color: GRAY }}>/ piece</span>
               </div>
-              <div className="h-8 w-px bg-gray-200" />
-              <div>
-                <p className="text-[10px] uppercase tracking-wider mb-0.5" style={{ color: GRAY }}>Min. Order</p>
-                <span className="inline-flex items-center gap-1 text-sm font-semibold px-2.5 py-1 rounded-full" style={{ backgroundColor: '#E8F7EF', color: GREEN }}>
-                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {product.moq}
-                </span>
-              </div>
             </div>
-            {/* Quick specs — colorful card grid */}
-            {quickSpecs.length > 0 && (
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
-                {quickSpecs.map((s, i) => {
-                  const palette = [
-                    { bg: '#EEF3FA', accent: '#034DA2', border: '#C5D6F0' },
-                    { bg: '#FFF0F0', accent: '#ED1B24', border: '#F9C4C6' },
-                    { bg: '#E8F7EF', accent: '#00A650', border: '#A8DFC0' },
-                    { bg: '#FFF8E7', accent: '#D4880A', border: '#F5D98A' },
-                  ]
-                  const { bg, accent, border } = palette[i % palette.length]
-                  return (
-                    <div
-                      key={s.label}
-                      className="flex flex-col gap-1.5 px-4 py-3.5 rounded-xl border shadow-sm hover:shadow-md transition-shadow"
-                      style={{ backgroundColor: bg, borderColor: border }}
-                    >
-                      <p className="text-[9px] uppercase tracking-[0.18em] font-bold" style={{ color: accent }}>{s.label}</p>
-                      <div className="w-6 h-0.5 rounded-full" style={{ backgroundColor: accent + '60' }} />
-                      <p className="text-sm font-extrabold leading-snug" style={{ color: FONT }}>{s.value}</p>
-                    </div>
-                  )
-                })}
-              </div>
-            )}
           </div>
 
           {/* Two-column: specs (left) | images stacked (right) */}
@@ -258,6 +222,21 @@ const ProductDetail = () => {
               </div>
 
               <div className="space-y-3 mb-7">
+                {/* Min. Order */}
+                <div className="flex items-start text-sm">
+                  <span className="font-bold uppercase tracking-wide flex-shrink-0 w-52 leading-snug" style={{ color: FONT }}>Min. Order</span>
+                  <span className="flex-shrink-0 font-medium mx-2" style={{ color: GRAY }}>:</span>
+                  <span className="font-medium leading-snug" style={{ color: GRAY }}>{product.moq}</span>
+                </div>
+                {/* Specs (Business Type, Brand Name, Material, Shape, etc.) */}
+                {product.specs && product.specs.map((s) => (
+                  <div key={s.label} className="flex items-start text-sm">
+                    <span className="font-bold uppercase tracking-wide flex-shrink-0 w-52 leading-snug" style={{ color: FONT }}>{s.label}</span>
+                    <span className="flex-shrink-0 font-medium mx-2" style={{ color: GRAY }}>:</span>
+                    <span className="font-medium leading-snug" style={{ color: GRAY }}>{s.value}</span>
+                  </div>
+                ))}
+                {/* Remaining product details */}
                 {product.details.map((d) => (
                   <div key={d.label} className="flex items-start text-sm">
                     <span className="font-bold uppercase tracking-wide flex-shrink-0 w-52 leading-snug" style={{ color: FONT }}>{d.label}</span>
@@ -285,13 +264,6 @@ const ProductDetail = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   Get Best Price
-                </button>
-                <button
-                  onClick={openModal}
-                  className="text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: ACCENT }}
-                >
-                  Yes! I am Interested
                 </button>
               </div>
 
@@ -372,20 +344,56 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* RIGHT — Bento grid images */}
-            <div className="lg:w-[360px] flex-shrink-0 lg:sticky lg:top-8 self-start">
-              <div className="flex flex-col gap-3">
-                {/* First image — large */}
+            {/* RIGHT — Images */}
+            <div className="lg:w-[480px] flex-shrink-0">
+              <div className="flex flex-col gap-4">
+                {/* Main image — unique framed structure */}
                 {images[0] && (
-                  <div className="rounded-xl overflow-hidden" style={{ backgroundColor: '#EEF3FA' }}>
-                    <img src={images[0]} alt={product.name} className="w-full h-auto object-cover" />
+                  <div className="relative">
+                    {/* Decorative offset shadow block */}
+                    <div
+                      className="absolute inset-0 rounded-2xl translate-x-3 translate-y-3"
+                      style={{ backgroundColor: PRIMARY + '22', zIndex: 0 }}
+                    />
+                    {/* Accent top-left corner bar */}
+                    <div
+                      className="absolute -top-2 -left-2 w-12 h-12 rounded-tl-2xl border-t-4 border-l-4 z-10"
+                      style={{ borderColor: PRIMARY }}
+                    />
+                    {/* Accent bottom-right corner bar */}
+                    <div
+                      className="absolute -bottom-2 -right-2 w-12 h-12 rounded-br-2xl border-b-4 border-r-4 z-10"
+                      style={{ borderColor: ACCENT }}
+                    />
+                    {/* Image container */}
+                    <div
+                      className="relative z-[1] rounded-2xl overflow-hidden border-2 shadow-xl"
+                      style={{ backgroundColor: '#EEF3FA', borderColor: '#C5D6F0' }}
+                    >
+                      <img src={images[0]} alt={product.name} className="w-full h-auto object-cover" />
+                      {/* MOQ badge overlay */}
+                      <div
+                        className="absolute top-3 right-3 flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full shadow-md"
+                        style={{ backgroundColor: GREEN, color: '#fff' }}
+                      >
+                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        MOQ: {product.moq}
+                      </div>
+                    </div>
                   </div>
                 )}
-                {/* Remaining images — smaller grid below */}
+                {/* Thumbnail strip */}
                 {images.length > 1 && (
-                  <div className={`grid gap-3 ${images.slice(1).length === 1 ? 'grid-cols-1' : images.slice(1).length === 2 ? 'grid-cols-2' : 'grid-cols-3'}`}>
-                    {images.slice(1).map((img, i) => (
-                      <div key={i + 1} className="rounded-xl overflow-hidden aspect-square" style={{ backgroundColor: '#EEF3FA' }}>
+                  <div className="grid grid-cols-2 gap-3 mt-2">
+                    {images.slice(1).map((img, i, arr) => (
+                      <div
+                        key={i + 1}
+                        className={`rounded-xl overflow-hidden aspect-square border-2 shadow-sm hover:shadow-md hover:border-blue-300 transition-all cursor-pointer ${arr.length % 2 !== 0 && i === arr.length - 1 ? 'col-span-2' : ''}`}
+                        style={{ backgroundColor: '#EEF3FA', borderColor: '#C5D6F0' }}
+                        onClick={() => setActiveImg(i + 1)}
+                      >
                         <img src={img} alt={product.name} className="w-full h-full object-cover" />
                       </div>
                     ))}
