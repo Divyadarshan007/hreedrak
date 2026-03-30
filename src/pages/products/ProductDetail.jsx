@@ -220,25 +220,29 @@ const ProductDetail = () => {
                 </span>
               </div>
             </div>
-            {/* Quick specs — inline strip */}
+            {/* Quick specs — colorful card grid */}
             {quickSpecs.length > 0 && (
-              <div className="flex flex-wrap items-center gap-0 mt-5 rounded-xl overflow-hidden border border-gray-100">
-                {quickSpecs.map((s, i) => (
-                  <div
-                    key={s.label}
-                    className={`flex items-center gap-3 px-4 py-3 flex-1 min-w-[160px] ${i !== 0 ? 'border-l border-gray-100' : ''}`}
-                    style={{ backgroundColor: i % 2 === 0 ? '#F8FAFF' : '#fff' }}
-                  >
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
+                {quickSpecs.map((s, i) => {
+                  const palette = [
+                    { bg: '#EEF3FA', accent: '#034DA2', border: '#C5D6F0' },
+                    { bg: '#FFF0F0', accent: '#ED1B24', border: '#F9C4C6' },
+                    { bg: '#E8F7EF', accent: '#00A650', border: '#A8DFC0' },
+                    { bg: '#FFF8E7', accent: '#D4880A', border: '#F5D98A' },
+                  ]
+                  const { bg, accent, border } = palette[i % palette.length]
+                  return (
                     <div
-                      className="w-1.5 h-8 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: PRIMARY + '40' }}
-                    />
-                    <div>
-                      <p className="text-[10px] uppercase tracking-widest font-semibold mb-0.5" style={{ color: PRIMARY }}>{s.label}</p>
-                      <p className="text-sm font-bold leading-snug" style={{ color: FONT }}>{s.value}</p>
+                      key={s.label}
+                      className="flex flex-col gap-1.5 px-4 py-3.5 rounded-xl border shadow-sm hover:shadow-md transition-shadow"
+                      style={{ backgroundColor: bg, borderColor: border }}
+                    >
+                      <p className="text-[9px] uppercase tracking-[0.18em] font-bold" style={{ color: accent }}>{s.label}</p>
+                      <div className="w-6 h-0.5 rounded-full" style={{ backgroundColor: accent + '60' }} />
+                      <p className="text-sm font-extrabold leading-snug" style={{ color: FONT }}>{s.value}</p>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             )}
           </div>
