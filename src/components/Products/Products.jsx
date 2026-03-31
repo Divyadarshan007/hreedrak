@@ -52,6 +52,7 @@ function InquireModal({ product, onClose }) {
   const [unit] = useState('piece')
   const [countryCode, setCountryCode] = useState('+91')
   const [mobile, setMobile] = useState('')
+  const [email, setEmail] = useState('')
   const [errors, setErrors] = useState({})
 
   const validate = () => {
@@ -60,6 +61,7 @@ function InquireModal({ product, onClose }) {
     else if (isNaN(quantity) || Number(quantity) <= 0) errs.quantity = 'Enter a valid quantity'
     if (!mobile.trim()) errs.mobile = 'Mobile number is required'
     else if (!/^\d{7,15}$/.test(mobile)) errs.mobile = 'Enter a valid mobile number (digits only)'
+    if (email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.email = 'Enter a valid email address'
     return errs
   }
 
@@ -70,7 +72,8 @@ function InquireModal({ product, onClose }) {
     const msg =
       `*Quick Quote - ${product.name}*\n` +
       `Quantity: ${quantity} ${unit}\n` +
-      `Mobile: ${countryCode} ${mobile}`
+      `Mobile: ${countryCode} ${mobile}` +
+      (email.trim() ? `\nEmail: ${email}` : '')
     window.open(`https://wa.me/919825156800?text=${encodeURIComponent(msg)}`, '_blank')
     onClose()
   }
@@ -106,7 +109,6 @@ function InquireModal({ product, onClose }) {
               />
             </div>
             <div className="mt-4 text-sm text-gray-800">
-              <p><span className="font-semibold">Price :</span> <span className="font-bold text-[#034DA2]">{product.price}</span></p>
               <p className="mt-1"><span className="font-semibold">MOQ :</span> {product.moq}</p>
             </div>
           </div>
@@ -166,6 +168,19 @@ function InquireModal({ product, onClose }) {
                     {errors.mobile && <p className="mt-1 text-xs text-red-500">{errors.mobile}</p>}
                   </div>
                 </div>
+              </div>
+
+              {/* Email (optional) */}
+              <div>
+                <label className="block text-xs text-gray-600 mb-1">Email <span className="text-gray-400">(Optional)</span></label>
+                <input
+                  type="email"
+                  placeholder="Enter Email Address"
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value); setErrors((p) => ({ ...p, email: '' })) }}
+                  className={`w-full border rounded px-3 py-2 text-sm focus:outline-none focus:border-[#034DA2] ${errors.email ? 'border-red-400' : 'border-gray-300'}`}
+                />
+                {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
               </div>
 
               {/* Submit */}
@@ -232,7 +247,6 @@ const Products = () => {
                 <img src={product.image} alt={product.name} className="h-40 w-auto mx-auto object-contain" />
               </div>
               <h3 className="text-xs font-bold text-[#231F20] mb-1 leading-snug flex-1">{product.name}</h3>
-              <p className="text-xs text-[#034DA2] font-medium mb-4">{product.price}</p>
               <button
                 onClick={(e) => { e.stopPropagation(); setSelectedProduct(product) }}
                 className="mt-auto border border-[#034DA2] text-[#034DA2] hover:bg-[#034DA2] hover:text-white text-xs font-semibold px-5 py-2 rounded transition-colors w-full"

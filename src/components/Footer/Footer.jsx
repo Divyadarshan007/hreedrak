@@ -45,7 +45,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#231F20] text-white" id="footer">
       {/* Multicolor top strip */}
-      <div className="h-1.5 flex">
+      <div className="h-1 flex">
         <div className="flex-1 bg-[#034DA2]" />
         <div className="flex-1 bg-[#231F20]" />
         <div className="flex-1 bg-[#ED1B24]" />
@@ -67,7 +67,7 @@ const Footer = () => {
               </div>
             </a>
             <p className="text-gray-400 text-xs leading-relaxed mb-6">
-              Established in 2024, we are manufacturers, exporters & wholesalers of CDSCO-certified blood collection tubes — serving diagnostic labs and hospitals worldwide from Surat, Gujarat, India.
+              Having experience for more than 10 years, we are manufacturers, exporters & wholesalers of CDSCO-certified blood collection tubes — serving diagnostic labs and hospitals worldwide from Surat, Gujarat, India.
             </p>
             <p className="text-gray-500 text-[10px] font-semibold uppercase tracking-widest mb-3">Follow Us</p>
             <div className="flex gap-2 flex-wrap">
@@ -170,8 +170,8 @@ const Footer = () => {
               <div className="w-full h-32 rounded-lg overflow-hidden border border-[#ED1B24]/40 mt-2">
                 <iframe
                   title="Hreedrak Bioscience Private Limited Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7440.021072628313!2d72.73207609357911!3d21.191740399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04d1d75a725ed%3A0x8bd68c87184611a!2sRJD%20Integrated%20Textile%20Park%20Ltd!5e0!3m2!1sen!2sin!4v1774354704807!5m2!1sen!2sin"
-                  className="w-full h-full border-0 grayscale opacity-70"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d281.244077196072!2d72.74164002261436!3d21.190139662766473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDExJzI0LjYiTiA3MsKwNDQnMzAuNSJF!5e1!3m2!1sen!2sin!4v1774951045242!5m2!1sen!2sin"
+                  className="w-full h-full border-0 opacity-70"
                   loading="lazy"
                 />
               </div>

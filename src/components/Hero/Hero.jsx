@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
@@ -41,36 +40,7 @@ const Hero = () => {
           healthcare outcomes in hospitals and clinics across India.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-10">
-          <Link
-            to="/contact"
-            className="bg-[#ED1B24] hover:bg-[#c41520] text-white font-semibold px-7 py-3 rounded transition-colors"
-          >
-            Chat With Us
-          </Link>
-          <Link
-            to="/products/vacuum-blood-collection-tubes"
-            className="bg-white/10 border border-white/30 hover:bg-white/20 text-white font-semibold px-7 py-3 rounded transition-colors"
-          >
-            View Products
-          </Link>
-        </div>
 
-        {/* Trust badges */}
-        <div className="flex flex-wrap justify-center gap-2">
-          {[
-            { label: 'ISO 7 Clean Room', color: 'bg-[#034DA2]/60 border-[#034DA2]' },
-            { label: 'CDSCO Certified', color: 'bg-[#00A650]/60 border-[#00A650]' },
-            { label: 'CE Marked', color: 'bg-[#993F97]/60 border-[#993F97]' },
-          ].map((badge) => (
-            <span
-              key={badge.label}
-              className={`${badge.color} border text-white text-xs font-medium px-3 py-1.5 rounded-full`}
-            >
-              {badge.label}
-            </span>
-          ))}
-        </div>
 
       </div>
     </section>

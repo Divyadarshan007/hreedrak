@@ -122,8 +122,8 @@ const profileItems = [
     ),
   },
   {
-    label: 'Year of Establishment',
-    value: '2024',
+    label: 'Years of Experience',
+    value: '10+',
     color: YELLOW,
     icon: (
       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -290,47 +290,14 @@ const About = () => {
         canonical="/about"
       />
       {/* ── Hero Banner ── */}
-      <div
-        className="relative overflow-hidden"
-        style={{ background: `linear-gradient(135deg, ${PRIMARY} 0%, #023585 55%, ${FONT} 100%)` }}
-      >
-        <div className="absolute top-0 right-0 w-80 h-80 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" style={{ backgroundColor: '#ffffff07' }} />
-        <div className="absolute bottom-0 left-10 w-52 h-52 rounded-full translate-y-1/2 pointer-events-none" style={{ backgroundColor: '#ffffff05' }} />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] mb-3" style={{ color: '#A8C4E8' }}>
-            Hreedrak Bioscience Private Limited
+      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #034DA2 0%, #023585 55%, #231F20 100%)' }}>
+        <div className="absolute top-0 right-0 w-72 h-72 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" style={{ backgroundColor: '#ffffff07' }} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center relative">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] mb-2" style={{ color: '#A8C4E8' }}>
+            HREEDRAK BIOSCIENCE PRIVATE LIMITED
           </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
-            About Us
-          </h1>
-          <p className="text-sm max-w-md mb-9 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            We are a trusted provider of essential medical supplies for laboratories and healthcare facilities across the nation.
-          </p>
-
-          {/* Stat badges — accent dots use meaningful palette colours */}
-          <div className="flex flex-wrap gap-3">
-            {[
-              { label: 'Established', value: '2024',             dot: YELLOW  },
-              { label: 'Reach',       value: 'Worldwide',        dot: GREEN   },
-              { label: 'Compliance',  value: 'CE Marked',        dot: ACCENT  },
-              { label: 'Certified',   value: 'ISO 9001 & 13485', dot: PURPLE  },
-            ].map((s) => (
-              <div
-                key={s.label}
-                className="border rounded-lg px-4 py-2.5 min-w-[110px]"
-                style={{ borderColor: 'rgba(255,255,255,0.2)', backgroundColor: 'rgba(255,255,255,0.08)' }}
-              >
-                <p className="text-[10px] uppercase tracking-wider leading-none mb-1.5" style={{ color: 'rgba(255,255,255,0.5)' }}>{s.label}</p>
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: s.dot }} />
-                  <p className="text-white font-bold text-xs leading-none">{s.value}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-white">About Us</h1>
         </div>
-
       </div>
 
       {/* ── Breadcrumb ── */}
@@ -356,33 +323,22 @@ const About = () => {
               {/* 01 — Our Story */}
               <section>
                 <SectionLabel number="01" title="Our Story" />
-                <p className="text-gray-700 text-sm leading-relaxed mb-5">
-                  Established in the year <strong>2024</strong>,{' '}
-                  <strong>HREEDRAK BIOSCIENCE PRIVATE LIMITED</strong> is among the leading and
-                  trustworthy organisations in this domain, engaged as{' '}
-                  <strong>Manufacturers, Exporters, Wholesaler</strong>, and{' '}
-                  <strong>Retailer</strong> of a wide range of medical products. Our offered
-                  assortment comprises:
-                </p>
-                {/* Product tags — primary blue, uniform */}
-                <div className="flex flex-wrap gap-2">
-                  {products.map((product) => (
-                    <span
-                      key={product}
-                      className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border"
-                      style={{ backgroundColor: tint[PRIMARY], borderColor: '#A8C4E8', color: PRIMARY }}
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: PRIMARY }} />
-                      {product}
-                    </span>
-                  ))}
+                <div className=" p-5 border-l-4" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    Having experience more than <strong>10 years</strong>,{' '}
+                    <strong>HREEDRAK BIOSCIENCE PRIVATE LIMITED</strong> is among the leading and
+                    trustworthy organisations in this domain, engaged as{' '}
+                    <strong>Manufacturers, Exporters, Wholesaler</strong>, and{' '}
+                    <strong>Retailer</strong> of a wide range of medical products. Our offered
+                    assortment comprises:
+                  </p>
                 </div>
               </section>
 
               {/* 02 — Manufacturing Excellence */}
               <section>
                 <SectionLabel number="02" title="Manufacturing Excellence" />
-                <div className="rounded-r-xl p-5 border-l-4" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
+                <div className=" p-5 border-l-4" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
                   <p className="text-gray-700 text-sm leading-relaxed">
                     All these products are manufactured from supreme grade raw materials using
                     modern tools and technology, and are made as per the industry approved
@@ -396,20 +352,8 @@ const About = () => {
               {/* 03 — Leadership & Growth */}
               <section>
                 <SectionLabel number="03" title="Leadership &amp; Growth" />
-                {/* Navy card — purple accent used intentionally here */}
-                <div className="rounded-xl p-6 relative overflow-hidden" style={{ backgroundColor: FONT }}>
-                  <div className="absolute top-0 right-0 w-40 h-40 rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" style={{ backgroundColor: PURPLE + '22' }} />
-                  <div className="flex items-center gap-2.5 mb-4">
-                    <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: PURPLE }}>
-                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-                      </svg>
-                    </span>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em]" style={{ color: PURPLE }}>
-                      From Our Leadership
-                    </span>
-                  </div>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                <div className=" p-5 border-l-4" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
+                  <p className="text-gray-700 text-sm leading-relaxed">
                     Our organisation is growing with a fast rate because of the valuable assistance
                     of our mentor. His management skills, ability to handle crucial situations, and
                     regular motivation have enabled us to achieve a remarkable peak of success in
@@ -421,9 +365,7 @@ const About = () => {
               {/* 04 — Our Commitment */}
               <section>
                 <SectionLabel number="04" title="Our Commitment" />
-                {/* Accent red left bar */}
-                <div className="flex gap-4">
-                  <div className="w-1 flex-shrink-0 rounded-full self-stretch" style={{ backgroundColor: ACCENT }} />
+                <div className=" p-5 border-l-4" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
                   <p className="text-gray-700 text-sm leading-relaxed">
                     At <strong>Hreedrak Bioscience</strong>, our commitment to quality and safety is
                     paramount. Our products are crafted to deliver reliable results, aiding
@@ -442,8 +384,8 @@ const About = () => {
                   {profileItems.map((item) => (
                     <div
                       key={item.label}
-                      className="flex items-start gap-4 rounded-xl p-4 border transition-colors"
-                      style={{ backgroundColor: tint[item.color], borderColor: item.color + '30' }}
+                      className="flex items-start gap-4 p-4 border-l-4  transition-colors"
+                      style={{ backgroundColor: tint[item.color], borderColor: item.color }}
                     >
                       <div
                         className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -482,28 +424,17 @@ const About = () => {
                         <h3 className="text-base font-bold mb-1" style={{ color: FONT }}>{cert.name}</h3>
                         <p className="text-xs font-medium mb-3" style={{ color: PRIMARY }}>Issued by: {cert.issuedBy}</p>
                         <p className="text-sm leading-relaxed flex-1" style={{ color: GRAY }}>{cert.scope}</p>
-                        <div className="flex gap-3 mt-6">
+                        <div className="mt-6">
                           <a
                             href={cert.pdf}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 text-center text-sm font-semibold py-2.5 rounded border transition-colors"
+                            className="w-full block text-center text-sm font-semibold py-2.5 rounded border transition-colors"
                             style={{ borderColor: PRIMARY, color: PRIMARY, backgroundColor: 'transparent' }}
                             onMouseEnter={e => e.currentTarget.style.backgroundColor = tint[PRIMARY]}
                             onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'}
                           >
                             View PDF
-                          </a>
-                          <a
-                            href={cert.pdf}
-                            download={cert.filename}
-                            className="flex-1 text-center text-white text-sm font-semibold py-2.5 rounded transition-opacity hover:opacity-90 flex items-center justify-center gap-1.5"
-                            style={{ backgroundColor: PRIMARY }}
-                          >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                            </svg>
-                            Download
                           </a>
                         </div>
                       </div>
@@ -539,7 +470,7 @@ const About = () => {
             </div>
 
             {/* ── Right: Sidebar ── */}
-            <div className="w-full lg:w-72 xl:w-80 flex-shrink-0 lg:self-start lg:sticky lg:top-6">
+            <div className="w-full lg:w-72 xl:w-80 flex-shrink-0 lg:self-start lg:sticky lg:top-24">
               <ContactSidebar />
             </div>
 

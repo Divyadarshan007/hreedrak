@@ -71,9 +71,6 @@ const SingleCapBloodCollectionTubes = () => {
                       {product.name}
                     </h2>
                     <div className="flex items-center gap-3 flex-wrap">
-                      <span className="text-primary font-bold text-base">
-                        {product.price} <span className="text-gray-400 font-normal text-xs">/ Piece</span>
-                      </span>
                       <span className="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
                         MOQ: {product.moq}
                       </span>

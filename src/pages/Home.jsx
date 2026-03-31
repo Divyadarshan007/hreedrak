@@ -3,6 +3,7 @@ import Hero from '../components/Hero/Hero'
 import About from '../components/About/About'
 import Products from '../components/Products/Products'
 import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs'
+import Principles from '../components/Principles/Principles'
 import Solutions from '../components/Solutions/Solutions'
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
       <About />
       <Products />
       <WhyChooseUs />
+      <Principles />
       <Solutions />
 
       {/* WhatsApp Floating Button */}

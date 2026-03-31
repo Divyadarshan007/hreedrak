@@ -5,15 +5,6 @@ import SEOMeta from '../components/SEO/SEOMeta'
 const contactDetails = [
   {
     icon: (
-      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-      </svg>
-    ),
-    label: 'Contact Person',
-    value: 'Mr. Patel',
-  },
-  {
-    icon: (
       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -41,16 +32,6 @@ const contactDetails = [
     label: 'Email',
     value: 'hreedrakbioscience@gmail.com',
     href: 'mailto:hreedrakbioscience@gmail.com',
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-    label: 'Web Address',
-    value: 'www.hreedrakbioscience.com',
-    href: '#',
   },
 ]
 
@@ -188,16 +169,6 @@ const Contact = () => {
                     </div>
                   ))}
                 </div>
-
-                {/* Map */}
-                <div className="mt-8 rounded-xl overflow-hidden border border-[#A8C4E8] h-44">
-                  <iframe
-                    title="Hreedrak Bioscience Private Limited Location"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=72.78%2C21.16%2C72.95%2C21.24&layer=mapnik&marker=21.2007%2C72.8577"
-                    className="w-full h-full border-0"
-                    loading="lazy"
-                  />
-                </div>
               </div>
 
               {/* Right: Contact Form */}
@@ -230,7 +201,7 @@ const Contact = () => {
                 ) : (
                   <form onSubmit={handleSubmit} noValidate className="space-y-5">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                      <label className="block text-sm font-bold text-gray-700 mb-1.5">
                         Product / Service Looking for <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -239,13 +210,13 @@ const Contact = () => {
                         value={form.product}
                         onChange={handleChange}
                         placeholder="Product / Service Looking for"
-                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.product ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
+                        className={`w-full border rounded-lg px-4 py-3 text-base font-medium text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.product ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
                       />
                       {errors.product && <p className="mt-1 text-xs text-red-500">{errors.product}</p>}
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                      <label className="block text-sm font-bold text-gray-700 mb-1.5">
                         Your Name <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -254,14 +225,14 @@ const Contact = () => {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="Your Name"
-                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.name ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
+                        className={`w-full border rounded-lg px-4 py-3 text-base font-medium text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.name ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
                       />
                       {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                        Email <span className="text-gray-400">(Optional)</span>
+                      <label className="block text-sm font-bold text-gray-700 mb-1.5">
+                        Email <span className="text-gray-400 font-normal">(Optional)</span>
                       </label>
                       <input
                         type="email"
@@ -269,13 +240,13 @@ const Contact = () => {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="Email"
-                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.email ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
+                        className={`w-full border rounded-lg px-4 py-3 text-base font-medium text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.email ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
                       />
                       {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                      <label className="block text-sm font-bold text-gray-700 mb-1.5">
                         Mobile <span className="text-red-500">*</span>
                       </label>
                       <div className="flex gap-2">
@@ -283,7 +254,7 @@ const Contact = () => {
                           name="countryCode"
                           value={form.countryCode}
                           onChange={handleChange}
-                          className="border border-gray-200 rounded-lg px-3 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#034DA2] focus:ring-1 focus:ring-[#034DA2] transition-colors bg-white"
+                          className="border border-gray-200 rounded-lg px-3 py-3 text-base font-medium text-gray-800 focus:outline-none focus:border-[#034DA2] focus:ring-1 focus:ring-[#034DA2] transition-colors bg-white"
                         >
                           {countryCodes.map((code) => (
                             <option key={code} value={code}>{code}</option>
@@ -296,7 +267,7 @@ const Contact = () => {
                             value={form.mobile}
                             onChange={handleChange}
                             placeholder="Mobile"
-                            className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.mobile ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
+                            className={`w-full border rounded-lg px-4 py-3 text-base font-medium text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors ${errors.mobile ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
                           />
                           {errors.mobile && <p className="mt-1 text-xs text-red-500">{errors.mobile}</p>}
                         </div>
@@ -304,7 +275,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                      <label className="block text-sm font-bold text-gray-700 mb-1.5">
                         Enquiry Details <span className="text-red-500">*</span>
                       </label>
                       <textarea
@@ -313,7 +284,7 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="Your Requirement"
                         rows={4}
-                        className={`w-full border rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors resize-none ${errors.enquiry ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
+                        className={`w-full border rounded-lg px-4 py-3 text-base font-medium text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 transition-colors resize-none ${errors.enquiry ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-200 focus:border-[#034DA2] focus:ring-[#034DA2]'}`}
                       />
                       {errors.enquiry && <p className="mt-1 text-xs text-red-500">{errors.enquiry}</p>}
                     </div>

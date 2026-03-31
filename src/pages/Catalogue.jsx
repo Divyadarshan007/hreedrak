@@ -103,10 +103,6 @@ const Catalogue = () => {
                           <p className="text-gray-700 font-medium mt-0.5">{size}</p>
                         </div>
                         <div>
-                          <span className="text-gray-400 uppercase tracking-wide">Price / Unit</span>
-                          <p className="text-[#231F20] font-semibold mt-0.5">{product.price}</p>
-                        </div>
-                        <div>
                           <span className="text-gray-400 uppercase tracking-wide">MOQ</span>
                           <p className="text-gray-700 font-medium mt-0.5">{product.moq}</p>
                         </div>
@@ -125,7 +121,6 @@ const Catalogue = () => {
                       <th className="text-left px-4 py-3 text-white print:text-black font-semibold text-xs uppercase tracking-wide">Product Name</th>
                       <th className="text-left px-4 py-3 text-white print:text-black font-semibold text-xs uppercase tracking-wide">Material</th>
                       <th className="text-left px-4 py-3 text-white print:text-black font-semibold text-xs uppercase tracking-wide">Size</th>
-                      <th className="text-left px-4 py-3 text-white print:text-black font-semibold text-xs uppercase tracking-wide">Price / Unit</th>
                       <th className="text-left px-4 py-3 text-white print:text-black font-semibold text-xs uppercase tracking-wide">MOQ</th>
                     </tr>
                   </thead>
@@ -156,7 +151,6 @@ const Catalogue = () => {
                           </td>
                           <td className="px-4 py-3 text-gray-600">{material}</td>
                           <td className="px-4 py-3 text-gray-600">{size}</td>
-                          <td className="px-4 py-3 font-semibold text-[#231F20]">{product.price}</td>
                           <td className="px-4 py-3 text-gray-600">{product.moq}</td>
                         </tr>
                       )

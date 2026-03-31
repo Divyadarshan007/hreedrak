@@ -73,7 +73,7 @@ const Navbar = () => {
   const otherCategories  = productCategories.filter(c => c.subItems.length === 0)
 
   const navLinkClass = (path) =>
-    `text-sm font-medium transition-colors pb-0.5 ${
+    `text-base font-bold transition-colors pb-0.5 ${
       isActive(path)
         ? 'text-[#ED1B24] border-b-2 border-[#ED1B24]'
         : 'text-gray-600 hover:text-[#231F20]'
@@ -94,7 +94,7 @@ const Navbar = () => {
       </div>
 
       {/* ── Main nav bar ── */}
-      <div className="max-w-7xl mx-auto py-1 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
@@ -108,7 +108,7 @@ const Navbar = () => {
 
             {/* Products trigger — no relative needed, mega-menu lives at nav level */}
             <button
-              className="text-gray-600 hover:text-[#231F20] text-sm font-medium flex items-center gap-1 transition-colors"
+              className="text-gray-600 hover:text-[#231F20] text-base font-bold flex items-center gap-1 transition-colors"
               onMouseEnter={handleProductsEnter}
               onMouseLeave={handleProductsLeave}
             >
