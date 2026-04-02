@@ -2,6 +2,7 @@ import { useState, useLayoutEffect, useEffect, useRef } from 'react'
 import { Link, useParams, Navigate } from 'react-router-dom'
 import { findProduct, getRelatedProducts } from '../../data/products'
 import SEOMeta from '../../components/SEO/SEOMeta'
+import ProductCard from '../../components/Products/ProductCard'
 
 /* ── Palette ─────────────────────────────────────────────────────
    PRIMARY  #034DA2   FONT  #231F20   ACCENT  #ED1B24
@@ -13,17 +14,6 @@ const ACCENT  = '#ED1B24'
 const GREEN   = '#00A650'
 const GRAY    = '#6D6E72'
 
-const Ribbon = () => (
-  <div className="flex h-1 flex-shrink-0">
-    <div className="flex-1" style={{ backgroundColor: '#034DA2' }} />
-    <div className="flex-1" style={{ backgroundColor: '#231F20' }} />
-    <div className="flex-1" style={{ backgroundColor: '#ED1B24' }} />
-    <div className="flex-1" style={{ backgroundColor: '#FDB813' }} />
-    <div className="flex-1" style={{ backgroundColor: '#00A650' }} />
-    <div className="flex-1" style={{ backgroundColor: '#993F97' }} />
-    <div className="flex-1" style={{ backgroundColor: '#6D6E72' }} />
-  </div>
-)
 
 const ProductDetail = () => {
   const { categorySlug, productSlug } = useParams()
@@ -372,28 +362,34 @@ const ProductDetail = () => {
 
         {/* ── Related products ── */}
         {related.length > 0 && (
-          <div className="border-t border-gray-100" style={{ backgroundColor: '#EEF3FA' }}>
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-6 rounded-full flex-shrink-0" style={{ backgroundColor: ACCENT }} />
-                <h2 className="text-lg font-extrabold" style={{ color: FONT }}>Explore More Products</h2>
+          <div className="border-t border-gray-100 bg-[#EEF3FA]">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+              <div className="flex items-center justify-between mb-10">
+                <div className="flex items-center gap-3">
+                  <div className="w-1 h-8 rounded-full flex-shrink-0" style={{ backgroundColor: ACCENT }} />
+                  <h2 className="text-2xl font-bold text-gray-900">Explore More Products</h2>
+                </div>
+                <div className="h-px flex-1 bg-gray-200 ml-8 hidden sm:block" />
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {related.map((p) => (
                   <Link
                     key={p.slug}
                     to={`/products/${p.categorySlug}/${p.slug}`}
-                    className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center hover:shadow-md hover:border-blue-200 transition-all group"
+                    className="group bg-white border border-gray-100 rounded-2xl p-5 flex flex-col items-center hover:shadow-xl hover:border-primary/20 transition-all duration-300"
                   >
-                    <div className="h-28 w-full rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#EEF3FA' }}>
-                      <img src={p.image} alt={p.name} className="h-20 w-auto object-contain" />
+                    <div className="h-36 w-full rounded-xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-105" style={{ backgroundColor: '#F8FAFC' }}>
+                      <img src={p.image} alt={p.name} className="h-24 w-auto object-contain" />
                     </div>
-                    <p className="text-xs text-center font-medium mb-4 leading-snug flex-1" style={{ color: FONT }}>{p.name}</p>
+                    <h3 className="text-[14px] text-center font-bold text-gray-900 mb-6 leading-tight flex-1 line-clamp-2">
+                      {p.name}
+                    </h3>
                     <span
-                      className="text-xs font-semibold px-4 py-1.5 rounded-lg w-full text-center text-white transition-opacity group-hover:opacity-90"
+                      className="text-[12px] font-bold px-6 py-2.5 rounded-lg w-full text-center text-white transition-all duration-300 shadow-md group-hover:shadow-lg active:scale-95"
                       style={{ backgroundColor: PRIMARY }}
                     >
-                      Get Best Quote
+                      View Details
                     </span>
                   </Link>
                 ))}
