@@ -247,7 +247,7 @@ export const allProducts = [
       '/productImage/non_vaccum_tubes/clot-activ-1740581207_7886494_2386816.webp',
     ],
     price: '₹1.40 – 1.80',
-    moq: '12000 Pack',
+    moq: '12000 Piece',
     capColor: '#034DA2',
     bodyColor: '#034DA2',
     specs: [
