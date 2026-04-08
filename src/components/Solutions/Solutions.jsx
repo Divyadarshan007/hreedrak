@@ -64,7 +64,7 @@ const Solutions = () => {
               style={{ backgroundColor: sol.bg }}
             >
               {/* Watermark number */}
-              <span className="absolute -top-3 -right-1 text-8xl font-extrabold text-[#231F20] opacity-5 leading-none select-none pointer-events-none">
+              <span className="absolute top-0 right-2 text-8xl font-extrabold text-[#231F20] opacity-5 leading-none select-none pointer-events-none">
                 {sol.number}
               </span>
 

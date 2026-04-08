@@ -38,6 +38,7 @@ const certs = [
     issuedBy: 'European Conformity',
     scope: 'Blood collection tubes and lab disposables meet EU safety, health, and environmental protection standards.',
     label: 'CE Marked',
+    logo: '/certificates/ce.png',
     pdf: '/certificates/hreedrak-bioscience-pvt-ltd-ce-1.pdf',
     filename: 'Hreedrak-CE-Certificate.pdf',
   },
@@ -47,6 +48,7 @@ const certs = [
     issuedBy: 'International Organization for Standardization',
     scope: 'Quality management processes for design, manufacture, and supply of blood collection products.',
     label: 'Certified 2015',
+    logo: '/certificates/iso-9001.png',
     pdf: '/certificates/iso-9001.pdf',
     filename: 'Hreedrak-ISO-9001-Certificate.pdf',
   },
@@ -56,6 +58,7 @@ const certs = [
     issuedBy: 'International Organization for Standardization',
     scope: 'Quality management system specific to medical devices, ensuring consistent safety and effectiveness.',
     label: 'Certified 2016',
+    logo: '/certificates/iso-13485.png',
     pdf: '/certificates/iso-13485-2016.pdf',
     filename: 'Hreedrak-ISO-13485-Certificate.pdf',
   },
@@ -123,7 +126,7 @@ const profileItems = [
   },
   {
     label: 'Years of Experience',
-    value: '10+',
+    value: '29+',
     color: YELLOW,
     icon: (
       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -320,66 +323,131 @@ const About = () => {
             {/* ── Left: Main Content ── */}
             <div className="flex-1 min-w-0 space-y-12">
 
-              {/* 01 — Our Story */}
+              {/* 01 — About Us */}
               <section>
-                <SectionLabel number="01" title="Our Story" />
-                <div className=" p-5 border-l-4" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    Having experience more than <strong>10 years</strong>,{' '}
-                    <strong>HREEDRAK BIOSCIENCE PRIVATE LIMITED</strong> is among the leading and
-                    trustworthy organisations in this domain, engaged as{' '}
-                    <strong>Manufacturers, Exporters, Wholesaler</strong>, and{' '}
-                    <strong>Retailer</strong> of a wide range of medical products. Our offered
-                    assortment comprises:
+                <SectionLabel number="01" title="About Us" />
+                <div className="p-8 border-l-[6px] rounded-r-xl" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
+                    <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
+                    <strong>Hreedrak Bioscience</strong> is a forward-thinking <strong>In Vitro Diagnostics (IVD) consumables manufacturer</strong>, committed to advancing healthcare through precision, quality, and innovation.
+                    <br /><br />
+                    With over <strong>29 years of cumulative experience in the healthcare industry,</strong> we bring a strong foundation of technical expertise, manufacturing excellence, and deep insight into diagnostic processes. Our primary focus lies in <strong>pre-analytical IVD solutions,</strong> particularly blood collection systems that play a critical role in ensuring diagnostic accuracy.
+                    <br /><br />
+                    We understand that the reliability of diagnostic outcomes begins at the point of sample collection. Every product we develop is engineered to deliver <strong>consistency, safety, and performance,</strong> meeting the evolving demands of modern laboratories and healthcare institutions.
+                    <br /><br />
+                    Driven by our philosophy — <strong>“Innovate. Evolve. Thrive.”</strong> — we are continuously expanding our capabilities into <strong>diagnostic consumables, rapid testing solutions, and next-generation IVD technologies</strong>, with a vision to build an integrated diagnostics portfolio.
+                    <br /><br />
+                    At Hreedrak Bioscience, we are not just manufacturing products — we are contributing to a <strong>more accurate, efficient, and accessible healthcare ecosystem</strong>.
                   </p>
                 </div>
               </section>
 
-              {/* 02 — Manufacturing Excellence */}
+              {/* 02 — Mission & Vision (Full Width Strips) */}
+              <div className="space-y-12">
+                {/* Mission */}
+                <div className="flex flex-col">
+                  <SectionLabel number="02" title="Mission" />
+                  <div className="p-8 border-l-[6px] rounded-r-xl shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
+                    <p className="text-sm lg:text-base mb-5 leading-relaxed" style={{ color: PRIMARY }}>
+                      To develop and deliver <strong>high-performance IVD consumables and diagnostic solutions</strong> that ensure precision, reliability, and efficiency across healthcare systems worldwide.
+                    </p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {[
+                        <span className="text-sm lg:text-sm mb-5 leading-relaxed text-gray-700">Upholding the <strong>highest standards of quality and compliance</strong></span>,
+                        <span className="text-sm lg:text-sm mb-5 leading-relaxed text-gray-700">Enabling healthcare providers with <strong>accurate and dependable solutions</strong></span>,
+                        <span className="text-sm lg:text-sm mb-5 leading-relaxed text-gray-700">Driving continuous improvement through <strong>innovation and technology</strong></span>
+                      ].map((item, i) => (
+                        <li key={i} className="flex gap-3 items-start text-sm text-gray-700">
+                          <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: ACCENT }} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Vision */}
+                <div className="flex flex-col">
+                  <SectionLabel number="03" title="Vision" />
+                  <div className="p-8 border-l-[6px] rounded-r-xl shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: GREEN }}>
+                    <p className="text-sm lg:text-base mb-5 leading-relaxed" style={{ color: PRIMARY }}>
+                      To establish Hreedrak Bioscience as a <strong>globally recognized IVD solutions provider</strong>, offering a comprehensive portfolio spanning <strong>pre-analytical consumables, diagnostic products, and advanced testing technologies</strong>.
+                    </p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {[
+                        <strong>Excellence in quality and precision</strong>,
+                        <strong>Innovation in diagnostic solutions</strong>,
+                        <strong>Trusted global partnerships</strong>
+                      ].map((item, i) => (
+                        <li key={i} className="flex gap-3 items-start text-sm text-gray-700">
+                          <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: GREEN }} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* 04 — Core Values */}
               <section>
-                <SectionLabel number="02" title="Manufacturing Excellence" />
-                <div className=" p-5 border-l-4" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    All these products are manufactured from supreme grade raw materials using
-                    modern tools and technology, and are made as per the industry approved
-                    parameters under the supervision of our skilled and experienced workforce.
-                    Our offered products are highly demanded across the market for their{' '}
-                    <strong>optimum quality</strong>.
-                  </p>
+                <SectionLabel number="04" title="Core Values" />
+                <div className="space-y-4">
+                  {[
+                    {
+                      t: 'Quality Without Compromise',
+                      d: 'At Hreedrak Bioscience, quality is the foundation of everything we do. We adhere to stringent manufacturing standards and robust quality control systems to ensure that every product delivers consistent performance, safety, and reliability in critical diagnostic applications.'
+                    },
+                    {
+                      t: 'Innovation with Purpose',
+                      d: 'We believe innovation should solve real-world challenges. Our approach focuses on continuously improving products and processes to meet the evolving needs of modern diagnostics, ensuring better efficiency, accuracy, and user experience.'
+                    },
+                    {
+                      t: 'Integrity & Accountability',
+                      d: 'We conduct our business with the highest level of integrity, transparency, and responsibility. Every commitment we make is backed by accountability, fostering long-term trust with our partners, customers, and stakeholders.'
+                    },
+                    {
+                      t: 'Customer-Centric Thinking',
+                      d: 'Understanding the needs of healthcare professionals is central to our growth. We design and deliver solutions that add real value, improve workflow efficiency, and support better diagnostic outcomes.'
+                    },
+                    {
+                      t: 'Sustainable Growth',
+                      d: 'We are committed to building a future-ready organization through responsible and scalable growth. Our focus is on long-term success while contributing positively to the healthcare ecosystem and society.'
+                    }
+                  ].map((val, i) => (
+                    <div key={i} className="p-6 border-l-[6px] rounded-r-xl transition-shadow hover:shadow-sm" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
+                      <h4 className="font-bold text-base mb-2" style={{ color: FONT }}>{val.t}</h4>
+                      <p className="text-sm text-gray-700 leading-relaxed">{val.d}</p>
+                    </div>
+                  ))}
                 </div>
               </section>
 
-              {/* 03 — Leadership & Growth */}
+              {/* 05 — Our Philosophy */}
               <section>
-                <SectionLabel number="03" title="Leadership &amp; Growth" />
-                <div className=" p-5 border-l-4" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    Our organisation is growing with a fast rate because of the valuable assistance
-                    of our mentor. His management skills, ability to handle crucial situations, and
-                    regular motivation have enabled us to achieve a remarkable peak of success in
-                    the market.
-                  </p>
+                <SectionLabel number="05" title="Our Philosophy" />
+                <div className="rounded-3xl p-10 border border-gray-100 relative overflow-hidden" style={{ backgroundColor: tint[PRIMARY] }}>
+                  <h3 className="text-2xl lg:text-3xl font-black mb-8 italic" style={{ color: FONT }}>Innovate. Evolve. Thrive.</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
+                    {[
+                      { t: 'Innovate', d: 'Developing better solutions that enhance accuracy, safety, and efficiency in diagnostic processes.', c: PRIMARY },
+                      { t: 'Evolve', d: 'Adapting and growing with the changing landscape of healthcare and global standards.', c: ACCENT },
+                      { t: 'Thrive', d: 'Sustainable growth contributing to improved healthcare outcomes and long-term value.', c: GREEN }
+                    ].map((item, i) => (
+                      <div key={i} className="space-y-3">
+                        <h4 className="font-black text-xl" style={{ color: item.c }}>{item.t}</h4>
+                        <p className="text-sm text-gray-700 leading-relaxed font-medium">{item.d}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-10 pt-8 border-t border-gray-200/50 text-center text-sm font-bold" style={{ color: GRAY }}>
+                    Together, this philosophy drives us to build a future-ready organization focused on excellence in diagnostics.
+                  </div>
                 </div>
               </section>
 
-              {/* 04 — Our Commitment */}
+              {/* 06 — Company at a Glance */}
               <section>
-                <SectionLabel number="04" title="Our Commitment" />
-                <div className=" p-5 border-l-4" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    At <strong>Hreedrak Bioscience</strong>, our commitment to quality and safety is
-                    paramount. Our products are crafted to deliver reliable results, aiding
-                    healthcare providers in accurate <strong>diagnosis</strong> and efficient
-                    sample management. We are a trusted provider of essential{' '}
-                    <strong>medical supplies</strong> for <strong>laboratories</strong> and{' '}
-                    <strong>healthcare facilities</strong> across the nation.
-                  </p>
-                </div>
-              </section>
-
-              {/* 05 — Company at a Glance */}
-              <section>
-                <SectionLabel number="05" title="Company at a Glance" />
+                <SectionLabel number="06" title="Company at a Glance" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {profileItems.map((item) => (
                     <div
@@ -402,9 +470,9 @@ const About = () => {
                 </div>
               </section>
 
-              {/* 06 — Our Certifications */}
+              {/* 07 — Our Certifications */}
               <section>
-                <SectionLabel number="06" title="Our Certifications" />
+                <SectionLabel number="07" title="Our Certifications" />
                 <p className="text-sm mb-6 -mt-2" style={{ color: GRAY }}>
                   Our products and quality systems are certified by internationally recognised standards bodies.
                 </p>
@@ -412,10 +480,12 @@ const About = () => {
                   {certs.map((cert) => (
                     <div key={cert.acronym} className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col">
                       <div className="px-6 py-8 flex flex-col items-center text-center" style={{ backgroundColor: FONT }}>
-                        <div className="w-14 h-14 rounded-full border-2 flex items-center justify-center mb-4" style={{ borderColor: PRIMARY }}>
-                          <svg className="w-7 h-7" style={{ color: PRIMARY }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                          </svg>
+                        <div className="w-16 h-16 rounded-full bg-white border-2 flex items-center justify-center mb-4 p-2 overflow-hidden shadow-inner" style={{ borderColor: PRIMARY }}>
+                          <img 
+                            src={cert.logo} 
+                            alt={`${cert.acronym} Logo`} 
+                            className="w-full h-full object-contain"
+                          />
                         </div>
                         <span className="text-2xl font-extrabold text-white mb-1">{cert.acronym}</span>
                         <span className="text-xs font-bold uppercase tracking-wider" style={{ color: PRIMARY }}>{cert.label}</span>
@@ -454,9 +524,9 @@ const About = () => {
                 </div>
               </section>
 
-              {/* 07 — FAQs */}
+              {/* 08 — FAQs */}
               <section>
-                <SectionLabel number="07" title="Frequently Asked Questions" />
+                <SectionLabel number="08" title="Frequently Asked Questions" />
                 <p className="text-sm mb-6 -mt-2" style={{ color: GRAY }}>
                   Find answers to commonly asked questions about our products and services.
                 </p>

@@ -3,14 +3,18 @@ import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 
 const features = [
   { title: 'Nature of Business', desc: 'Manufacturers, Exporters, Wholesaler, Retailer', color: '#034DA2', bg: '#EEF3FA' },
-  { title: '10+', desc: 'Years of Experience', color: '#ED1B24', bg: '#FDE8E9' },
+  { title: '29+', desc: 'Years of Experience', color: '#ED1B24', bg: '#FDE8E9' },
   { title: 'Market Covered', desc: 'Worldwide', color: '#00A650', bg: '#E6F6ED' },
   { title: 'GST No', desc: '24AAHCH3979H1ZA', color: '#993F97', bg: '#F5EBF5' },
 ]
 
-const fullText = `Having 10+ years of experience, HREEDRAK BIOSCIENCE PRIVATE LIMITED is among the leading and trustworthy organizations of this domain, engaged in Manufacturers, Exporters, Wholesaler, Retailer a wide range of products. Our offered assortment of products is comprises of K3 EDTA Vacuum Blood Collection Tube, K2 EDTA Vacuum Blood Collection Tube, Clot Activator Vacuum Blood Collection Tube, Fluoride Vacuum Blood Collection Tube, Plain Serum Vacuum Blood Collection Tube, K3 EDTA Single Cap Non Vacuum Blood Collection Tube, K2 EDTA Non Vacuum Blood Collection Tube, Clot Activator Non Vacuum Blood Collection Tube, Double Cap Non Vacuum Blood Collection Tube, Clot Activator Single Cap Blood Collection Tube etc. Offered products are manufactured from supreme grade basic material by using modern tools and technology. All these products are made as per the industry approved parameters with the supervision of our skilled and experienced workforce. Our offered products are highly demanded across the market for their optimum quality. Our organization is growing with a fast rate because of valuable assistance of our mentor. His management skills, ability to handle crucial situation and regular motivation, enabled us to achieve such a remarkable peak of success in the market.`
-
-const halfText = fullText.slice(0, Math.floor(fullText.length / 2))
+const AboutPreview = () => (
+  <>
+    <strong>Hreedrak Bioscience</strong> is a forward-thinking <strong>In Vitro Diagnostics (IVD) consumables manufacturer</strong>, committed to advancing healthcare through precision, quality, and innovation.
+    <br /><br />
+    With over <strong>29 years of cumulative experience in the healthcare industry,</strong> we bring a strong foundation of technical expertise, manufacturing excellence, and deep insight into diagnostic processes. Our primary focus lies in <strong>pre-analytical IVD solutions,</strong> particularly blood collection systems that play a critical role in ensuring diagnostic accuracy.
+  </>
+)
 
 const About = () => {
   const ref = useScrollAnimation()
@@ -34,9 +38,9 @@ const About = () => {
               <h2 className="text-3xl lg:text-4xl font-extrabold text-[#231F20] mb-6 leading-tight">
                 Hreedrak Bioscience Private Limited
               </h2>
-              <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-8 text-justify">
-                {halfText}...
-              </p>
+              <div className="text-gray-600 text-sm lg:text-base leading-relaxed mb-8">
+                <AboutPreview />...
+              </div>
               <button
                 onClick={() => navigate('/about')}
                 className="bg-[#034DA2] hover:bg-[#023585] text-white font-semibold px-7 py-2.5 rounded transition-colors"

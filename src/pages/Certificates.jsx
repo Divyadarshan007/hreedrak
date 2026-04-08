@@ -6,6 +6,7 @@ const certs = [
     issuedBy: 'European Conformity',
     scope: 'Blood collection tubes and lab disposables meet EU safety, health, and environmental protection standards.',
     label: 'CE Marked',
+    logo: '/certificates/ce.png',
     pdf: '/certificates/hreedrak-bioscience-pvt-ltd-ce-1.pdf',
     filename: 'Hreedrak-CE-Certificate.pdf',
   },
@@ -15,6 +16,7 @@ const certs = [
     issuedBy: 'International Organization for Standardization',
     scope: 'Quality management processes for design, manufacture, and supply of blood collection products.',
     label: 'Certified 2015',
+    logo: '/certificates/iso-9001.png',
     pdf: '/certificates/iso-9001.pdf',
     filename: 'Hreedrak-ISO-9001-Certificate.pdf',
   },
@@ -24,6 +26,7 @@ const certs = [
     issuedBy: 'International Organization for Standardization',
     scope: 'Quality management system specific to medical devices, ensuring consistent safety and effectiveness.',
     label: 'Certified 2016',
+    logo: '/certificates/iso-13485.png',
     pdf: '/certificates/iso-13485-2016.pdf',
     filename: 'Hreedrak-ISO-13485-Certificate.pdf',
   },
@@ -75,10 +78,12 @@ const Certificates = () => {
 
                 {/* Card header */}
                 <div className="bg-[#231F20] px-6 py-8 flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-full border-2 border-[#034DA2] flex items-center justify-center mb-4">
-                    <svg className="w-7 h-7 text-[#034DA2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
+                  <div className="w-16 h-16 rounded-full bg-white border-2 border-[#034DA2] flex items-center justify-center mb-4 p-2 overflow-hidden shadow-inner">
+                    <img 
+                      src={cert.logo} 
+                      alt={`${cert.acronym} Logo`} 
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <span className="text-2xl font-extrabold text-white mb-1">{cert.acronym}</span>
                   <span className="text-[#034DA2] text-xs font-bold uppercase tracking-wider">{cert.label}</span>
