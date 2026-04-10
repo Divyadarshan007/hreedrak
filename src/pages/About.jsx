@@ -334,7 +334,7 @@ const About = () => {
                     <br /><br />
                     We understand that the reliability of diagnostic outcomes begins at the point of sample collection. Every product we develop is engineered to deliver <strong>consistency, safety, and performance,</strong> meeting the evolving demands of modern laboratories and healthcare institutions.
                     <br /><br />
-                    Driven by our philosophy — <strong>“Innovate. Evolve. Thrive.”</strong> — we are continuously expanding our capabilities into <strong>diagnostic consumables, rapid testing solutions, and next-generation IVD technologies</strong>, with a vision to build an integrated diagnostics portfolio.
+                    Driven by our philosophy — <strong>“Innovation. Evolve. Thrive.”</strong> — we are continuously expanding our capabilities into <strong>diagnostic consumables, rapid testing solutions, and next-generation IVD technologies</strong>, with a vision to build an integrated diagnostics portfolio.
                     <br /><br />
                     At Hreedrak Bioscience, we are not just manufacturing products — we are contributing to a <strong>more accurate, efficient, and accessible healthcare ecosystem</strong>.
                   </p>
@@ -426,10 +426,10 @@ const About = () => {
               <section>
                 <SectionLabel number="05" title="Our Philosophy" />
                 <div className="rounded-3xl p-10 border border-gray-100 relative overflow-hidden" style={{ backgroundColor: tint[PRIMARY] }}>
-                  <h3 className="text-2xl lg:text-3xl font-black mb-8 italic" style={{ color: FONT }}>Innovate. Evolve. Thrive.</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black mb-8 italic" style={{ color: FONT }}>Innovation. Evolve. Thrive.</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
                     {[
-                      { t: 'Innovate', d: 'Developing better solutions that enhance accuracy, safety, and efficiency in diagnostic processes.', c: PRIMARY },
+                      { t: 'Innovation', d: 'Developing better solutions that enhance accuracy, safety, and efficiency in diagnostic processes.', c: PRIMARY },
                       { t: 'Evolve', d: 'Adapting and growing with the changing landscape of healthcare and global standards.', c: ACCENT },
                       { t: 'Thrive', d: 'Sustainable growth contributing to improved healthcare outcomes and long-term value.', c: GREEN }
                     ].map((item, i) => (

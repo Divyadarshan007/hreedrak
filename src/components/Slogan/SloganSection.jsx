@@ -2,7 +2,7 @@ import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 
 const sloganItems = [
   {
-    word: 'Innovate',
+    word: 'Innovation',
     description: 'Reflects our commitment to continuously developing better solutions that enhance accuracy, safety, and efficiency in diagnostic processes. We strive to bring meaningful advancements to pre-analytical and diagnostic technologies.',
     color: '#034DA2',
     bg: '#EEF3FA'
@@ -34,7 +34,7 @@ const SloganSection = () => {
             <div className="w-8 h-0.5 bg-[#ED1B24]" />
           </div>
           <h2 className="text-3xl lg:text-5xl font-black text-[#231F20] mb-6">
-            Innovate. Evolve. Thrive.
+            Innovation. Evolve. Thrive.
           </h2>
           <p className="max-w-2xl mx-auto text-gray-500 text-base leading-relaxed">
             At Hreedrak Bioscience, this philosophy defines our journey and our approach to diagnostics.
