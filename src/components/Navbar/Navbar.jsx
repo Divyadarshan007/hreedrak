@@ -20,7 +20,7 @@ const Navbar = () => {
   const moreItems = [
     { name: 'Contact Us',         href: '/contact'       },
     { name: 'Request a Quote',    href: '/request-quote' },
-    { name: 'Download Catalogue', href: '/catalogue'     },
+    { name: 'Download Catalogue', href: '/catalogue',     target: '_blank' },
   ]
 
   const productCategories = [
@@ -120,7 +120,15 @@ const Navbar = () => {
 
             <Link to="/about" className={navLinkClass('/about')}>About Us</Link>
             {moreItems.map((item) => (
-              <Link key={item.name} to={item.href} className={navLinkClass(item.href)}>{item.name}</Link>
+              <Link 
+                key={item.name} 
+                to={item.href} 
+                className={navLinkClass(item.href)}
+                target={item.target}
+                rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
+              >
+                {item.name}
+              </Link>
             ))}
           </div>
 
@@ -176,7 +184,16 @@ const Navbar = () => {
 
             <Link to="/about" className="block py-2 px-3 text-sm text-gray-700 hover:text-[#034DA2] hover:bg-[#EEF3FA] rounded transition-colors" onClick={() => setMobileOpen(false)}>About Us</Link>
             {moreItems.map((item) => (
-              <Link key={item.name} to={item.href} className="block py-2 px-3 text-sm text-gray-700 hover:text-[#034DA2] hover:bg-[#EEF3FA] rounded transition-colors" onClick={() => setMobileOpen(false)}>{item.name}</Link>
+              <Link 
+                key={item.name} 
+                to={item.href} 
+                className="block py-2 px-3 text-sm text-gray-700 hover:text-[#034DA2] hover:bg-[#EEF3FA] rounded transition-colors" 
+                onClick={() => setMobileOpen(false)}
+                target={item.target}
+                rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
+              >
+                {item.name}
+              </Link>
             ))}
           </div>
         )}

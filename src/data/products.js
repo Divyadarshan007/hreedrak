@@ -170,7 +170,7 @@ export const allProducts = [
       '/productImage/vaccum_tubes/clot-1--17-1740637131_7886589_2387351.webp',
     ],
     price: '₹3.00 – 5.00',
-    moq: '12000 Piece',
+    moq: '6000 Piece',
     capColor: '#B45309',
     bodyColor: '#D97706',
     specs: [
@@ -180,6 +180,7 @@ export const allProducts = [
       { label: 'Type', value: 'Vacuum Blood Collection Tubes' },
       { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
       { label: 'Product Code', value: '5050' },
+      { label: 'Material', value: 'PET' },
     ],
     details: [
       { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
@@ -410,6 +411,7 @@ export const allProducts = [
       { label: 'Type', value: 'Non Vacuum Rubber Cap Blood Collection Tube' },
       { label: 'Size', value: '4 Ml / 6 Ml' },
       { label: 'Condition', value: 'Sterile / Single-use / Disposable' },
+      { label: 'Material', value: 'PET/PP/PS' },
     ],
     details: [
       { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
@@ -448,6 +450,7 @@ export const allProducts = [
       { label: 'Height', value: '13 X 75 Mm' },
       { label: 'Country of Origin', value: 'India' },
       { label: 'Size', value: '2 Ml' },
+      { label: 'Material', value: 'PET/PP/PS' },
       { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
     ],
     details: [

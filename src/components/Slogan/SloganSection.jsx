@@ -45,11 +45,11 @@ const SloganSection = () => {
           {sloganItems.map((item, i) => (
             <div
               key={i}
-              className="relative p-8 rounded-lg transition-all duration-300 hover:shadow-xl group border border-transparent hover:border-gray-100"
+              className="relative p-8 pt-12 min-h-[350px] rounded-sm transition-all duration-500 hover:-translate-y-3 cursor-default group"
               style={{ backgroundColor: item.bg }}
             >
               <div
-                className="text-4xl lg:text-5xl font-black mb-6 opacity-20 group-hover:opacity-100 transition-opacity"
+                className="text-4xl lg:text-5xl font-black mb-6 relative z-10 leading-tight tracking-tight transition-all duration-300 opacity-[0.25] group-hover:opacity-100"
                 style={{ color: item.color }}
               >
                 {item.word}
@@ -57,14 +57,16 @@ const SloganSection = () => {
               <p className="text-gray-600 text-sm lg:text-base leading-relaxed relative z-10">
                 {item.description}
               </p>
+              {/* Watermark Number */}
               <div
-                className="absolute top-0 right-2 text-8xl font-black opacity-5 pointer-events-none select-none"
-                style={{ color: item.color }}
+                className="absolute top-2 right-4 text-6xl lg:text-7xl font-black leading-none select-none pointer-events-none"
+                style={{ color: item.color, opacity: 0.08 }}
               >
                 0{i + 1}
               </div>
+              {/* Solid Bottom Border Strip */}
               <div
-                className="absolute bottom-0 left-0 right-0 h-1 rounded-b-lg"
+                className="absolute bottom-0 left-0 w-full h-[6px]"
                 style={{ backgroundColor: item.color }}
               />
             </div>

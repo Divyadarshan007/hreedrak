@@ -325,16 +325,7 @@ const ProductDetail = () => {
                       style={{ backgroundColor: '#EEF3FA', borderColor: '#C5D6F0' }}
                     >
                       <img src={images[0]} alt={product.name} className="w-full h-auto object-cover" />
-                      {/* MOQ badge overlay */}
-                      <div
-                        className="absolute top-3 right-3 flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full shadow-md"
-                        style={{ backgroundColor: GREEN, color: '#fff' }}
-                      >
-                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        MOQ: {product.moq}
-                      </div>
+
                     </div>
                   </div>
                 )}

@@ -8,7 +8,7 @@ const productCategories = {
     { id: 2, name: 'Clot Activator Vacuum Blood Collection Tube', image: '/productImage/vaccum_tubes/vacuum-clot-activator-blood-collection-tube-1740496023-7886366.jpg', price: '₹2.75 – ₹4.00 / piece', moq: '5000 piece', slug: 'clot-activator-vacuum-blood-collection-tube', categorySlug: 'vacuum-blood-collection-tubes' },
     { id: 3, name: 'K3 EDTA Vacuum Blood Collection Tube', image: '/productImage/vaccum_tubes/k3-edta-vacuum-blood-collection-tubes-1740491241-7886279.jpg', price: '₹2.75 – ₹4.00 / piece', moq: '5000 piece', slug: 'k3-edta-vacuum-blood-collection-tube', categorySlug: 'vacuum-blood-collection-tubes' },
     { id: 4, name: 'Fluoride Vacuum Blood Collection Tube', image: '/productImage/vaccum_tubes/fluoride-vacuum-blood-collection-tube-1740496500-7886414.jpg', price: '₹2.75 – ₹4.00 / piece', moq: '5000 piece', slug: 'fluoride-vacuum-blood-collection-tube', categorySlug: 'vacuum-blood-collection-tubes' },
-    { id: 5, name: 'Plain Serum Vacuum Blood Collection Tube', image: '/productImage/vaccum_tubes/vacuum-plain-serum-blood-collection-tube-1740637011-7886589.jpg', price: '₹3.00 – ₹5.00 / piece', moq: '5000 piece', slug: 'plain-serum-vacuum-blood-collection-tube', categorySlug: 'vacuum-blood-collection-tubes' },
+    { id: 5, name: 'Plain Serum Vacuum Blood Collection Tube', image: '/productImage/vaccum_tubes/vacuum-plain-serum-blood-collection-tube-1740637011-7886589.jpg', price: '₹3.00 – ₹5.00 / piece', moq: '6000 piece', slug: 'plain-serum-vacuum-blood-collection-tube', categorySlug: 'vacuum-blood-collection-tubes' },
   ],
   nonVacuum: [
     { id: 6, name: 'Blood Collection Fluoride Tube with Double Safety Caps', image: '/productImage/non_vaccum_tubes/fluoride-safety-cap-blood-collection-tube-1740581900-7886495.jpg', price: '₹1.40 – ₹1.80 / piece', moq: '10000 piece', slug: 'blood-collection-flouride-tube-with-double-safety-caps', categorySlug: 'non-vacuum-blood-collection-tubes' },
@@ -210,12 +210,15 @@ const Products = () => {
       <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
 
         {/* Section header */}
-        <div className="mb-10">
+        <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-0.5 bg-[#034DA2]" />
             <p className="text-[#034DA2] text-xs font-bold uppercase tracking-[0.3em]">OUR PRODUCTS</p>
+            <div className="w-8 h-0.5 bg-[#034DA2]" />
           </div>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-[#231F20]">Blood Collection Tubes</h2>
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-[#231F20] leading-tight max-w-2xl">
+            Blood Collection Tubes
+          </h2>
         </div>
 
         {/* Tab navigation */}

@@ -125,11 +125,16 @@ const Footer = () => {
                 { label: 'Our Products', href: '#products' },
                 { label: 'Our Certificate', href: '/about' },
                 { label: 'Request a Quote', href: '/request-quote' },
-                { label: 'Download Catalogue', href: '/catalogue' },
+                { label: 'Download Catalogue', href: '/catalogue', target: '_blank' },
                 { label: 'Contact Us', href: '/contact' },
               ].map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-gray-400 text-sm hover:text-[#034DA2] transition-colors">
+                  <a 
+                    href={link.href} 
+                    className="text-gray-400 text-sm hover:text-[#034DA2] transition-colors"
+                    target={link.target}
+                    rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
+                  >
                     {link.label}
                   </a>
                 </li>

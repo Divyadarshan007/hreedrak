@@ -7,6 +7,7 @@ const certs = [
     scope: 'Blood collection tubes and lab disposables meet EU safety, health, and environmental protection standards.',
     label: 'CE Marked',
     logo: '/certificates/ce.png',
+    bgImg: '/certificates/hreedrak-bioscience-pvt-ltd-ce-1_page-0001.jpg',
     pdf: '/certificates/hreedrak-bioscience-pvt-ltd-ce-1.pdf',
     filename: 'Hreedrak-CE-Certificate.pdf',
   },
@@ -17,6 +18,7 @@ const certs = [
     scope: 'Quality management processes for design, manufacture, and supply of blood collection products.',
     label: 'Certified 2015',
     logo: '/certificates/iso-9001.png',
+    bgImg: '/certificates/iso-9001_page-0001.jpg',
     pdf: '/certificates/iso-9001.pdf',
     filename: 'Hreedrak-ISO-9001-Certificate.pdf',
   },
@@ -27,6 +29,7 @@ const certs = [
     scope: 'Quality management system specific to medical devices, ensuring consistent safety and effectiveness.',
     label: 'Certified 2016',
     logo: '/certificates/iso-13485.png',
+    bgImg: '/certificates/iso-13485-2016_page-0001.jpg',
     pdf: '/certificates/iso-13485-2016.pdf',
     filename: 'Hreedrak-ISO-13485-Certificate.pdf',
   },
@@ -74,41 +77,62 @@ const Certificates = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {certs.map((cert) => (
-              <div key={cert.acronym} className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col">
+              <div key={cert.acronym} className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col transition-all hover:shadow-xl hover:-translate-y-1">
 
-                {/* Card header */}
-                <div className="bg-[#231F20] px-6 py-8 flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-white border-2 border-[#034DA2] flex items-center justify-center mb-4 p-2 overflow-hidden shadow-inner">
+                {/* Certificate Image Preview - Taller, Full View, Lower Blur */}
+                <div className="relative h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100">
+                  <div className="absolute inset-0 z-0 opacity-40 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-60">
+                    {cert.bgImg ? (
+                      <img 
+                        src={cert.bgImg} 
+                        alt={`${cert.acronym} Certificate Preview`} 
+                        className="w-full h-full object-contain blur-[0.5px] brightness-100 p-4"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-gray-100">
+                        <img 
+                          src={cert.logo} 
+                          alt="" 
+                          className="w-20 h-20 object-contain opacity-20 grayscale"
+                        />
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className="px-2 py-1 rounded bg-white/80 backdrop-blur-sm text-[10px] font-bold text-gray-400 uppercase tracking-widest border border-gray-100">
+                      Preview
+                    </span>
+                  </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="px-8 py-8 flex-1 flex flex-col items-center text-center">
+                  {/* Logo and Labels moved here */}
+                  <div className="w-20 h-20 rounded-full bg-white border-2 flex items-center justify-center mb-4 p-3 shadow-xl -mt-16 relative z-20 transition-transform duration-500 group-hover:scale-110" style={{ borderColor: '#034DA2' }}>
                     <img 
                       src={cert.logo} 
                       alt={`${cert.acronym} Logo`} 
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <span className="text-2xl font-extrabold text-white mb-1">{cert.acronym}</span>
-                  <span className="text-[#034DA2] text-xs font-bold uppercase tracking-wider">{cert.label}</span>
-                </div>
-
-                {/* Card body */}
-                <div className="px-6 py-5 flex-1 flex flex-col">
-                  <h3 className="text-base font-bold text-[#231F20] mb-1">{cert.name}</h3>
-                  <p className="text-xs text-[#034DA2] font-medium mb-3">Issued by: {cert.issuedBy}</p>
-                  <p className="text-gray-500 text-sm leading-relaxed flex-1">{cert.scope}</p>
+                  <span className="text-2xl font-extrabold text-[#231F20] mb-1 tracking-tight">{cert.acronym}</span>
+                  <span className="text-[#034DA2] text-[10px] font-black uppercase tracking-[0.2em] mb-4">{cert.label}</span>
 
                   {/* Actions */}
-                  <div className="flex gap-3 mt-6">
+                  <div className="flex gap-3 mt-auto w-full">
                     <a
                       href={cert.pdf}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 text-center border border-[#034DA2] text-[#034DA2] text-sm font-semibold py-2.5 rounded hover:bg-[#EEF3FA] transition-colors"
+                      className="flex-1 text-center border-2 border-[#034DA2] text-[#034DA2] text-sm font-bold py-2.5 rounded-xl hover:bg-[#EEF3FA] transition-all"
                     >
                       View PDF
                     </a>
                     <a
                       href={cert.pdf}
                       download={cert.filename}
-                      className="flex-1 text-center bg-[#034DA2] hover:bg-[#023585] text-white text-sm font-semibold py-2.5 rounded transition-colors flex items-center justify-center gap-1.5"
+                      className="flex-1 text-center bg-[#034DA2] hover:bg-[#023585] text-white text-sm font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-lg shadow-blue-500/20"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />

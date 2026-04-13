@@ -1,5 +1,12 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import {
+  HiOutlineShieldCheck,
+  HiOutlineLightBulb,
+  HiOutlineScale,
+  HiOutlineUserGroup,
+  HiOutlineArrowTrendingUp,
+} from 'react-icons/hi2'
 import SEOMeta from '../components/SEO/SEOMeta'
 
 /* ── Palette & roles ─────────────────────────────────────────────
@@ -39,6 +46,7 @@ const certs = [
     scope: 'Blood collection tubes and lab disposables meet EU safety, health, and environmental protection standards.',
     label: 'CE Marked',
     logo: '/certificates/ce.png',
+    bgImg: '/certificates/hreedrak-bioscience-pvt-ltd-ce-1_page-0001.jpg',
     pdf: '/certificates/hreedrak-bioscience-pvt-ltd-ce-1.pdf',
     filename: 'Hreedrak-CE-Certificate.pdf',
   },
@@ -49,6 +57,7 @@ const certs = [
     scope: 'Quality management processes for design, manufacture, and supply of blood collection products.',
     label: 'Certified 2015',
     logo: '/certificates/iso-9001.png',
+    bgImg: '/certificates/iso-9001_page-0001.jpg',
     pdf: '/certificates/iso-9001.pdf',
     filename: 'Hreedrak-ISO-9001-Certificate.pdf',
   },
@@ -59,6 +68,7 @@ const certs = [
     scope: 'Quality management system specific to medical devices, ensuring consistent safety and effectiveness.',
     label: 'Certified 2016',
     logo: '/certificates/iso-13485.png',
+    bgImg: '/certificates/iso-13485-2016_page-0001.jpg',
     pdf: '/certificates/iso-13485-2016.pdf',
     filename: 'Hreedrak-ISO-13485-Certificate.pdf',
   },
@@ -167,8 +177,8 @@ const profileItems = [
 ]
 
 /* ── Sub-components ────────────────────────────────────────────── */
-const SectionLabel = ({ number, title }) => (
-  <div className="flex items-center  gap-4 mb-6">
+const SectionLabel = ({ number, title, centered = false }) => (
+  <div className={`flex items-center gap-4 mb-6 ${centered ? 'justify-center' : ''}`}>
     <div
       className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm"
       style={{ backgroundColor: PRIMARY }}
@@ -176,7 +186,7 @@ const SectionLabel = ({ number, title }) => (
       <span className="text-white font-black text-xs">{number}</span>
     </div>
     <div>
-      <div className="w-7 h-0.5 mb-1.5 rounded-full" style={{ backgroundColor: ACCENT }} />
+      <div className={`w-7 h-0.5 mb-1.5 rounded-full ${centered ? 'mx-auto' : ''}`} style={{ backgroundColor: ACCENT }} />
       <h2 className="text-xl font-extrabold leading-tight" style={{ color: FONT }}>{title}</h2>
     </div>
   </div>
@@ -222,65 +232,80 @@ const FAQItem = ({ q, a }) => {
   )
 }
 
-const ContactSidebar = () => (
-  <aside className="w-full">
-    <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
-      <div className="px-5 py-4" style={{ backgroundColor: PRIMARY }}>
-        <h3 className="text-white font-bold text-base tracking-wide">Contact Us</h3>
-      </div>
-      <div className="bg-white p-5 space-y-4">
-        <p className="font-bold text-sm leading-snug" style={{ color: FONT }}>
-          HREEDRAK BIOSCIENCE PRIVATE LIMITED
-        </p>
-        <div className="flex gap-3 items-start">
-          <span className="mt-0.5 flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: tint[PRIMARY] }}>
-            <svg className="w-4 h-4" style={{ color: PRIMARY }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </span>
-          <p className="text-gray-600 text-sm leading-relaxed">
-            166, First Floor, SITP-1, RJD Park,<br />
-            Ichchhapor, Surat, Gujarat – 394510,<br />
-            India
+const ContactSection = () => (
+  <section className="py-12">
+    <SectionLabel number="08" title="Contact Us" centered />
+    <div className="rounded-3xl overflow-hidden border border-gray-100 shadow-xl bg-white max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="p-8 lg:p-10 space-y-6">
+          <div>
+            <h3 className="text-xl font-bold mb-2" style={{ color: FONT }}>Get in Touch</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Have questions about our products or need a custom solution? Our team is here to help you with expert guidance.
+            </p>
+          </div>
+          
+          <div className="space-y-4">
+            <div className="flex gap-4 items-center">
+              <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: tint[PRIMARY] }}>
+                <svg className="w-5 h-5" style={{ color: PRIMARY }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </span>
+              <div>
+                <p className="text-xs uppercase font-bold tracking-wider" style={{ color: GRAY }}>Call Us</p>
+                <a href="tel:08048116653" className="text-lg font-bold hover:underline transition-colors" style={{ color: PRIMARY }}>
+                  08048116653
+                </a>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-center">
+              <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: tint[PRIMARY] }}>
+                <svg className="w-5 h-5" style={{ color: PRIMARY }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </span>
+              <div>
+                <p className="text-xs uppercase font-bold tracking-wider" style={{ color: GRAY }}>E-mail</p>
+                <a href="mailto:hreedrakbioscience@gmail.com" className="text-base font-bold hover:underline break-all transition-colors" style={{ color: PRIMARY }}>
+                  hreedrakbioscience@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gray-50 p-8 lg:p-10 flex flex-col justify-center">
+          <p className="font-bold text-base mb-4" style={{ color: FONT }}>
+            HREEDRAK BIOSCIENCE PRIVATE LIMITED
           </p>
-        </div>
-        <div className="flex gap-3 items-center">
-          <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: tint[PRIMARY] }}>
-            <svg className="w-4 h-4" style={{ color: PRIMARY }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-          </span>
-          <div>
-            <p className="text-xs mb-0.5" style={{ color: GRAY }}>Call Us</p>
-            <a href="tel:08048116653" className="text-sm font-medium hover:underline" style={{ color: PRIMARY }}>
-              08048116653
-            </a>
+          <div className="flex gap-3 items-start mb-6">
+            <span className="mt-1 flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-white shadow-sm border border-gray-100">
+              <svg className="w-4 h-4" style={{ color: PRIMARY }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </span>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              166, First Floor, SITP-1, RJD Park,<br />
+              Ichchhapor, Surat, Gujarat – 394510,<br />
+              India
+            </p>
           </div>
+          <a
+            href="https://wa.me/919825156800?text=Hello! I'm interested in Hreedrak Bioscience products. Please share more details and pricing."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center text-white text-sm font-bold px-6 py-4 rounded-xl shadow-lg transition-all hover:scale-[1.02] active:scale-95 shadow-red-500/20"
+            style={{ backgroundColor: ACCENT }}
+          >
+            Send Enquiry Now
+          </a>
         </div>
-        <div className="flex gap-3 items-center">
-          <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: tint[PRIMARY] }}>
-            <svg className="w-4 h-4" style={{ color: PRIMARY }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </span>
-          <div>
-            <p className="text-xs mb-0.5" style={{ color: GRAY }}>E-mail</p>
-            <a href="mailto:hreedrakbioscience@gmail.com" className="text-sm font-medium hover:underline break-all" style={{ color: PRIMARY }}>
-              hreedrakbioscience@gmail.com
-            </a>
-          </div>
-        </div>
-        <a
-          href="mailto:hreedrakbioscience@gmail.com"
-          className="mt-2 block w-full text-center text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-opacity hover:opacity-90"
-          style={{ backgroundColor: ACCENT }}
-        >
-          Send Enquiry
-        </a>
       </div>
     </div>
-  </aside>
+  </section>
 )
 
 /* ── Main Component ────────────────────────────────────────────── */
@@ -318,231 +343,279 @@ const About = () => {
 
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
-          <div className="flex flex-col lg:flex-row gap-10">
+          
+          <div className="space-y-24 lg:space-y-32">
 
-            {/* ── Left: Main Content ── */}
-            <div className="flex-1 min-w-0 space-y-12">
-
-              {/* 01 — About Us */}
-              <section>
+            {/* 01 — About Us (Text Left, Image Right) */}
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div>
                 <SectionLabel number="01" title="About Us" />
-                <div className="p-8 border-l-[6px] rounded-r-xl" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
-                    <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
+                <div className="space-y-6">
+                  <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
                     <strong>Hreedrak Bioscience</strong> is a forward-thinking <strong>In Vitro Diagnostics (IVD) consumables manufacturer</strong>, committed to advancing healthcare through precision, quality, and innovation.
-                    <br /><br />
-                    With over <strong>29 years of cumulative experience in the healthcare industry,</strong> we bring a strong foundation of technical expertise, manufacturing excellence, and deep insight into diagnostic processes. Our primary focus lies in <strong>pre-analytical IVD solutions,</strong> particularly blood collection systems that play a critical role in ensuring diagnostic accuracy.
-                    <br /><br />
-                    We understand that the reliability of diagnostic outcomes begins at the point of sample collection. Every product we develop is engineered to deliver <strong>consistency, safety, and performance,</strong> meeting the evolving demands of modern laboratories and healthcare institutions.
-                    <br /><br />
-                    Driven by our philosophy — <strong>“Innovation. Evolve. Thrive.”</strong> — we are continuously expanding our capabilities into <strong>diagnostic consumables, rapid testing solutions, and next-generation IVD technologies</strong>, with a vision to build an integrated diagnostics portfolio.
-                    <br /><br />
-                    At Hreedrak Bioscience, we are not just manufacturing products — we are contributing to a <strong>more accurate, efficient, and accessible healthcare ecosystem</strong>.
+                  </p>
+                  <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
+                    With over <strong>29 years of cumulative experience</strong> in the healthcare industry, we bring a strong foundation of technical expertise and manufacturing excellence. Our primary focus lies in <strong>pre-analytical IVD solutions</strong>, particularly blood collection systems that play a critical role in diagnostic accuracy.
+                  </p>
+                  <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
+                    Every product we develop is engineered to deliver <strong>consistency, safety, and performance</strong>, meeting the evolving demands of modern laboratories and healthcare institutions globally.
                   </p>
                 </div>
-              </section>
+              </div>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-[#034DA2]/5 rounded-[2rem] -rotate-2 scale-95 group-hover:rotate-0 transition-transform duration-500" />
+                <img 
+                  src="/about_us_lab.png" 
+                  alt="Modern Bioscience Laboratory" 
+                  className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+                />
+              </div>
+            </section>
 
-              {/* 02 — Mission & Vision (Full Width Strips) */}
-              <div className="space-y-12">
-                {/* Mission */}
-                <div className="flex flex-col">
-                  <SectionLabel number="02" title="Mission" />
-                  <div className="p-8 border-l-[6px] rounded-r-xl shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
-                    <p className="text-sm lg:text-base mb-5 leading-relaxed" style={{ color: PRIMARY }}>
-                      To develop and deliver <strong>high-performance IVD consumables and diagnostic solutions</strong> that ensure precision, reliability, and efficiency across healthcare systems worldwide.
-                    </p>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {[
-                        <span className="text-sm lg:text-sm mb-5 leading-relaxed text-gray-700">Upholding the <strong>highest standards of quality and compliance</strong></span>,
-                        <span className="text-sm lg:text-sm mb-5 leading-relaxed text-gray-700">Enabling healthcare providers with <strong>accurate and dependable solutions</strong></span>,
-                        <span className="text-sm lg:text-sm mb-5 leading-relaxed text-gray-700">Driving continuous improvement through <strong>innovation and technology</strong></span>
-                      ].map((item, i) => (
-                        <li key={i} className="flex gap-3 items-start text-sm text-gray-700">
-                          <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: ACCENT }} />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Vision */}
-                <div className="flex flex-col">
-                  <SectionLabel number="03" title="Vision" />
-                  <div className="p-8 border-l-[6px] rounded-r-xl shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: GREEN }}>
-                    <p className="text-sm lg:text-base mb-5 leading-relaxed" style={{ color: PRIMARY }}>
-                      To establish Hreedrak Bioscience as a <strong>globally recognized IVD solutions provider</strong>, offering a comprehensive portfolio spanning <strong>pre-analytical consumables, diagnostic products, and advanced testing technologies</strong>.
-                    </p>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {[
-                        <strong>Excellence in quality and precision</strong>,
-                        <strong>Innovation in diagnostic solutions</strong>,
-                        <strong>Trusted global partnerships</strong>
-                      ].map((item, i) => (
-                        <li key={i} className="flex gap-3 items-start text-sm text-gray-700">
-                          <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: GREEN }} />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+            {/* 02 — Mission (Image Left, Text Right) */}
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div className="relative group order-2 lg:order-1">
+                <div className="absolute -inset-4 bg-[#ED1B24]/5 rounded-[2rem] rotate-2 scale-95 group-hover:rotate-0 transition-transform duration-500" />
+                <img 
+                  src="/Medical-innovation-in-action.png" 
+                  alt="Innovation in Action" 
+                  className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+                />
+              </div>
+              <div className="order-1 lg:order-2">
+                <SectionLabel number="02" title="Mission" />
+                <div className="space-y-6">
+                  <p className="text-lg font-bold leading-relaxed" style={{ color: PRIMARY }}>
+                    To develop and deliver high-performance IVD consumables and diagnostic solutions that ensure precision and reliability worldwide.
+                  </p>
+                  <ul className="space-y-4">
+                    {[
+                      "Upholding the highest standards of quality and compliance",
+                      "Enabling healthcare providers with accurate and dependable solutions",
+                      "Driving continuous improvement through innovation and technology"
+                    ].map((item, i) => (
+                      <li key={i} className="flex gap-4 items-start text-gray-700">
+                        <span className="mt-2 w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: ACCENT }} />
+                        <span className="text-sm lg:text-base">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
+            </section>
 
-              {/* 04 — Core Values */}
-              <section>
-                <SectionLabel number="04" title="Core Values" />
-                <div className="space-y-4">
-                  {[
-                    {
-                      t: 'Quality Without Compromise',
-                      d: 'At Hreedrak Bioscience, quality is the foundation of everything we do. We adhere to stringent manufacturing standards and robust quality control systems to ensure that every product delivers consistent performance, safety, and reliability in critical diagnostic applications.'
-                    },
-                    {
-                      t: 'Innovation with Purpose',
-                      d: 'We believe innovation should solve real-world challenges. Our approach focuses on continuously improving products and processes to meet the evolving needs of modern diagnostics, ensuring better efficiency, accuracy, and user experience.'
-                    },
-                    {
-                      t: 'Integrity & Accountability',
-                      d: 'We conduct our business with the highest level of integrity, transparency, and responsibility. Every commitment we make is backed by accountability, fostering long-term trust with our partners, customers, and stakeholders.'
-                    },
-                    {
-                      t: 'Customer-Centric Thinking',
-                      d: 'Understanding the needs of healthcare professionals is central to our growth. We design and deliver solutions that add real value, improve workflow efficiency, and support better diagnostic outcomes.'
-                    },
-                    {
-                      t: 'Sustainable Growth',
-                      d: 'We are committed to building a future-ready organization through responsible and scalable growth. Our focus is on long-term success while contributing positively to the healthcare ecosystem and society.'
-                    }
-                  ].map((val, i) => (
-                    <div key={i} className="p-6 border-l-[6px] rounded-r-xl transition-shadow hover:shadow-sm" style={{ backgroundColor: tint[PRIMARY], borderLeftColor: PRIMARY }}>
-                      <h4 className="font-bold text-base mb-2" style={{ color: FONT }}>{val.t}</h4>
-                      <p className="text-sm text-gray-700 leading-relaxed">{val.d}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* 05 — Our Philosophy */}
-              <section>
-                <SectionLabel number="05" title="Our Philosophy" />
-                <div className="rounded-3xl p-10 border border-gray-100 relative overflow-hidden" style={{ backgroundColor: tint[PRIMARY] }}>
-                  <h3 className="text-2xl lg:text-3xl font-black mb-8 italic" style={{ color: FONT }}>Innovation. Evolve. Thrive.</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
+            {/* 03 — Vision (Text Left, Image Right) */}
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div>
+                <SectionLabel number="03" title="Vision" />
+                <div className="space-y-6">
+                  <p className="text-lg font-bold leading-relaxed" style={{ color: PRIMARY }}>
+                    To establish Hreedrak Bioscience as a globally recognized IVD solutions provider with a comprehensive diagnostics portfolio.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
                     {[
-                      { t: 'Innovation', d: 'Developing better solutions that enhance accuracy, safety, and efficiency in diagnostic processes.', c: PRIMARY },
-                      { t: 'Evolve', d: 'Adapting and growing with the changing landscape of healthcare and global standards.', c: ACCENT },
-                      { t: 'Thrive', d: 'Sustainable growth contributing to improved healthcare outcomes and long-term value.', c: GREEN }
+                      { t: "Excellence", c: PRIMARY },
+                      { t: "Innovation", c: GREEN },
+                      { t: "Trust", c: ACCENT }
                     ].map((item, i) => (
-                      <div key={i} className="space-y-3">
-                        <h4 className="font-black text-xl" style={{ color: item.c }}>{item.t}</h4>
-                        <p className="text-sm text-gray-700 leading-relaxed font-medium">{item.d}</p>
+                      <div key={i} className="bg-gray-50 p-4 rounded-xl border border-gray-100 text-center">
+                        <span className="font-bold text-sm block" style={{ color: item.c }}>{item.t}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-10 pt-8 border-t border-gray-200/50 text-center text-sm font-bold" style={{ color: GRAY }}>
-                    Together, this philosophy drives us to build a future-ready organization focused on excellence in diagnostics.
+                </div>
+              </div>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-[#00A650]/5 rounded-[2rem] -rotate-2 scale-95 group-hover:rotate-0 transition-transform duration-500" />
+                <img 
+                  src="/Colorful-liquids-in-laboratory-test-tubes.png" 
+                  alt="Future of Diagnostics" 
+                  className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+                />
+              </div>
+            </section>
+
+            {/* 04 — Core Values */}
+            <section>
+              <SectionLabel number="04" title="Core Values" centered />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    t: 'Quality Without Compromise',
+                    d: 'At Hreedrak Bioscience, quality is the foundation of everything we do. We adhere to stringent manufacturing standards and robust quality control systems to ensure that every product delivers consistent performance, safety, and reliability in critical diagnostic applications.',
+                    icon: <HiOutlineShieldCheck className="w-10 h-10" />,
+                    bg: 'bg-[#E6F4EA]',
+                    text: 'text-[#00A650]'
+                  },
+                  {
+                    t: 'Innovation with Purpose',
+                    d: 'We believe innovation should solve real-world challenges. Our approach focuses on continuously improving products and processes to meet the evolving needs of modern diagnostics, ensuring better efficiency, accuracy, and user experience.',
+                    icon: <HiOutlineLightBulb className="w-10 h-10" />,
+                    bg: 'bg-[#E8F0FE]',
+                    text: 'text-[#034DA2]'
+                  },
+                  {
+                    t: 'Integrity & Accountability',
+                    d: 'We conduct our business with the highest level of integrity, transparency, and responsibility. Every commitment we make is backed by accountability, fostering long-term trust with our partners, customers, and stakeholders.',
+                    icon: <HiOutlineScale className="w-10 h-10" />,
+                    bg: 'bg-[#FEF7E0]',
+                    text: 'text-[#F9AB00]'
+                  },
+                  {
+                    t: 'Customer-Centric Thinking',
+                    d: 'Understanding the needs of healthcare professionals is central to our growth. We design and deliver solutions that add real value, improve workflow efficiency, and support better diagnostic outcomes.',
+                    icon: <HiOutlineUserGroup className="w-10 h-10" />,
+                    bg: 'bg-[#FCE8E6]',
+                    text: 'text-[#D93025]'
+                  },
+                  {
+                    t: 'Sustainable Growth',
+                    d: 'We are committed to building a future-ready organization through responsible and scalable growth. Our focus is on long-term success while contributing positively to the healthcare ecosystem and society.',
+                    icon: <HiOutlineArrowTrendingUp className="w-10 h-10" />,
+                    bg: 'bg-[#F3E8FD]',
+                    text: 'text-[#A06EE1]'
+                  }
+                ].map((val, i) => (
+                  <div key={i} className={`group ${val.bg} rounded-3xl p-8 border border-transparent hover:border-white/20 transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-black/5`}>
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="p-3 rounded-2xl bg-white shadow-sm flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                        <div className={`${val.text} group-hover:animate-jiggle`}>
+                          {val.icon}
+                        </div>
+                      </div>
+                    </div>
+                    <h4 className="font-bold text-xl mb-4" style={{ color: FONT }}>{val.t}</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">{val.d}</p>
                   </div>
-                </div>
-              </section>
+                ))}
+              </div>
+            </section>
 
-              {/* 06 — Company at a Glance */}
-              <section>
-                <SectionLabel number="06" title="Company at a Glance" />
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {profileItems.map((item) => (
+            {/* 05 — Our Philosophy */}
+            <section>
+              <SectionLabel number="05" title="Our Philosophy" centered />
+              <div className="rounded-[3rem] p-10 lg:p-16 relative overflow-hidden text-center" style={{ backgroundColor: tint[PRIMARY] }}>
+                <h3 className="text-3xl lg:text-5xl font-black mb-12 italic" style={{ color: FONT }}>Innovation. Evolve. Thrive.</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+                  {[
+                    { t: 'Innovation', d: 'Developing better solutions that enhance accuracy, safety, and efficiency.', c: PRIMARY },
+                    { t: 'Evolve', d: 'Adapting and growing with the changing landscape of global standards.', c: ACCENT },
+                    { t: 'Thrive', d: 'Sustainable growth contributing to improved healthcare outcomes.', c: GREEN }
+                  ].map((item, i) => (
+                    <div key={i} className="space-y-4">
+                      <div className="w-16 h-16 mx-auto rounded-full flex items-center justify-center bg-white shadow-sm mb-4">
+                        <span className="font-black text-2xl" style={{ color: item.c }}>{i+1}</span>
+                      </div>
+                      <h4 className="font-black text-2xl" style={{ color: item.c }}>{item.t}</h4>
+                      <p className="text-sm text-gray-700 leading-relaxed font-medium max-w-xs mx-auto">{item.d}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 06 — Company at a Glance */}
+            <section>
+              <SectionLabel number="06" title="Company at a Glance" centered />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {profileItems.map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex items-center gap-5 p-6 rounded-2xl border border-gray-100 transition-all hover:shadow-lg"
+                    style={{ backgroundColor: tint[item.color] }}
+                  >
                     <div
-                      key={item.label}
-                      className="flex items-start gap-4 p-4 border-l-4  transition-colors"
-                      style={{ backgroundColor: tint[item.color], borderColor: item.color }}
+                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm"
+                      style={{ backgroundColor: item.color }}
                     >
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                        style={{ backgroundColor: item.color }}
-                      >
-                        {item.icon}
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: GRAY }}>{item.label}</p>
-                        <p className="text-sm font-semibold leading-snug" style={{ color: FONT }}>{item.value}</p>
-                      </div>
+                      {item.icon}
                     </div>
-                  ))}
-                </div>
-              </section>
+                    <div className="min-w-0">
+                      <p className="text-[10px] uppercase font-bold tracking-[0.15em] mb-1" style={{ color: GRAY }}>{item.label}</p>
+                      <p className="text-base font-bold leading-tight" style={{ color: FONT }}>{item.value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-              {/* 07 — Our Certifications */}
-              <section>
-                <SectionLabel number="07" title="Our Certifications" />
-                <p className="text-sm mb-6 -mt-2" style={{ color: GRAY }}>
-                  Our products and quality systems are certified by internationally recognised standards bodies.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {certs.map((cert) => (
-                    <div key={cert.acronym} className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col">
-                      <div className="px-6 py-8 flex flex-col items-center text-center" style={{ backgroundColor: FONT }}>
-                        <div className="w-16 h-16 rounded-full bg-white border-2 flex items-center justify-center mb-4 p-2 overflow-hidden shadow-inner" style={{ borderColor: PRIMARY }}>
+            {/* 07 — Our Certifications */}
+            <section>
+              <SectionLabel number="07" title="Our Certifications" centered />
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {certs.map((cert) => (
+                  <div key={cert.acronym} className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col transition-all hover:shadow-xl hover:-translate-y-1">
+                    
+                    {/* Certificate Image Preview - Taller, Full View, Lower Blur */}
+                    <div className="relative h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100">
+                      <div className="absolute inset-0 z-0 opacity-40 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-60">
+                        {cert.bgImg ? (
                           <img 
-                            src={cert.logo} 
-                            alt={`${cert.acronym} Logo`} 
-                            className="w-full h-full object-contain"
+                            src={cert.bgImg} 
+                            alt={`${cert.acronym} Certificate Preview`} 
+                            className="w-full h-full object-contain blur-[0.5px] brightness-100 p-4"
                           />
-                        </div>
-                        <span className="text-2xl font-extrabold text-white mb-1">{cert.acronym}</span>
-                        <span className="text-xs font-bold uppercase tracking-wider" style={{ color: PRIMARY }}>{cert.label}</span>
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center bg-gray-100">
+                            <img 
+                              src={cert.logo} 
+                              alt="" 
+                              className="w-20 h-20 object-contain opacity-20 grayscale"
+                            />
+                          </div>
+                        )}
                       </div>
-                      <div className="px-6 py-5 flex-1 flex flex-col">
-                        <h3 className="text-base font-bold mb-1" style={{ color: FONT }}>{cert.name}</h3>
-                        <p className="text-xs font-medium mb-3" style={{ color: PRIMARY }}>Issued by: {cert.issuedBy}</p>
-                        <p className="text-sm leading-relaxed flex-1" style={{ color: GRAY }}>{cert.scope}</p>
-                        <div className="mt-6">
-                          <a
-                            href={cert.pdf}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full block text-center text-sm font-semibold py-2.5 rounded border transition-colors"
-                            style={{ borderColor: PRIMARY, color: PRIMARY, backgroundColor: 'transparent' }}
-                            onMouseEnter={e => e.currentTarget.style.backgroundColor = tint[PRIMARY]}
-                            onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'}
-                          >
-                            View PDF
-                          </a>
-                        </div>
+                      
+                      {/* Optional: A small "Preview" badge */}
+                      <div className="absolute top-4 right-4 z-10">
+                        <span className="px-2 py-1 rounded bg-white/80 backdrop-blur-sm text-[10px] font-bold text-gray-400 uppercase tracking-widest border border-gray-100">
+                          Preview
+                        </span>
                       </div>
                     </div>
-                  ))}
-                </div>
-                <div className="mt-6 bg-white border border-gray-200 rounded-xl px-6 py-5 flex items-start gap-4">
-                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: PRIMARY }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="text-sm leading-relaxed" style={{ color: GRAY }}>
-                    All certificates are issued to{' '}
-                    <strong style={{ color: FONT }}>Hreedrak Bioscience Private Limited</strong>.
-                    For verification or enquiries regarding our certifications, please{' '}
-                    <Link to="/contact" className="hover:underline" style={{ color: PRIMARY }}>contact us</Link>.
-                  </p>
-                </div>
-              </section>
 
-              {/* 08 — FAQs */}
-              <section>
-                <SectionLabel number="08" title="Frequently Asked Questions" />
-                <p className="text-sm mb-6 -mt-2" style={{ color: GRAY }}>
-                  Find answers to commonly asked questions about our products and services.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {faqs.map((faq) => (
-                    <FAQItem key={faq.q} q={faq.q} a={faq.a} />
-                  ))}
-                </div>
-              </section>
+                    {/* Card Content */}
+                    <div className="px-8 py-8 flex-1 flex flex-col items-center text-center">
+                      {/* Logo and Labels moved here */}
+                      <div className="w-20 h-20 rounded-full bg-white border-2 flex items-center justify-center mb-4 p-3 shadow-xl -mt-16 relative z-20 transition-transform duration-500 group-hover:scale-110" style={{ borderColor: PRIMARY }}>
+                        <img 
+                          src={cert.logo} 
+                          alt={`${cert.acronym} Logo`} 
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <span className="text-2xl font-black mb-1 tracking-tight" style={{ color: FONT }}>{cert.acronym}</span>
+                      <span className="text-[10px] font-black uppercase tracking-[0.2em] mb-4" style={{ color: PRIMARY }}>{cert.label}</span>
 
-            </div>
+                      <div className="mt-auto w-full">
+                        <a
+                          href={cert.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full block text-center text-sm font-bold py-3.5 rounded-xl border-2 transition-all hover:bg-opacity-10"
+                          style={{ borderColor: PRIMARY, color: PRIMARY }}
+                        >
+                          View PDF
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-            {/* ── Right: Sidebar ── */}
-            <div className="w-full lg:w-72 xl:w-80 flex-shrink-0 lg:self-start lg:sticky lg:top-24">
-              <ContactSidebar />
-            </div>
+            {/* 08 — Contact Us (New Position) */}
+            <ContactSection />
+
+            {/* 09 — FAQs */}
+            <section>
+              <SectionLabel number="09" title="Frequently Asked Questions" centered />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+                {faqs.map((faq) => (
+                  <FAQItem key={faq.q} q={faq.q} a={faq.a} />
+                ))}
+              </div>
+            </section>
 
           </div>
         </div>

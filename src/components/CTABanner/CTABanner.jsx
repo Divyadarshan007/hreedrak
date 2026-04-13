@@ -37,9 +37,14 @@ const CTABanner = () => {
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-[#231F20] hover:bg-black text-white font-semibold px-10 py-3.5 rounded transition-colors">
+          <a
+            href="https://wa.me/919825156800?text=Hello! I'm interested in Hreedrak Bioscience products. Please share more details and pricing."
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="bg-[#231F20] hover:bg-black text-white font-semibold px-10 py-3.5 rounded transition-colors"
+          >
             Submit an Inquiry
-          </button>
+          </a>
           <button className="bg-[#FDB813] hover:bg-[#e0a810] text-[#231F20] font-semibold px-10 py-3.5 rounded transition-colors">
             View Products
           </button>

@@ -169,6 +169,29 @@ const Contact = () => {
                     </div>
                   ))}
                 </div>
+
+                {/* Map Section */}
+                <div className="mt-10 lg:mt-12 group">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 rounded-lg bg-[#EEF3FA] flex items-center justify-center">
+                      <svg className="w-4 h-4 text-[#034DA2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-sm font-bold text-[#231F20] uppercase tracking-wider">
+                      Visit Our Facility
+                    </h3>
+                  </div>
+                  <div className="relative w-full h-[280px] rounded-2xl overflow-hidden border border-gray-100 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                    <iframe
+                      title="Hreedrak Bioscience Location"
+                      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d281.244077196072!2d72.74164002261436!3d21.190139662766473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDExJzI0LjYiTiA3MsKwNDQnMzAuNSJF!5e1!3m2!1sen!2sin!4v1774951045242!5m2!1sen!2sin"
+                      className="w-full h-full border-0"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
               </div>
 
               {/* Right: Contact Form */}

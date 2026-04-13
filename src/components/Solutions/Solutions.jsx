@@ -47,24 +47,30 @@ const Solutions = () => {
       <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
 
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-8 h-0.5 bg-[#993F97]" />
-          <p className="text-[#993F97] text-xs font-bold uppercase tracking-[0.3em]">SOLUTIONS</p>
+        <div className="flex flex-col items-center text-center mb-16">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-0.5 bg-[#993F97]" />
+            <p className="text-[#993F97] text-xs font-bold uppercase tracking-[0.3em]">SOLUTIONS</p>
+            <div className="w-8 h-0.5 bg-[#993F97]" />
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-[#231F20] leading-tight max-w-2xl">
+            Solutions For Medical And Diagnostic Needs
+          </h2>
         </div>
-        <h2 className="text-3xl lg:text-4xl font-extrabold text-[#231F20] mb-12">
-          Solutions For Medical And Diagnostic Needs
-        </h2>
 
         {/* 3-column card grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {solutions.map((sol, i) => (
             <div
               key={i}
-              className="relative rounded-lg p-8 overflow-hidden group hover:shadow-lg transition-shadow"
+              className="relative p-8 pt-12 min-h-[350px] rounded-sm overflow-hidden group transition-all duration-500 hover:-translate-y-3 cursor-default"
               style={{ backgroundColor: sol.bg }}
             >
               {/* Watermark number */}
-              <span className="absolute top-0 right-2 text-8xl font-extrabold text-[#231F20] opacity-5 leading-none select-none pointer-events-none">
+              <span 
+                className="absolute top-2 right-4 text-6xl lg:text-7xl font-black leading-none select-none pointer-events-none"
+                style={{ color: sol.color, opacity: 0.08 }}
+              >
                 {sol.number}
               </span>
 
@@ -79,7 +85,10 @@ const Solutions = () => {
               {/* Number label */}
               <p className="text-xs font-bold mb-2 tracking-widest" style={{ color: sol.color }}>{sol.number}</p>
 
-              <h3 className="text-xl font-extrabold text-[#231F20] mb-3 leading-snug">
+              <h3 
+                className="text-2xl lg:text-3xl font-black mb-4 relative z-10 leading-tight tracking-tight transition-all duration-300 opacity-[0.25] group-hover:opacity-100"
+                style={{ color: sol.color }}
+              >
                 {sol.title}
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -87,8 +96,8 @@ const Solutions = () => {
               </p>
 
               {/* Bottom accent line */}
-              <div
-                className="absolute bottom-0 left-0 right-0 h-1 rounded-b-lg"
+              <div 
+                className="absolute bottom-0 left-0 w-full h-[6px]"
                 style={{ backgroundColor: sol.color }}
               />
             </div>

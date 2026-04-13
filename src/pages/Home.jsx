@@ -3,6 +3,7 @@ import Hero from '../components/Hero/Hero'
 import About from '../components/About/About'
 import Products from '../components/Products/Products'
 import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs'
+import OrderOfDraw from '../components/OrderOfDraw/OrderOfDraw'
 import Principles from '../components/Principles/Principles'
 import SloganSection from '../components/Slogan/SloganSection'
 import Solutions from '../components/Solutions/Solutions'
@@ -19,6 +20,7 @@ const Home = () => {
       <About />
       <Products />
       <WhyChooseUs />
+      <OrderOfDraw />
       <Principles />
       <SloganSection />
       <Solutions />
