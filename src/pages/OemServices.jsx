@@ -138,10 +138,6 @@ const OemServices = () => {
                 OEM Services for Blood Collection Tubes
               </h1>
 
-              <div className="flex items-center gap-3 mb-4 flex-wrap">
-                <span className="text-primary font-bold text-xl">₹ 1.00 - 3.00</span>
-                <span className="text-gray-500 text-sm">/ Piece</span>
-              </div>
 
               <div className="text-sm text-gray-600 leading-relaxed space-y-3">
                 <p>
@@ -268,7 +264,6 @@ const OemServices = () => {
                   </svg>
                 </div>
                 <div className="text-xs text-gray-600 text-center space-y-0.5">
-                  <p><span className="font-medium">Price :</span> <span className="text-primary font-semibold">₹ 1.00 - 3.00</span></p>
                   <p><span className="font-medium">MOQ :</span> 1000 Piece</p>
                 </div>
               </div>
