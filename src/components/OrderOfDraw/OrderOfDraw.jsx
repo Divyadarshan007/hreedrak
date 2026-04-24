@@ -5,14 +5,14 @@ const OrderOfDraw = () => {
   const watermarkText = "HREEDRAK"
 
   const tubes = [
-    { color: '#3291FF', label: 'Light Blue', name: 'Coagulation' },
-    { color: '#000000', label: 'Black', name: 'ESR' },
-    { color: '#FF0000', label: 'Red', name: 'Serum' },
-    { color: '#FF0000', label: 'Red', name: 'Serum' }, // Red twice
-    { color: '#FFD700', label: 'Yellow', name: 'SST' },
+    { color: '#034DA2', label: 'Light Blue', name: 'Coagulation' },
+    { color: '#231F20', label: 'Black', name: 'ESR' },
+    { color: '#ED1B24', label: 'Red', name: 'Serum' },
+    { color: '#ED1B24', label: 'Red', name: 'Serum' }, // Red twice
+    { color: '#FDB813', label: 'Yellow', name: 'SST' },
     { color: '#00A650', label: 'Green', name: 'Heparin' },
-    { color: '#8A2BE2', label: 'Purple', name: 'EDTA' },
-    { color: '#808080', label: 'Grey', name: 'Fluoride' },
+    { color: '#993F97', label: 'Purple', name: 'EDTA' },
+    { color: '#6D6E72', label: 'Grey', name: 'Fluoride' },
   ]
 
   return (
@@ -38,7 +38,10 @@ const OrderOfDraw = () => {
             {tubes.map((tube, index) => (
               <div key={index} className="flex items-center flex-nowrap relative">
                 {/* Watermark Letter */}
-                <span className={`absolute left-1/2 top-1/2 -translate-y-1/3 text-[130px] font-black text-gray-200 select-none pointer-events-none z-0 ${watermarkText[index] === 'K' ? 'translate-x-[-10%]' : '-translate-x-1/2'}`}>
+                <span 
+                  className={`absolute left-1/2 top-1/2 -translate-y-1/3 text-[130px] font-black select-none pointer-events-none z-0 ${watermarkText[index] === 'K' ? 'translate-x-[-10%]' : '-translate-x-1/2'}`}
+                  style={{ color: tube.color, opacity: 0.85 }}
+                >
                   {watermarkText[index]}
                 </span>
 
@@ -47,19 +50,11 @@ const OrderOfDraw = () => {
                   <div className="relative group cursor-help transition-transform duration-300 hover:scale-105">
                     {/* Tube Cap */}
                     <div
-                      className="w-12 h-14 rounded-t-xl shadow-lg mb-0 relative overflow-hidden"
+                      className="w-12 h-14 rounded-t-xl mb-0 relative overflow-hidden"
                       style={{
-                        background: `linear-gradient(145deg, ${tube.color}, #1a1a1a44)`
+                        background: tube.color
                       }}
                     >
-                      {/* Ridges on cap */}
-                      <div className="absolute inset-0 flex justify-around px-1 opacity-10">
-                        {[...Array(6)].map((_, i) => (
-                          <div key={i} className="w-0.5 h-full bg-black"></div>
-                        ))}
-                      </div>
-                      {/* Cap Highlight */}
-                      <div className="absolute top-0 left-0 w-full h-1/2 bg-white/20 blur-sm -rotate-45 -translate-y-1/2"></div>
                     </div>
 
                     {/* Tube Body */}
@@ -72,7 +67,7 @@ const OrderOfDraw = () => {
                       <div className="absolute top-6 left-0 right-0 h-20 bg-white shadow-sm border-t border-b border-gray-100 mx-0.5 z-10"></div>
 
                       {/* Liquid level */}
-                      <div className="w-full h-1/3 bg-gradient-to-b from-red-900/40 to-red-950/60 rounded-b-[inherit] shadow-inner mb-px"></div>
+                      <div className="w-full h-1/3 bg-gradient-to-b from-[#880808] to-[#4a0404] opacity-95 rounded-b-[inherit] shadow-inner mb-px"></div>
                     </div>
                   </div>
                 </div>

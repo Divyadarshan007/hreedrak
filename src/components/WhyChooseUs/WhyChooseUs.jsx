@@ -1,7 +1,7 @@
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
-import collectionImg from '../../assets/why-choose-us/collection.png'
+import collectionImg from '../../assets/why-choose-us/collection.jpg'
 import integrityImg from '../../assets/why-choose-us/integrity.png'
-import resultsImg from '../../assets/why-choose-us/results.png'
+import resultsImg from '../../assets/why-choose-us/results.jpg'
 
 const cards = [
   {
@@ -23,7 +23,7 @@ const cards = [
 
 const WhyChooseUs = () => {
   const ref = useScrollAnimation()
-  
+
   return (
     <section className="bg-[#f1f5f4] py-20" id="why-us">
       <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
@@ -40,14 +40,14 @@ const WhyChooseUs = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {cards.map((card, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="bg-white flex flex-col h-full shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden group border border-gray-100"
             >
               {/* Image Container */}
               <div className="relative h-64 overflow-hidden p-3 bg-[#f1f5f4]">
-                <img 
-                  src={card.image} 
+                <img
+                  src={card.image}
                   alt={card.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 rounded-sm shadow-inner"
                 />

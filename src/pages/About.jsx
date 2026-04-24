@@ -19,22 +19,22 @@ import SEOMeta from '../components/SEO/SEOMeta'
    GRAY     #6D6E72  – GST card icon, muted labels
 ──────────────────────────────────────────────────────────────── */
 const PRIMARY = '#034DA2'
-const FONT    = '#231F20'
-const ACCENT  = '#ED1B24'
-const YELLOW  = '#FDB813'
-const GREEN   = '#00A650'
-const PURPLE  = '#993F97'
-const GRAY    = '#6D6E72'
+const FONT = '#231F20'
+const ACCENT = '#ED1B24'
+const YELLOW = '#FDB813'
+const GREEN = '#00A650'
+const PURPLE = '#993F97'
+const GRAY = '#6D6E72'
 
 /* Light tint helper */
 const tint = {
   [PRIMARY]: '#EEF3FA',
-  [FONT]:    '#F0EFEF',
-  [ACCENT]:  '#FDE8E9',
-  [YELLOW]:  '#FEF8E7',
-  [GREEN]:   '#E8F7EF',
-  [PURPLE]:  '#F5EBF5',
-  [GRAY]:    '#F3F3F4',
+  [FONT]: '#F0EFEF',
+  [ACCENT]: '#FDE8E9',
+  [YELLOW]: '#FEF8E7',
+  [GREEN]: '#E8F7EF',
+  [PURPLE]: '#F5EBF5',
+  [GRAY]: '#F3F3F4',
 }
 
 /* ── Data ──────────────────────────────────────────────────────── */
@@ -244,7 +244,7 @@ const ContactSection = () => (
               Have questions about our products or need a custom solution? Our team is here to help you with expert guidance.
             </p>
           </div>
-          
+
           <div className="space-y-4">
             <div className="flex gap-4 items-center">
               <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: tint[PRIMARY] }}>
@@ -343,7 +343,7 @@ const About = () => {
 
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
-          
+
           <div className="space-y-24 lg:space-y-32">
 
             {/* 01 — About Us (Text Left, Image Right) */}
@@ -364,9 +364,9 @@ const About = () => {
               </div>
               <div className="relative group">
                 <div className="absolute -inset-4 bg-[#034DA2]/5 rounded-[2rem] -rotate-2 scale-95 group-hover:rotate-0 transition-transform duration-500" />
-                <img 
-                  src="/about_us_lab.png" 
-                  alt="Modern Bioscience Laboratory" 
+                <img
+                  src="/about_us_lab.png"
+                  alt="Modern Bioscience Laboratory"
                   className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
                 />
               </div>
@@ -376,9 +376,9 @@ const About = () => {
             <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div className="relative group order-2 lg:order-1">
                 <div className="absolute -inset-4 bg-[#ED1B24]/5 rounded-[2rem] rotate-2 scale-95 group-hover:rotate-0 transition-transform duration-500" />
-                <img 
-                  src="/Medical-innovation-in-action.png" 
-                  alt="Innovation in Action" 
+                <img
+                  src="/Medical-innovation-in-action.png"
+                  alt="Innovation in Action"
                   className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
                 />
               </div>
@@ -414,9 +414,9 @@ const About = () => {
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
                     {[
-                      { t: "Excellence", c: PRIMARY },
-                      { t: "Innovation", c: GREEN },
-                      { t: "Trust", c: ACCENT }
+                      { t: "Innovation", c: PRIMARY },
+                      { t: "Evolve", c: GREEN },
+                      { t: "Thrive", c: ACCENT }
                     ].map((item, i) => (
                       <div key={i} className="bg-gray-50 p-4 rounded-xl border border-gray-100 text-center">
                         <span className="font-bold text-sm block" style={{ color: item.c }}>{item.t}</span>
@@ -427,9 +427,9 @@ const About = () => {
               </div>
               <div className="relative group">
                 <div className="absolute -inset-4 bg-[#00A650]/5 rounded-[2rem] -rotate-2 scale-95 group-hover:rotate-0 transition-transform duration-500" />
-                <img 
-                  src="/Colorful-liquids-in-laboratory-test-tubes.png" 
-                  alt="Future of Diagnostics" 
+                <img
+                  src="/Colorful-liquids-in-laboratory-test-tubes.png"
+                  alt="Future of Diagnostics"
                   className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
                 />
               </div>
@@ -504,7 +504,7 @@ const About = () => {
                   ].map((item, i) => (
                     <div key={i} className="space-y-4">
                       <div className="w-16 h-16 mx-auto rounded-full flex items-center justify-center bg-white shadow-sm mb-4">
-                        <span className="font-black text-2xl" style={{ color: item.c }}>{i+1}</span>
+                        <span className="font-black text-2xl" style={{ color: item.c }}>{i + 1}</span>
                       </div>
                       <h4 className="font-black text-2xl" style={{ color: item.c }}>{item.t}</h4>
                       <p className="text-sm text-gray-700 leading-relaxed font-medium max-w-xs mx-auto">{item.d}</p>
@@ -545,27 +545,27 @@ const About = () => {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {certs.map((cert) => (
                   <div key={cert.acronym} className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col transition-all hover:shadow-xl hover:-translate-y-1">
-                    
+
                     {/* Certificate Image Preview - Taller, Full View, Lower Blur */}
                     <div className="relative h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100">
                       <div className="absolute inset-0 z-0 opacity-40 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-60">
                         {cert.bgImg ? (
-                          <img 
-                            src={cert.bgImg} 
-                            alt={`${cert.acronym} Certificate Preview`} 
+                          <img
+                            src={cert.bgImg}
+                            alt={`${cert.acronym} Certificate Preview`}
                             className="w-full h-full object-contain blur-[0.5px] brightness-100 p-4"
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center bg-gray-100">
-                            <img 
-                              src={cert.logo} 
-                              alt="" 
+                            <img
+                              src={cert.logo}
+                              alt=""
                               className="w-20 h-20 object-contain opacity-20 grayscale"
                             />
                           </div>
                         )}
                       </div>
-                      
+
                       {/* Optional: A small "Preview" badge */}
                       <div className="absolute top-4 right-4 z-10">
                         <span className="px-2 py-1 rounded bg-white/80 backdrop-blur-sm text-[10px] font-bold text-gray-400 uppercase tracking-widest border border-gray-100">
@@ -578,9 +578,9 @@ const About = () => {
                     <div className="px-8 py-8 flex-1 flex flex-col items-center text-center">
                       {/* Logo and Labels moved here */}
                       <div className="w-20 h-20 rounded-full bg-white border-2 flex items-center justify-center mb-4 p-3 shadow-xl -mt-16 relative z-20 transition-transform duration-500 group-hover:scale-110" style={{ borderColor: PRIMARY }}>
-                        <img 
-                          src={cert.logo} 
-                          alt={`${cert.acronym} Logo`} 
+                        <img
+                          src={cert.logo}
+                          alt={`${cert.acronym} Logo`}
                           className="w-full h-full object-contain"
                         />
                       </div>
