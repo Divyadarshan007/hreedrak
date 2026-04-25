@@ -5,14 +5,14 @@ const OrderOfDraw = () => {
   const watermarkText = "HREEDRAK"
 
   const tubes = [
-    { color: '#034DA2', label: 'Light Blue', name: 'Coagulation' },
-    { color: '#231F20', label: 'Black', name: 'ESR' },
-    { color: '#ED1B24', label: 'Red', name: 'Serum' },
-    { color: '#ED1B24', label: 'Red', name: 'Serum' }, // Red twice
-    { color: '#FDB813', label: 'Yellow', name: 'SST' },
-    { color: '#00A650', label: 'Green', name: 'Heparin' },
-    { color: '#993F97', label: 'Purple', name: 'EDTA' },
-    { color: '#6D6E72', label: 'Grey', name: 'Fluoride' },
+    { color: '#5299C1', label: 'Light Blue', name: 'Coagulation' },
+    { color: '#000110', label: 'Black', name: 'ESR' },
+    { color: '#A32115', label: 'Red', name: 'Plain' },
+    { color: '#A32115', label: 'Red', name: 'Red' },
+    { color: '#E6C874', label: 'Yellow', name: 'SST' },
+    { color: '#2D6830', label: 'Green', name: 'Heparin' },
+    { color: '#724A82', label: 'Purple', name: 'EDTA' },
+    { color: '#7F7F7F', label: 'Grey', name: 'Fluoride' },
   ]
 
   return (
@@ -38,7 +38,7 @@ const OrderOfDraw = () => {
             {tubes.map((tube, index) => (
               <div key={index} className="flex items-center flex-nowrap relative">
                 {/* Watermark Letter */}
-                <span 
+                <span
                   className={`absolute left-1/2 top-1/2 -translate-y-1/3 text-[130px] font-black select-none pointer-events-none z-0 ${watermarkText[index] === 'K' ? 'translate-x-[-10%]' : '-translate-x-1/2'}`}
                   style={{ color: tube.color, opacity: 0.85 }}
                 >

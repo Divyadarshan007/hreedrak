@@ -1,7 +1,7 @@
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 import collectionImg from '../../assets/why-choose-us/collection.jpg'
 import integrityImg from '../../assets/why-choose-us/integrity.png'
-import resultsImg from '../../assets/why-choose-us/results.jpg'
+import resultsImg from '../../assets/why-choose-us/results.png'
 
 const cards = [
   {
