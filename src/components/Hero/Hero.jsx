@@ -22,13 +22,6 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl">
-          <div className="flex items-center gap-3 mb-6 animate-fade-in-up">
-            <div className="w-10 h-0.5 bg-[#ED1B24]" />
-            <span className="text-[#ED1B24] text-xs sm:text-sm font-bold uppercase tracking-[0.3em]">
-              Pioneering Pre-Analytical Diagnostics
-            </span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tight mb-8 animate-fade-in-up delay-100">
             Advancing Diagnostics <br />
             <span className="text-[#FDB813]">Through Innovation</span>
