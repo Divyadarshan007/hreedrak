@@ -86,7 +86,7 @@ const faqs = [
   },
   {
     q: "Are Hreedrak Bioscience's products certified?",
-    a: 'Yes, our products are certified by CDSCO, and manufactured in a state-of-the-art ISO 7 (Class 10,000) clean room facility.',
+    a: 'Yes, our products are certified by CDSCO, ISO 9001, ISO 13485, CE and manufactured in a state-of-the-art ISO 7 (Class 10,000) clean room facility.',
   },
   {
     q: 'Can I get assistance with recommendations?',
