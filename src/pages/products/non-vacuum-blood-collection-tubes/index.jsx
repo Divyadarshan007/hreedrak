@@ -16,7 +16,7 @@ const NonVacuumBloodCollectionTubes = () => {
           <p className="text-xs font-semibold uppercase tracking-[0.25em] mb-2" style={{ color: '#A8C4E8' }}>
             HREEDRAK BIOSCIENCE PRIVATE LIMITED
           </p>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white uppercase tracking-tight">Non Vacuum Blood Collection Tubes</h1>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-white uppercase tracking-tight">⁠Non-vacuum Safety Cap Blood Collection Tube</h1>
         </div>
       </div>
 
@@ -28,7 +28,7 @@ const NonVacuumBloodCollectionTubes = () => {
             <svg className="w-3 h-3 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
             </svg>
-            <span className="text-gray-900 font-semibold uppercase tracking-wider">Non Vacuum Blood Collection Tubes</span>
+            <span className="text-gray-900 font-semibold uppercase tracking-wider">⁠Non-vacuum Safety Cap Blood Collection Tube</span>
           </nav>
         </div>
       </div>

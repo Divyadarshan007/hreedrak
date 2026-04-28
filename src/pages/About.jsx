@@ -111,16 +111,16 @@ const faqs = [
 ]
 
 const products = [
-  'K3 EDTA Vacuum Blood Collection Tubes',
-  'K2 EDTA Vacuum Blood Collection Tubes',
-  'Clot Activator Vacuum Blood Collection Tubes',
-  'Fluoride Vacuum Blood Collection Tubes',
-  'Plain Serum Vacuum Blood Collection Tubes',
-  'K3 EDTA Single Cap Non-Vacuum Blood Collection Tubes',
-  'K2 EDTA Non-Vacuum Blood Collection Tubes',
-  'Clot Activator Non-Vacuum Blood Collection Tubes',
-  'Double Cap Non-Vacuum Blood Collection Tubes',
-  'Clot Activator Single Cap Blood Collection Tubes',
+  'K3 EDTA Vacuum Blood Collection Tube',
+  '⁠K2 EDTA Vacuum Blood Collection Tube',
+  'Clot Activator Vacuum Blood Collection Tube',
+  'Sodium Fluoride Vacuum Blood Collection Tube',
+  'Plain Serum Vacuum Blood Collection Tube',
+  'K3 EDTA Blood Collection Tube',
+  'K2 EDTA Blood Collection Tube',
+  'Clot Activator Blood Collection Tube',
+  'Sodium Fluoride Non-Vacuum Blood Collection Tube',
+  'Plain Non-Vacuum Blood Collection Tube',
 ]
 
 /* Profile cards – each icon colour has a deliberate meaning */

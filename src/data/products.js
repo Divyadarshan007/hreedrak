@@ -4,193 +4,128 @@ export const allProducts = [
     id: 'vacuum-clot-activator',
     slug: 'clot-activator-vacuum-blood-collection-tube',
     categorySlug: 'vacuum-blood-collection-tubes',
-    categoryName: 'Vacuum Blood Collection Tubes',
+    categoryName: 'Vacuum Blood Collection Tube',
     name: 'Clot Activator Vacuum Blood Collection Tube',
     image: '/productImage/vaccum_tubes/vacuum-clot-activator-blood-collection-tube-1740496023-7886366.jpg',
     images: [
       '/productImage/vaccum_tubes/vacuum-clot-activator-blood-collection-tube-1740496023-7886366.jpg',
       '/productImage/vaccum_tubes/vacuum-clo-1740496044_7886366_2385537.webp',
       '/productImage/vaccum_tubes/vacuum-clo-1740496059_7886366_2385538.webp',
-      '/productImage/vaccum_tubes/vacuum-clo-1740496074_7886366_2385539.webp',
+      '/productImage/vaccum_tubes/vacuum-clo-1740496074_7886366_2385539.webp'
     ],
     price: '₹2.75 – 4.00',
-    moq: '6000 Piece',
     capColor: '#034DA2',
     bodyColor: '#034DA2',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Material', value: 'PET' },
-      { label: 'Shape', value: 'Round' },
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Application', value: 'Filling Blood' },
+      { label: 'Material', value: 'PET' }
     ],
     details: [
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Size', value: '4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly, Non Breakable' },
-      { label: 'Type', value: 'Vacuum Blood Collection Tubes' },
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Height', value: '13 X 75 Mm / 13 X 100 Mm' },
-      { label: 'Product Code', value: '5020' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Tube Size', value: '13 X 75 Mm / 13 X 100 Mm' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Used for serum sample collection, ideal for Biochemical and Immunological tests. These tubes facilitate the separation of serum from whole blood, making them essential for various Diagnostic Assays, including Liver Function Tests, Lipid Profiles, and Infectious Disease Screenings. The presence of a clot activator accelerates Coagulation, ensuring faster and more reliable test results. Designed for high compatibility with automated analyzers, these tubes help streamline laboratory workflows, enhancing efficiency and accuracy in clinical diagnostics.',
+      'Used for serum sample collection, ideal for Biochemical and Immunological tests. These tubes facilitate the separation of serum from whole blood, making them essential for various Diagnostic Assays, including Liver Function Tests, Lipid Profiles, and Infectious Disease Screenings. The presence of a clot activator accelerates Coagulation, ensuring faster and more reliable test results. Designed for high compatibility with automated analyzers, these tubes help streamline laboratory workflows, enhancing efficiency and accuracy in clinical diagnostics.'
   },
   {
     id: 'vacuum-fluoride',
     slug: 'fluoride-vacuum-blood-collection-tube',
     categorySlug: 'vacuum-blood-collection-tubes',
-    categoryName: 'Vacuum Blood Collection Tubes',
-    name: 'Fluoride Vacuum Blood Collection Tube',
+    categoryName: 'Vacuum Blood Collection Tube',
+    name: 'Sodium Fluoride Vacuum Blood Collection Tube',
     image: '/productImage/vaccum_tubes/fluoride-vacuum-blood-collection-tube-1740496500-7886414.jpg',
     images: [
       '/productImage/vaccum_tubes/fluoride-vacuum-blood-collection-tube-1740496500-7886414.jpg',
       '/productImage/vaccum_tubes/fluoride-v-1740496527_7886414_2385540.webp',
-      '/productImage/vaccum_tubes/fluoride-v-1740496555_7886414_2385541.webp',
+      '/productImage/vaccum_tubes/fluoride-v-1740496555_7886414_2385541.webp'
     ],
     price: '₹2.75 – 4.00',
-    moq: '6000 Piece',
     capColor: '#6B7280',
     bodyColor: '#9CA3AF',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Material', value: 'PET' },
       { label: 'Driven Type', value: 'VACUUM' },
-      { label: 'Shape', value: 'Round' },
-      { label: 'Condition', value: 'Sterile, Single-use, Disposable' },
+      { label: 'Material', value: 'PET' },
     ],
     details: [
-      { label: 'Shape', value: 'Round' },
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Condition', value: 'Sterile, Single-use, Disposable' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Size', value: '2 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Type', value: 'Disposable Vacuum Blood Collection Tube' },
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Height', value: '13 X 75 Mm' },
-      { label: 'Product Code', value: '5030' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Tube Size', value: '13 X 75 Mm' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Specifically designed for Glucose Testing, these tubes contain Sodium Fluoride and Potassium Oxalate to effectively inhibit Glycolysis, ensuring accurate blood glucose measurement. The additives help preserve glucose levels for extended periods, making them essential for Diabetes Testing, Metabolic Studies, and Clinical Research. These tubes are widely used in Hospitals, Diagnostic Laboratories, and Research Institutions to provide reliable and consistent results.',
+      'Specifically designed for Glucose Testing, these tubes contain Sodium Fluoride and Potassium Oxalate to effectively inhibit Glycolysis, ensuring accurate blood glucose measurement. The additives help preserve glucose levels for extended periods, making them essential for Diabetes Testing, Metabolic Studies, and Clinical Research. These tubes are widely used in Hospitals, Diagnostic Laboratories, and Research Institutions to provide reliable and consistent results.'
   },
   {
     id: 'vacuum-k2-edta',
     slug: 'k2-edta-vacuum-blood-collection-tube',
     categorySlug: 'vacuum-blood-collection-tubes',
-    categoryName: 'Vacuum Blood Collection Tubes',
-    name: 'K2 EDTA Vacuum Blood Collection Tube',
+    categoryName: 'Vacuum Blood Collection Tube',
+    name: '⁠K2 EDTA Vacuum Blood Collection Tube',
     image: '/productImage/vaccum_tubes/k2-edta-vacuum-blood-collection-tube-1740491889-7886336.jpg',
     images: [
       '/productImage/vaccum_tubes/k2-edta-vacuum-blood-collection-tube-1740491889-7886336.jpg',
       '/productImage/vaccum_tubes/k2-edta-va-1740491918_7886336_2385494.webp',
-      '/productImage/vaccum_tubes/k2-edta-va-1740491933_7886336_2385495.webp',
+      '/productImage/vaccum_tubes/k2-edta-va-1740491933_7886336_2385495.webp'
     ],
     price: '₹2.75 – 4.00',
-    moq: '6000 Piece',
     capColor: '#7C3AED',
     bodyColor: '#7C3AED',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Material', value: 'PET' },
-      { label: 'Shape', value: 'Round' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
+      { label: 'Driven Type', value: 'VACUUM' },
+      { label: 'Material', value: 'PET' }
     ],
     details: [
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Type', value: 'Disposable Vacuum Blood Collection Tube' },
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Height', value: '13 X 75 Mm / 13 X 100 Mm' },
-      { label: 'Condition', value: 'Sterile, Single-use, Disposable' },
-      { label: 'Driven Type', value: 'VACUUM' },
-      { label: 'Product Code', value: '5040' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Tube Size', value: '13 X 75 Mm / 13 X 100 Mm' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Used for Haematology tests, Molecular Diagnostics, and Blood Cell Analysis. These tubes are essential for Complete Blood Count (CBC) testing, Blood Film Examination, and Flow Cytometry. They prevent clotting while preserving Cell Morphology, making them ideal for advanced Medical Research, Genetic Studies, and Diagnostic applications in detecting Blood Disorders, Infections, and Cancers.',
+      'Used for Haematology tests, Molecular Diagnostics, and Blood Cell Analysis. These tubes are essential for Complete Blood Count (CBC) testing, Blood Film Examination, and Flow Cytometry. They prevent clotting while preserving Cell Morphology, making them ideal for advanced Medical Research, Genetic Studies, and Diagnostic applications in detecting Blood Disorders, Infections, and Cancers.'
   },
   {
     id: 'vacuum-k3-edta',
     slug: 'k3-edta-vacuum-blood-collection-tube',
     categorySlug: 'vacuum-blood-collection-tubes',
-    categoryName: 'Vacuum Blood Collection Tubes',
+    categoryName: 'Vacuum Blood Collection Tube',
     name: 'K3 EDTA Vacuum Blood Collection Tube',
     image: '/productImage/vaccum_tubes/k3-edta-vacuum-blood-collection-tubes-1740491241-7886279.jpg',
     images: [
       '/productImage/vaccum_tubes/k3-edta-vacuum-blood-collection-tubes-1740491241-7886279.jpg',
-      '/productImage/vaccum_tubes/k3-edta-va-1740491291_7886279_2385489.webp',
+      '/productImage/vaccum_tubes/k3-edta-va-1740491291_7886279_2385489.webp'
     ],
     price: '₹2.75 – 4.00',
-    moq: '6000 Piece',
     capColor: '#6D28D9',
     bodyColor: '#6D28D9',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Material', value: 'PET' },
-      { label: 'Shape', value: 'Round' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
+      { label: 'Driven Type', value: 'VACUUM' },
+      { label: 'Material', value: 'PET' }
     ],
     details: [
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Type', value: 'Vacuum Blood Collection Tubes' },
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Height', value: '13 X 75 Mm / 13 X 100 Mm' },
-      { label: 'Condition', value: 'Sterile, Single-use, Disposable' },
-      { label: 'Driven Type', value: 'VACUUM' },
-      { label: 'Product Code', value: '5010' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Tube Size', value: '13 X 75 Mm / 13 X 100 Mm' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Used for Haematology tests, Molecular Diagnostics, and Blood Cell Analysis. These tubes are essential for Complete Blood Count (CBC) testing, Blood Film Examination, and Flow Cytometry. They prevent clotting while preserving Cell Morphology, making them ideal for advanced Medical Research, Genetic Studies, and Diagnostic applications in detecting Blood Disorders, Infections, and Cancers.',
+      'Used for Haematology tests, Molecular Diagnostics, and Blood Cell Analysis. These tubes are essential for Complete Blood Count (CBC) testing, Blood Film Examination, and Flow Cytometry. They prevent clotting while preserving Cell Morphology, making them ideal for advanced Medical Research, Genetic Studies, and Diagnostic applications in detecting Blood Disorders, Infections, and Cancers.'
   },
   {
     id: 'vacuum-plain-serum',
     slug: 'plain-serum-vacuum-blood-collection-tube',
     categorySlug: 'vacuum-blood-collection-tubes',
-    categoryName: 'Vacuum Blood Collection Tubes',
+    categoryName: 'Vacuum Blood Collection Tube',
     name: 'Plain Serum Vacuum Blood Collection Tube',
     image: '/productImage/vaccum_tubes/vacuum-plain-serum-blood-collection-tube-1740637011-7886589.jpg',
     images: [
       '/productImage/vaccum_tubes/vacuum-plain-serum-blood-collection-tube-1740637011-7886589.jpg',
-      '/productImage/vaccum_tubes/clot-1--17-1740637131_7886589_2387351.webp',
+      '/productImage/vaccum_tubes/clot-1--17-1740637131_7886589_2387351.webp'
     ],
     price: '₹3.00 – 5.00',
-    moq: '6000 Piece',
     capColor: '#B45309',
     bodyColor: '#D97706',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
-      { label: 'Height', value: '13 X 75 Mm / 13 X 100 Mm' },
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Type', value: 'Vacuum Blood Collection Tubes' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Product Code', value: '5050' },
-      { label: 'Material', value: 'PET' },
+      { label: 'Tube Size', value: '13 X 75 Mm / 13 X 100 Mm' },
+      { label: 'Material', value: 'PET' }
     ],
     details: [
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Product Code', value: '5050' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Designed for serum separation, these tubes are essential for Biochemical, Serological, and Immunological tests. Without additives, they allow natural clotting of blood, leading to high-quality serum samples for laboratory analysis. They are widely used in Hospitals, Diagnostic Labs, and Research Institutions for reliable and efficient sample collection.',
+      'Designed for serum separation, these tubes are essential for Biochemical, Serological, and Immunological tests. Without additives, they allow natural clotting of blood, leading to high-quality serum samples for laboratory analysis. They are widely used in Hospitals, Diagnostic Labs, and Research Institutions for reliable and efficient sample collection.'
   },
 
   // ─── Non Vacuum Blood Collection Tubes ────────────────────────────────────
@@ -198,194 +133,133 @@ export const allProducts = [
     id: 'non-vacuum-fluoride-double-cap',
     slug: 'blood-collection-flouride-tube-with-double-safety-caps',
     categorySlug: 'non-vacuum-blood-collection-tubes',
-    categoryName: 'Non Vacuum Blood Collection Tubes',
-    name: 'Blood Collection Flouride Tube with Double Safety Caps',
+    categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
+    name: 'Sodium Fluoride Non-Vacuum Blood Collection Tube',
     image: '/productImage/non_vaccum_tubes/fluoride-safety-cap-blood-collection-tube-1740581900-7886495.jpg',
     images: [
       '/productImage/non_vaccum_tubes/fluoride-safety-cap-blood-collection-tube-1740581900-7886495.jpg',
       '/productImage/non_vaccum_tubes/fluoride-s-1740636028_7886495_2387292.webp',
       '/productImage/non_vaccum_tubes/fluoride-s-1740636037_7886495_2387293.webp',
-      '/productImage/non_vaccum_tubes/fluoride-s-1740636046_7886495_2387294.webp',
+      '/productImage/non_vaccum_tubes/fluoride-s-1740636046_7886495_2387294.webp'
     ],
     price: '₹1.40 – 1.80',
-    moq: '12000 Piece',
     capColor: '#6B7280',
     bodyColor: '#9CA3AF',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Material', value: 'PET/PP/PS' },
-      { label: 'Shape', value: 'Round' },
-      { label: 'Size', value: '2 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
+      { label: 'Driven Type', value: 'Non Vaccum' },
+      { label: 'Material', value: 'PET/PP/PS' }
     ],
     details: [
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Size', value: '2 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Type', value: 'Non Vacuum Blood Collection Tube, Non Vacuum Double Cap Blood Collection Tube' },
-      { label: 'Country of Origin', value: 'India' },
       { label: 'Certificate', value: 'CE Certificate, ISO 13485:2016, ISO 9001:2015' },
-      { label: 'Height', value: '13 X 75 Mm' },
-      { label: 'Product Code', value: '3030/4030' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Tube Size', value: '13 X 75 Mm' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Specifically designed for Glucose Testing, these tubes contain Sodium Fluoride and Potassium Oxalate to effectively inhibit Glycolysis, ensuring accurate blood glucose measurement. The additives help preserve glucose levels for extended periods, making them essential for Diabetes Testing, Metabolic Studies, and Clinical Research. These tubes are widely used in Hospitals, Diagnostic Laboratories, and Research Institutions to provide reliable and consistent results.',
+      'Specifically designed for Glucose Testing, these tubes contain Sodium Fluoride and Potassium Oxalate to effectively inhibit Glycolysis, ensuring accurate blood glucose measurement. The additives help preserve glucose levels for extended periods, making them essential for Diabetes Testing, Metabolic Studies, and Clinical Research. These tubes are widely used in Hospitals, Diagnostic Laboratories, and Research Institutions to provide reliable and consistent results.'
   },
   {
     id: 'non-vacuum-clot-activator',
     slug: 'clot-activator-non-vacuum-blood-collection-tube',
     categorySlug: 'non-vacuum-blood-collection-tubes',
-    categoryName: 'Non Vacuum Blood Collection Tubes',
-    name: 'Clot Activator Non Vacuum Blood Collection Tube',
+    categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
+    name: 'Clot Activator Non-Vacuum Blood Collection Tube',
     image: '/productImage/non_vaccum_tubes/clot-activator-safety-cap-blood-collection-tube-1740581205-7886494.jpg',
     images: [
       '/productImage/non_vaccum_tubes/clot-activator-safety-cap-blood-collection-tube-1740581205-7886494.jpg',
       '/productImage/non_vaccum_tubes/clot-activ-1740581206_7886494_2386814.webp',
       '/productImage/non_vaccum_tubes/clot-activ-1740581206_7886494_2386815.webp',
-      '/productImage/non_vaccum_tubes/clot-activ-1740581207_7886494_2386816.webp',
+      '/productImage/non_vaccum_tubes/clot-activ-1740581207_7886494_2386816.webp'
     ],
     price: '₹1.40 – 1.80',
-    moq: '12000 Piece',
     capColor: '#034DA2',
     bodyColor: '#034DA2',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Material', value: 'PET/PP/PS' },
-      { label: 'Shape', value: 'Round' },
-      { label: 'Size', value: '4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
+      { label: 'Driven Type', value: 'Non Vaccum' },
+      { label: 'Material', value: 'PET/PP/PS' }
     ],
     details: [
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Size', value: '4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Type', value: 'Non Vacuum Blood Collection Tube, Non Vacuum Double Cap Blood Collection Tube' },
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Height', value: '13 X 75 Mm / 13 X 100 Mm' },
+      { label: 'Tube Size', value: '13 X 75 Mm / 13 X 100 Mm' },
       { label: 'Certificate', value: 'CE Certificate, ISO 13485:2016, ISO 9001:2015' },
-      { label: 'Product Code', value: '3020/4020' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Used for Haematology tests, Molecular Diagnostics, and Blood Cell Analysis. These tubes are essential for Complete Blood Count (CBC) testing, Blood Film Examination, and Flow Cytometry. They prevent clotting while preserving Cell Morphology, making them ideal for advanced Medical Research, Genetic Studies, and Diagnostic applications in detecting Blood Disorders, Infections, and Cancers.',
+      'Used for Haematology tests, Molecular Diagnostics, and Blood Cell Analysis. These tubes are essential for Complete Blood Count (CBC) testing, Blood Film Examination, and Flow Cytometry. They prevent clotting while preserving Cell Morphology, making them ideal for advanced Medical Research, Genetic Studies, and Diagnostic applications in detecting Blood Disorders, Infections, and Cancers.'
   },
   {
     id: 'non-vacuum-k2-edta-safety',
     slug: 'k2-edta-safety-cap-blood-collection-tube',
     categorySlug: 'non-vacuum-blood-collection-tubes',
-    categoryName: 'Non Vacuum Blood Collection Tubes',
-    name: 'K2 EDTA Safety Cap Blood Collection Tube',
+    categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
+    name: 'K2 EDTA Non-Vacuum Blood Collection Tube',
     image: '/productImage/non_vaccum_tubes/k2-edta-safety-cap-blood-collection-tube-1740580690-7886490.jpg',
     images: [
       '/productImage/non_vaccum_tubes/k2-edta-safety-cap-blood-collection-tube-1740580690-7886490.jpg',
-      '/productImage/non_vaccum_tubes/k2-edta-sa-1740580744_7886490_2386813.webp',
+      '/productImage/non_vaccum_tubes/k2-edta-sa-1740580744_7886490_2386813.webp'
     ],
     price: '₹1.40 – 1.80',
-    moq: '12000 Piece',
     capColor: '#7C3AED',
     bodyColor: '#7C3AED',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Type', value: 'Non Vacuum Blood Collection Tube, Non Vacuum Double Cap Blood Collection Tube' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Material', value: 'PET/PP/PS' },
+      { label: 'Driven Type', value: 'Non Vaccum' },
+      { label: 'Material', value: 'PET/PP/PS' }
     ],
     details: [
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Material', value: 'PET/PP/PS' },
-      { label: 'Shape', value: 'Round' },
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Driven Type', value: 'Non Vaccum' },
-      { label: 'Height', value: '13 X 75 Mm / 13 X 100 Mm' },
+      { label: 'Tube Size', value: '13 X 75 Mm / 13 X 100 Mm' },
       { label: 'Certificate', value: 'CE Certificate, ISO 13485:2016, ISO 9001:2015' },
-      { label: 'Product Code', value: '3040/4040' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Used for Haematology tests, Molecular Diagnostics, and Blood Cell Analysis. These tubes are essential for Complete Blood Count (CBC) testing, Blood Film Examination, and Flow Cytometry. They prevent clotting while preserving Cell Morphology, making them ideal for advanced Medical Research, Genetic Studies, and Diagnostic applications in detecting Blood Disorders, Infections, and Cancers.',
+      'Used for Haematology tests, Molecular Diagnostics, and Blood Cell Analysis. These tubes are essential for Complete Blood Count (CBC) testing, Blood Film Examination, and Flow Cytometry. They prevent clotting while preserving Cell Morphology, making them ideal for advanced Medical Research, Genetic Studies, and Diagnostic applications in detecting Blood Disorders, Infections, and Cancers.'
   },
   {
     id: 'non-vacuum-k3-edta-safety',
     slug: 'k3-edta-safety-cap-blood-collection-tube',
     categorySlug: 'non-vacuum-blood-collection-tubes',
-    categoryName: 'Non Vacuum Blood Collection Tubes',
-    name: 'K3 EDTA Safety Cap Blood Collection Tube',
+    categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
+    name: '⁠K3 EDTA Non-Vacuum Blood Collection Tube',
     image: '/productImage/non_vaccum_tubes/k3-edta-safety-cap-blood-collection-tube-1740580332-7886474.jpg',
     images: [
       '/productImage/non_vaccum_tubes/k3-edta-safety-cap-blood-collection-tube-1740580332-7886474.jpg',
       '/productImage/non_vaccum_tubes/k3-edta-sa-1740579824_7886474_2386806.webp',
-      '/productImage/non_vaccum_tubes/k3-edta-sa-1740579825_7886474_2386807.webp',
+      '/productImage/non_vaccum_tubes/k3-edta-sa-1740579825_7886474_2386807.webp'
     ],
     price: '₹1.40 – 1.80',
-    moq: '12000 Piece',
     capColor: '#6D28D9',
     bodyColor: '#6D28D9',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
-      { label: 'Shape', value: 'Round' },
       { label: 'Driven Type', value: 'Non Vaccum' },
-      { label: 'Material', value: 'PET/PP/PS' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Application', value: 'Filling Blood' },
+      { label: 'Material', value: 'PET/PP/PS' }
     ],
     details: [
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Type', value: 'Blood Collection Tubes' },
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Height', value: '13 X 75 Mm / 13 X 100 Mm' },
-      { label: 'Product Code', value: '3010/4010' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Tube Size', value: '13 X 75 Mm / 13 X 100 Mm' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Used for Haematology tests, Molecular Diagnostics, and Blood Cell Analysis. These tubes are essential for Complete Blood Count (CBC) testing, Blood Film Examination, and Flow Cytometry. They prevent clotting while preserving Cell Morphology, making them ideal for advanced Medical Research, Genetic Studies, and Diagnostic applications in detecting Blood Disorders, Infections, and Cancers.',
+      'Used for Haematology tests, Molecular Diagnostics, and Blood Cell Analysis. These tubes are essential for Complete Blood Count (CBC) testing, Blood Film Examination, and Flow Cytometry. They prevent clotting while preserving Cell Morphology, making them ideal for advanced Medical Research, Genetic Studies, and Diagnostic applications in detecting Blood Disorders, Infections, and Cancers.'
   },
   {
     id: 'non-vacuum-plain',
     slug: 'plain-non-vacuum-blood-collection-tube',
     categorySlug: 'non-vacuum-blood-collection-tubes',
-    categoryName: 'Non Vacuum Blood Collection Tubes',
-    name: 'Plain Non Vacuum Blood Collection Tube',
+    categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
+    name: 'Plain Non-Vacuum Blood Collection Tube',
     image: '/productImage/non_vaccum_tubes/non-vacuum-double-cap-plain-blood-collection-tube-1740637631-7886598.jpg',
     images: [
       '/productImage/non_vaccum_tubes/non-vacuum-double-cap-plain-blood-collection-tube-1740637631-7886598.jpg',
-      '/productImage/non_vaccum_tubes/non-vacuum-1740639620_7886598_2387446.webp',
+      '/productImage/non_vaccum_tubes/non-vacuum-1740639620_7886598_2387446.webp'
     ],
     price: '₹1.40 – 1.80',
-    moq: '12000 Piece',
     capColor: '#B45309',
     bodyColor: '#D97706',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Material', value: 'PET/PP/PS' },
-      { label: 'Shape', value: 'Round' },
-      { label: 'Size', value: '4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
+      { label: 'Material', value: 'PET/PP/PS' }
     ],
     details: [
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Size', value: '4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
       { label: 'Certificate', value: 'CE Certificate, ISO 13485:2016, ISO 9001:2015' },
-      { label: 'Product Code', value: '3050/4050' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Designed for serum separation, these tubes are essential for Biochemical, Serological, and Immunological tests. Without additives, they allow natural clotting of blood, leading to high-quality serum samples for laboratory analysis. They are widely used in Hospitals, Diagnostic Labs, and Research Institutions for reliable and efficient sample collection.',
+      'Designed for serum separation, these tubes are essential for Biochemical, Serological, and Immunological tests. Without additives, they allow natural clotting of blood, leading to high-quality serum samples for laboratory analysis. They are widely used in Hospitals, Diagnostic Labs, and Research Institutions for reliable and efficient sample collection.'
   },
 
   // ─── Single Cap Blood Collection Tubes ────────────────────────────────────
@@ -393,195 +267,126 @@ export const allProducts = [
     id: 'single-cap-clot-activator',
     slug: 'clot-activator-single-cap-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
-    categoryName: 'Single Cap Blood Collection Tubes',
-    name: 'Clot Activator Single Cap Blood Collection Tube',
+    categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
+    name: 'Clot Activator Blood Collection Tube',
     image: '/productImage/single_cap_tubes/single-cap-clot-activator-blood-collection-tube-1740497900-7886439.jpg',
     images: [
       '/productImage/single_cap_tubes/single-cap-clot-activator-blood-collection-tube-1740497900-7886439.jpg',
-      '/productImage/single_cap_tubes/single-cap-1740497547_7886439_2385565.webp',
+      '/productImage/single_cap_tubes/single-cap-1740497547_7886439_2385565.webp'
     ],
     price: '₹1.20 – 1.60',
-    moq: '12000 Piece',
     capColor: '#034DA2',
     bodyColor: '#034DA2',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
-      { label: 'Height', value: '13 X 75 Mm / 13 X 100 Mm' },
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Type', value: 'Non Vacuum Rubber Cap Blood Collection Tube' },
-      { label: 'Size', value: '4 Ml / 6 Ml' },
-      { label: 'Condition', value: 'Sterile / Single-use / Disposable' },
+      { label: 'Driven Type', value: 'Non Vaccum' },
       { label: 'Material', value: 'PET/PP/PS' },
     ],
     details: [
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Size', value: '4 Ml / 6 Ml' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Condition', value: 'Sterile / Single-use / Disposable' },
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Shape', value: 'Round' },
-      { label: 'Driven Type', value: 'Non Vaccum' },
-      { label: 'Material', value: 'PET/PP/PS' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Product Code', value: '1020/2020' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 40 Bags = 4000 (IN 1 box)\n100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Tube Size', value: '13 X 75 Mm / 13 X 100 Mm' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 40 Bags = 4000 (IN 1 box)\n100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Used for serum sample collection, ideal for Biochemical and Immunological tests. These tubes facilitate the separation of serum from whole blood, making them essential for various Diagnostic Assays, including Liver Function Tests, Lipid Profiles, and Infectious Disease Screenings. The presence of a clot activator accelerates Coagulation, ensuring faster and more reliable test results. Designed for high compatibility with automated analyzers, these tubes help streamline laboratory workflows, enhancing efficiency and accuracy in clinical diagnostics.',
+      'Used for serum sample collection, ideal for Biochemical and Immunological tests. These tubes facilitate the separation of serum from whole blood, making them essential for various Diagnostic Assays, including Liver Function Tests, Lipid Profiles, and Infectious Disease Screenings. The presence of a clot activator accelerates Coagulation, ensuring faster and more reliable test results. Designed for high compatibility with automated analyzers, these tubes help streamline laboratory workflows, enhancing efficiency and accuracy in clinical diagnostics.'
   },
   {
     id: 'single-cap-fluoride',
     slug: 'fluoride-single-cap-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
-    categoryName: 'Single Cap Blood Collection Tubes',
-    name: 'Fluoride Single Cap Blood Collection Tube',
+    categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
+    name: 'Sodium Fluoride Blood Collection Tube',
     image: '/productImage/single_cap_tubes/fluoride-single-cap-blood-collection-tube-1740498240-7886448.jpg',
     images: [
       '/productImage/single_cap_tubes/fluoride-single-cap-blood-collection-tube-1740498240-7886448.jpg',
-      '/productImage/single_cap_tubes/fluoride-s-1740498241_7886448_2385583.webp',
+      '/productImage/single_cap_tubes/fluoride-s-1740498241_7886448_2385583.webp'
     ],
     price: '₹1.20 – 1.60',
-    moq: '12000 Piece',
     capColor: '#6B7280',
     bodyColor: '#9CA3AF',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
       { label: 'Driven Type', value: 'Non Vacuum' },
-      { label: 'Height', value: '13 X 75 Mm' },
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Size', value: '2 Ml' },
       { label: 'Material', value: 'PET/PP/PS' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
+      { label: 'Tube Size', value: '13 X 75 Mm' },
     ],
     details: [
-      { label: 'Type', value: 'Blood Collection Tubes, Single Cap Blood Collection Tube' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Size', value: '2 Ml' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Shape', value: 'Round' },
-      { label: 'Material', value: 'PET/PP/PS' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
       { label: 'Certification', value: 'CE Certified, ISO 13485:2016, ISO 9001:2015' },
-      { label: 'Product Code', value: '1030/2030' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 40 Bags = 4000 (IN 1 box)\n100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 40 Bags = 4000 (IN 1 box)\n100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Specifically designed for Glucose Testing, these tubes contain Sodium Fluoride and Potassium Oxalate to effectively inhibit Glycolysis, ensuring accurate blood glucose measurement. The additives help preserve glucose levels for extended periods, making them essential for Diabetes Testing, Metabolic Studies, and Clinical Research. These tubes are widely used in Hospitals, Diagnostic Laboratories, and Research Institutions to provide reliable and consistent results.',
+      'Specifically designed for Glucose Testing, these tubes contain Sodium Fluoride and Potassium Oxalate to effectively inhibit Glycolysis, ensuring accurate blood glucose measurement. The additives help preserve glucose levels for extended periods, making them essential for Diabetes Testing, Metabolic Studies, and Clinical Research. These tubes are widely used in Hospitals, Diagnostic Laboratories, and Research Institutions to provide reliable and consistent results.'
   },
   {
     id: 'single-cap-k2-edta',
     slug: 'k2-edta-non-vacuum-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
-    categoryName: 'Single Cap Blood Collection Tubes',
-    name: 'K2 EDTA Non Vacuum Blood Collection Tube',
+    categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
+    name: 'K2 EDTA Blood Collection Tube',
     image: '/productImage/single_cap_tubes/k2-edta-single-cap-blood-collection-tube-1740497396-7886431.jpg',
     images: [
       '/productImage/single_cap_tubes/k2-edta-single-cap-blood-collection-tube-1740497396-7886431.jpg',
-      '/productImage/single_cap_tubes/k2-edta-si-1740497396_7886431_2385562.webp',
+      '/productImage/single_cap_tubes/k2-edta-si-1740497396_7886431_2385562.webp'
     ],
     price: '₹1.20 – 1.60',
-    moq: '12000 Piece',
     capColor: '#7C3AED',
     bodyColor: '#7C3AED',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Material', value: 'PET/PP/PS' },
-      { label: 'Shape', value: 'Round' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
+      { label: 'Driven Type', value: 'Non Vaccum' },
+      { label: 'Material', value: 'PET/PP/PS' }
     ],
     details: [
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Type', value: 'Blood Collection Tubes, Non Vacuum Rubber Cap Blood Collection Tube' },
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Height', value: '13 X 75 Mm / 13 X 100 Mm' },
-      { label: 'Driven Type', value: 'Non Vaccum' },
-      { label: 'Product Code', value: '1040/2040' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 40 Bags = 4000 (IN 1 box)' },
+      { label: 'Tube Size', value: '13 X 75 Mm / 13 X 100 Mm' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 40 Bags = 4000 (IN 1 box)' }
     ],
     description:
-      'Used for hematology tests, molecular diagnostics, and blood cell analysis. These tubes are essential for complete blood count (CBC) testing, blood film examination, and flow cytometry. They prevent clotting while preserving cell morphology, making them ideal for advanced medical research, genetic studies, and diagnostic applications in detecting blood disorders, infections, and cancers.',
+      'Used for hematology tests, molecular diagnostics, and blood cell analysis. These tubes are essential for complete blood count (CBC) testing, blood film examination, and flow cytometry. They prevent clotting while preserving cell morphology, making them ideal for advanced medical research, genetic studies, and diagnostic applications in detecting blood disorders, infections, and cancers.'
   },
   {
     id: 'single-cap-k3-edta',
     slug: 'k3-edta-single-cap-non-vacuum-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
-    categoryName: 'Single Cap Blood Collection Tubes',
-    name: 'K3 EDTA Single Cap Non Vacuum Blood Collection Tube',
+    categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
+    name: 'K3 EDTA Blood Collection Tube',
     image: '/productImage/single_cap_tubes/k3-edta-single-cap-tube-1740497811-7886427.jpg',
     images: [
       '/productImage/single_cap_tubes/k3-edta-single-cap-tube-1740497811-7886427.jpg',
-      '/productImage/single_cap_tubes/k3-edta-si-1740496856_7886427_2385548.webp',
+      '/productImage/single_cap_tubes/k3-edta-si-1740496856_7886427_2385548.webp'
     ],
     price: '₹1.20 – 1.60',
-    moq: '12000 Piece',
     capColor: '#6D28D9',
     bodyColor: '#6D28D9',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Material', value: 'PET/PP/PS' },
-      { label: 'Shape', value: 'Round' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
+      { label: 'Driven Type', value: 'Non Vaccum' },
+      { label: 'Material', value: 'PET/PP/PS' }
     ],
     details: [
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Application', value: 'Filling Blood' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Type', value: 'Non Vacuum Blood Collection Tube, Blood Collection Tubes' },
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Height', value: '13 X 75 Mm / 13 X 100 Mm' },
-      { label: 'Driven Type', value: 'Non Vaccum' },
-      { label: 'Product Code', value: '1010/2010' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 40 Bags = 4000 (IN 1 box)' },
+      { label: 'Tube Size', value: '13 X 75 Mm / 13 X 100 Mm' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 40 Bags = 4000 (IN 1 box)' }
     ],
     description:
-      'Used for Haematology tests, Molecular Diagnostics, and Blood Cell Analysis. These tubes are essential for Complete Blood Count (CBC) testing, Blood Film Examination, and Flow Cytometry. They prevent clotting while preserving Cell Morphology, making them ideal for advanced Medical Research, Genetic Studies, and Diagnostic applications in detecting Blood Disorders, Infections, and Cancers.',
+      'Used for Haematology tests, Molecular Diagnostics, and Blood Cell Analysis. These tubes are essential for Complete Blood Count (CBC) testing, Blood Film Examination, and Flow Cytometry. They prevent clotting while preserving Cell Morphology, making them ideal for advanced Medical Research, Genetic Studies, and Diagnostic applications in detecting Blood Disorders, Infections, and Cancers.'
   },
   {
     id: 'single-cap-plain-serum',
     slug: 'plain-serum-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
-    categoryName: 'Single Cap Blood Collection Tubes',
+    categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
     name: 'Plain Serum Blood Collection Tube',
     image: '/productImage/single_cap_tubes/plain-serum-blood-collection-tubes-1740637606-7886572.jpg',
     images: [
       '/productImage/single_cap_tubes/plain-serum-blood-collection-tubes-1740637606-7886572.jpg',
-      '/productImage/single_cap_tubes/plain-seru-1740637617_7886572_2387376.webp',
+      '/productImage/single_cap_tubes/plain-seru-1740637617_7886572_2387376.webp'
     ],
     price: '₹1.20 – 1.60',
-    moq: '12000 Piece',
     capColor: '#B45309',
     bodyColor: '#D97706',
-    specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
-      { label: 'Feature', value: 'Crack Proof, Disposable, Durable, Eco Friendly' },
-      { label: 'Size', value: '2 Ml / 3 Ml / 4 Ml / 6 Ml' },
-      { label: 'Application', value: 'Filling Blood, Serum' },
-      { label: 'Driven Type', value: 'Non Vaccum' },
-      { label: 'Material', value: 'PET/PP/PS' },
-    ],
+    specs: [],
     details: [
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Shape', value: 'Round' },
       { label: 'Driven Type', value: 'Non Vaccum' },
       { label: 'Material', value: 'PET/PP/PS' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Type', value: 'Blood Collection Tubes, Serum Collection' },
-      { label: 'Country of Origin', value: 'India' },
-      { label: 'Height', value: '13 X 75 Mm / 13 X 100 Mm' },
-      { label: 'Product Code', value: '1050/2050' },
-      { label: 'Packaging Details', value: '100 Piece(s) X 40 Bags = 4000 (IN 1 box)\n100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' },
+      { label: 'Tube Size', value: '13 X 75 Mm / 13 X 100 Mm' },
+      { label: 'Packaging Details', value: '100 Piece(s) X 40 Bags = 4000 (IN 1 box)\n100 Piece(s) X 30 TRAY = 3000 (IN 1 box)' }
     ],
     description:
-      'Designed for serum separation, these tubes are essential for Biochemical, Serological, and Immunological tests. Without additives, they allow natural clotting of blood, leading to high-quality serum samples for laboratory analysis. They are widely used in Hospitals, Diagnostic Labs, and Research Institutions for reliable and efficient sample collection.',
+      'Designed for serum separation, these tubes are essential for Biochemical, Serological, and Immunological tests. Without additives, they allow natural clotting of blood, leading to high-quality serum samples for laboratory analysis. They are widely used in Hospitals, Diagnostic Labs, and Research Institutions for reliable and efficient sample collection.'
   },
 
   // ─── Polystyrene Disposable ESR Pipette ───────────────────────────────────
@@ -593,29 +398,19 @@ export const allProducts = [
     name: 'Polystyrene Disposable ESR Pipette',
     image: '/productImage/polystyrene-disposable-esr-pipette-1740635071-7886616.jpg',
     price: '₹3.50 – 5.50',
-    moq: '3000 Piece',
     capColor: '#034DA2',
     bodyColor: '#93C5FD',
     specs: [
-      { label: 'Business Type', value: 'Manufacturer, Exporter, Supplier, Retailer' },
       { label: 'Packaging Type', value: 'Paper Box' },
-      { label: 'Brand Name', value: 'Hreedrak Bioscience' },
-      { label: 'Material', value: 'Polystyrene' },
+      { label: 'Material', value: 'Polystyrene' }
     ],
     details: [
-      { label: 'Color', value: 'Transparent' },
-      { label: 'Application', value: 'Chemical Laboratory' },
-      { label: 'Size', value: 'Standard' },
-      { label: 'Feature', value: 'Disposable, Durable, Eco Friendly' },
-      { label: 'Type', value: 'Disposable Esr Pipette' },
-      { label: 'Country of Origin', value: 'India' },
       { label: 'Packaging Size', value: '50 Pieces' },
-      { label: 'Product Code', value: '6010' },
-      { label: 'Packaging Details', value: '50 Piece(s) X 60 Box = 3000 (IN 1 box)' },
+      { label: 'Packaging Details', value: '50 Piece(s) X 60 Box = 3000 (IN 1 box)' }
     ],
     description:
-      'The ESR pipette is specifically designed for accurate erythrocyte sedimentation rate (ESR) testing. Made of high-quality plastic, it ensures precise measurements and reliable test results. Used extensively in hematology laboratories for diagnosing inflammatory conditions.',
-  },
+      'The ESR pipette is specifically designed for accurate erythrocyte sedimentation rate (ESR) testing. Made of high-quality plastic, it ensures precise measurements and reliable test results. Used extensively in hematology laboratories for diagnosing inflammatory conditions.'
+  }
 ]
 
 /** Lookup a single product by categorySlug + productSlug */

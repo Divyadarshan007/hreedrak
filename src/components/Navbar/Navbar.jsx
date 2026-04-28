@@ -18,43 +18,43 @@ const Navbar = () => {
     closeTimer.current = setTimeout(() => setProductsOpen(false), 180)
   }
   const moreItems = [
-    { name: 'Contact Us',         href: '/contact'       },
-    { name: 'Request a Quote',    href: '/request-quote' },
-    { name: 'Download Catalogue', href: '/catalogue',     target: '_blank' },
+    { name: 'Contact Us', href: '/contact' },
+    { name: 'Request a Quote', href: '/request-quote' },
+    { name: 'Download Catalogue', href: '/catalogue', target: '_blank' },
   ]
 
   const productCategories = [
     {
-      name: 'Vacuum Blood Collection Tubes',
+      name: 'Vacuum Blood Collection Tube',
       href: '/products/vacuum-blood-collection-tubes',
       subItems: [
-        { name: 'Clot Activator Vacuum Blood Collection Tube',   href: '/products/vacuum-blood-collection-tubes/clot-activator-vacuum-blood-collection-tube' },
-        { name: 'Fluoride Vacuum Blood Collection Tube',         href: '/products/vacuum-blood-collection-tubes/fluoride-vacuum-blood-collection-tube' },
-        { name: 'K2 EDTA Vacuum Blood Collection Tube',          href: '/products/vacuum-blood-collection-tubes/k2-edta-vacuum-blood-collection-tube' },
-        { name: 'K3 EDTA Vacuum Blood Collection Tube',          href: '/products/vacuum-blood-collection-tubes/k3-edta-vacuum-blood-collection-tube' },
-        { name: 'Plain Serum Vacuum Blood Collection Tube',      href: '/products/vacuum-blood-collection-tubes/plain-serum-vacuum-blood-collection-tube' },
+        { name: 'Clot Activator Vacuum Blood Collection Tube', href: '/products/vacuum-blood-collection-tubes/clot-activator-vacuum-blood-collection-tube' },
+        { name: 'Sodium Fluoride Vacuum Blood Collection Tube', href: '/products/vacuum-blood-collection-tubes/sodium-fluoride-vacuum-blood-collection-tube' },
+        { name: '⁠K2 EDTA Vacuum Blood Collection Tube', href: '/products/vacuum-blood-collection-tubes/k2-edta-vacuum-blood-collection-tube' },
+        { name: 'K3 EDTA Vacuum Blood Collection Tube', href: '/products/vacuum-blood-collection-tubes/k3-edta-vacuum-blood-collection-tube' },
+        { name: 'Plain Serum Vacuum Blood Collection Tube', href: '/products/vacuum-blood-collection-tubes/plain-serum-vacuum-blood-collection-tube' },
       ],
     },
     {
-      name: 'Non Vacuum Blood Collection Tubes',
+      name: '⁠Non-vacuum Safety Cap Blood Collection Tube',
       href: '/products/non-vacuum-blood-collection-tubes',
       subItems: [
-        { name: 'Blood Collection Flouride Tube with Double Safety Caps', href: '/products/non-vacuum-blood-collection-tubes/blood-collection-flouride-tube-with-double-safety-caps' },
-        { name: 'Clot Activator Non Vacuum Blood Collection Tube',        href: '/products/non-vacuum-blood-collection-tubes/clot-activator-non-vacuum-blood-collection-tube' },
-        { name: 'K2 EDTA Safety Cap Blood Collection Tube',               href: '/products/non-vacuum-blood-collection-tubes/k2-edta-safety-cap-blood-collection-tube' },
-        { name: 'K3 EDTA Safety Cap Blood Collection Tube',               href: '/products/non-vacuum-blood-collection-tubes/k3-edta-safety-cap-blood-collection-tube' },
-        { name: 'Plain Non Vacuum Blood Collection Tube',                 href: '/products/non-vacuum-blood-collection-tubes/plain-non-vacuum-blood-collection-tube' },
+        { name: 'Sodium Fluoride Non-Vacuum Blood Collection Tube', href: '/products/non-vacuum-blood-collection-tubes/sodium-fluoride-non-vacuum-blood-collection-tube' },
+        { name: 'Clot Activator Non-Vacuum Blood Collection Tube', href: '/products/non-vacuum-blood-collection-tubes/clot-activator-non-vacuum-blood-collection-tube' },
+        { name: 'K2 EDTA Non-Vacuum Blood Collection Tube', href: '/products/non-vacuum-blood-collection-tubes/k2-edta-non-vacuum-blood-collection-tube' },
+        { name: '⁠K3 EDTA Non-Vacuum Blood Collection Tube', href: '/products/non-vacuum-blood-collection-tubes/k3-edta-non-vacuum-blood-collection-tube' },
+        { name: 'Plain Non-Vacuum Blood Collection Tube', href: '/products/non-vacuum-blood-collection-tubes/plain-non-vacuum-blood-collection-tube' },
       ],
     },
     {
-      name: 'Single Cap Blood Collection Tubes',
+      name: 'Non-vacuum Single Cap Blood Collection Tube',
       href: '/products/single-cap-blood-collection-tubes',
       subItems: [
-        { name: 'Clot Activator Single Cap Blood Collection Tube',      href: '/products/single-cap-blood-collection-tubes/clot-activator-single-cap-blood-collection-tube' },
-        { name: 'Fluoride Single Cap Blood Collection Tube',            href: '/products/single-cap-blood-collection-tubes/fluoride-single-cap-blood-collection-tube' },
-        { name: 'K2 EDTA Non Vacuum Blood Collection Tube',             href: '/products/single-cap-blood-collection-tubes/k2-edta-non-vacuum-blood-collection-tube' },
-        { name: 'K3 EDTA Single Cap Non Vacuum Blood Collection Tube',  href: '/products/single-cap-blood-collection-tubes/k3-edta-single-cap-non-vacuum-blood-collection-tube' },
-        { name: 'Plain Serum Blood Collection Tube',                    href: '/products/single-cap-blood-collection-tubes/plain-serum-blood-collection-tube' },
+        { name: 'Clot Activator Blood Collection Tube', href: '/products/single-cap-blood-collection-tubes/clot-activator-single-cap-blood-collection-tube' },
+        { name: 'Sodium Fluoride Blood Collection Tube', href: '/products/single-cap-blood-collection-tubes/sodium-fluoride-blood-collection-tube' },
+        { name: 'K2 EDTA Blood Collection Tube', href: '/products/single-cap-blood-collection-tubes/k2-edta-blood-collection-tube' },
+        { name: 'K3 EDTA Blood Collection Tube', href: '/products/single-cap-blood-collection-tubes/k3-edta-blood-collection-tube' },
+        { name: 'Plain Serum Blood Collection Tube', href: '/products/single-cap-blood-collection-tubes/plain-serum-blood-collection-tube' },
       ],
     },
     {
@@ -69,14 +69,13 @@ const Navbar = () => {
     },
   ]
 
-  const mainCategories   = productCategories.filter(c => c.subItems.length > 0)
-  const otherCategories  = productCategories.filter(c => c.subItems.length === 0)
+  const mainCategories = productCategories.filter(c => c.subItems.length > 0)
+  const otherCategories = productCategories.filter(c => c.subItems.length === 0)
 
   const navLinkClass = (path) =>
-    `text-base font-bold transition-colors pb-0.5 ${
-      isActive(path)
-        ? 'text-[#ED1B24] border-b-2 border-[#ED1B24]'
-        : 'text-gray-600 hover:text-[#231F20]'
+    `text-base font-bold transition-colors pb-0.5 ${isActive(path)
+      ? 'text-[#ED1B24] border-b-2 border-[#ED1B24]'
+      : 'text-gray-600 hover:text-[#231F20]'
     }`
 
   return (
@@ -120,9 +119,9 @@ const Navbar = () => {
 
             <Link to="/about" className={navLinkClass('/about')}>About Us</Link>
             {moreItems.map((item) => (
-              <Link 
-                key={item.name} 
-                to={item.href} 
+              <Link
+                key={item.name}
+                to={item.href}
                 className={navLinkClass(item.href)}
                 target={item.target}
                 rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
@@ -184,10 +183,10 @@ const Navbar = () => {
 
             <Link to="/about" className="block py-2 px-3 text-sm text-gray-700 hover:text-[#034DA2] hover:bg-[#EEF3FA] rounded transition-colors" onClick={() => setMobileOpen(false)}>About Us</Link>
             {moreItems.map((item) => (
-              <Link 
-                key={item.name} 
-                to={item.href} 
-                className="block py-2 px-3 text-sm text-gray-700 hover:text-[#034DA2] hover:bg-[#EEF3FA] rounded transition-colors" 
+              <Link
+                key={item.name}
+                to={item.href}
+                className="block py-2 px-3 text-sm text-gray-700 hover:text-[#034DA2] hover:bg-[#EEF3FA] rounded transition-colors"
                 onClick={() => setMobileOpen(false)}
                 target={item.target}
                 rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}

@@ -251,14 +251,15 @@ const ProductDetail = () => {
               </div>
 
               <div className="space-y-3 mb-7">
-                {/* Min. Order */}
-                <div className="flex items-start text-sm">
-                  <span className="font-bold uppercase tracking-wide flex-shrink-0 w-52 leading-snug" style={{ color: FONT }}>Min. Order</span>
-                  <span className="flex-shrink-0 font-medium mx-2" style={{ color: GRAY }}>:</span>
-                  <span className="font-medium leading-snug" style={{ color: GRAY }}>{product.moq}</span>
-                </div>
+
                 {/* Specs (Business Type, Brand Name, Material, Shape, etc.) */}
-                {product.specs && product.specs.map((s) => (
+                {product.specs && product.specs
+                  .filter(s => ![
+                    'Business Type', 'Brand Name', 'Shape', 'Feature', 'Color', 
+                    'Application', 'Size', 'Draw Volume', 'Type', 'Country of Origin', 
+                    'Condition', 'Product Code'
+                  ].includes(s.label))
+                  .map((s) => (
                   <div key={s.label} className="flex items-start text-sm">
                     <span className="font-bold uppercase tracking-wide flex-shrink-0 w-52 leading-snug" style={{ color: FONT }}>{s.label}</span>
                     <span className="flex-shrink-0 font-medium mx-2" style={{ color: GRAY }}>:</span>
@@ -266,7 +267,13 @@ const ProductDetail = () => {
                   </div>
                 ))}
                 {/* Remaining product details */}
-                {product.details.map((d) => (
+                {product.details
+                  .filter(d => ![
+                    'Business Type', 'Brand Name', 'Shape', 'Feature', 'Color', 
+                    'Application', 'Size', 'Draw Volume', 'Type', 'Country of Origin', 
+                    'Condition', 'Product Code'
+                  ].includes(d.label))
+                  .map((d) => (
                   <div key={d.label} className="flex items-start text-sm">
                     <span className="font-bold uppercase tracking-wide flex-shrink-0 w-52 leading-snug" style={{ color: FONT }}>{d.label}</span>
                     <span className="flex-shrink-0 font-medium mx-2" style={{ color: GRAY }}>:</span>
@@ -401,7 +408,7 @@ const ProductDetail = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-4">
           <div className="flex-1 min-w-0 hidden sm:block">
             <p className="text-white text-sm font-semibold truncate">{product.name}</p>
-            <p className="text-xs" style={{ color: '#A8C4E8' }}>MOQ: {product.moq}</p>
+
           </div>
           <div className="flex items-center gap-3 ml-auto">
             <a
@@ -439,9 +446,7 @@ const ProductDetail = () => {
                 <div className="w-28 h-28 flex items-center justify-center">
                   <img src={product.image} alt={product.name} className="h-24 w-auto object-contain" />
                 </div>
-                <div className="text-xs text-center space-y-0.5" style={{ color: GRAY }}>
-                  <p><span className="font-medium">MOQ :</span> {product.moq}</p>
-                </div>
+
               </div>
               {/* Right – form */}
               <div className="flex-1 flex flex-col">

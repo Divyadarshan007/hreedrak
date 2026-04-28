@@ -75,10 +75,10 @@ const Footer = () => {
             <h4 className="font-bold mb-5 text-sm uppercase tracking-wider text-[#FDB813]">Products</h4>
             <ul className="space-y-2.5">
               {[
-                { label: 'Vacuum Blood Collection Tubes', href: '/products/vacuum-blood-collection-tubes' },
-                { label: 'Non-Vacuum Blood Collection Tubes', href: '/products/non-vacuum-blood-collection-tubes' },
-                { label: 'Single Cap Blood Collection Tubes', href: '/products/single-cap-blood-collection-tubes' },
-                { label: 'ESR Pipettes', href: '#' },
+                { label: 'Vacuum Blood Collection Tube', href: '/products/vacuum-blood-collection-tubes' },
+                { label: '⁠Non-vacuum Safety Cap Blood Collection Tube', href: '/products/non-vacuum-blood-collection-tubes' },
+                { label: 'Non-vacuum Single Cap Blood Collection Tube', href: '/products/single-cap-blood-collection-tubes' },
+                { label: 'Polystyrene Disposable ESR Pipette', href: '/products/polystyrene-disposable-esr-pipette/polystyrene-disposable-esr-pipette' },
                 { label: 'OEM Services', href: '/oem-services' },
               ].map((item) => (
                 <li key={item.label}>

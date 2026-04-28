@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import { allProducts } from '../data/products'
 
 const categories = [
-  'Vacuum Blood Collection Tubes',
-  'Non Vacuum Blood Collection Tubes',
-  'Single Cap Blood Collection Tubes',
+  'Vacuum Blood Collection Tube',
+  '⁠Non-vacuum Safety Cap Blood Collection Tube',
+  'Non-vacuum Single Cap Blood Collection Tube',
   'Polystyrene Disposable ESR Pipette',
 ]
 
