@@ -28,7 +28,7 @@ export const allProducts = [
   },
   {
     id: 'vacuum-fluoride',
-    slug: 'fluoride-vacuum-blood-collection-tube',
+    slug: 'sodium-fluoride-vacuum-blood-collection-tube',
     categorySlug: 'vacuum-blood-collection-tubes',
     categoryName: 'Vacuum Blood Collection Tube',
     name: 'Sodium Fluoride Vacuum Blood Collection Tube',
@@ -131,7 +131,7 @@ export const allProducts = [
   // ─── Non Vacuum Blood Collection Tubes ────────────────────────────────────
   {
     id: 'non-vacuum-fluoride-double-cap',
-    slug: 'blood-collection-flouride-tube-with-double-safety-caps',
+    slug: 'sodium-fluoride-non-vacuum-blood-collection-tube',
     categorySlug: 'non-vacuum-blood-collection-tubes',
     categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
     name: 'Sodium Fluoride Non-Vacuum Blood Collection Tube',
@@ -187,7 +187,7 @@ export const allProducts = [
   },
   {
     id: 'non-vacuum-k2-edta-safety',
-    slug: 'k2-edta-safety-cap-blood-collection-tube',
+    slug: 'k2-edta-non-vacuum-blood-collection-tube',
     categorySlug: 'non-vacuum-blood-collection-tubes',
     categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
     name: 'K2 EDTA Non-Vacuum Blood Collection Tube',
@@ -213,7 +213,7 @@ export const allProducts = [
   },
   {
     id: 'non-vacuum-k3-edta-safety',
-    slug: 'k3-edta-safety-cap-blood-collection-tube',
+    slug: 'k3-edta-non-vacuum-blood-collection-tube',
     categorySlug: 'non-vacuum-blood-collection-tubes',
     categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
     name: '⁠K3 EDTA Non-Vacuum Blood Collection Tube',
@@ -290,7 +290,7 @@ export const allProducts = [
   },
   {
     id: 'single-cap-fluoride',
-    slug: 'fluoride-single-cap-blood-collection-tube',
+    slug: 'sodium-fluoride-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
     categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
     name: 'Sodium Fluoride Blood Collection Tube',
@@ -316,7 +316,7 @@ export const allProducts = [
   },
   {
     id: 'single-cap-k2-edta',
-    slug: 'k2-edta-non-vacuum-blood-collection-tube',
+    slug: 'k2-edta-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
     categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
     name: 'K2 EDTA Blood Collection Tube',
@@ -341,7 +341,7 @@ export const allProducts = [
   },
   {
     id: 'single-cap-k3-edta',
-    slug: 'k3-edta-single-cap-non-vacuum-blood-collection-tube',
+    slug: 'k3-edta-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
     categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
     name: 'K3 EDTA Blood Collection Tube',
