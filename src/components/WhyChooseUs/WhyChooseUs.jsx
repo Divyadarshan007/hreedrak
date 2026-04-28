@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import { motion } from 'framer-motion'
 import collectionImg from '../../assets/why-choose-us/collection.jpg'
 import integrityImg from '../../assets/why-choose-us/integrity.png'
 import resultsImg from '../../assets/why-choose-us/results.png'
@@ -22,11 +22,15 @@ const cards = [
 ]
 
 const WhyChooseUs = () => {
-  const ref = useScrollAnimation()
-
   return (
     <section className="bg-[#f1f5f4] py-20" id="why-us">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-[#ED1B24]" />
@@ -40,8 +44,12 @@ const WhyChooseUs = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {cards.map((card, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
               className="bg-white flex flex-col h-full shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden group border border-gray-100"
             >
               {/* Image Container */}
@@ -62,10 +70,10 @@ const WhyChooseUs = () => {
                   {card.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

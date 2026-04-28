@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import { motion } from 'framer-motion'
 
 const testimonialsData = [
   {
@@ -141,7 +141,6 @@ const Stars = ({ count }) => (
 )
 
 const Testimonials = () => {
-  const ref = useScrollAnimation()
   const containerRef = useRef(null)
   const [trackIndex, setTrackIndex] = useState(CLONE) // start at first real card
   const [animated, setAnimated] = useState(true)
@@ -208,7 +207,13 @@ const Testimonials = () => {
   return (
     <section id="testimonials">
       <div className="bg-[#EEF3FA] py-20 px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="max-w-7xl mx-auto animate-on-scroll">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-7xl mx-auto"
+        >
 
           <div className="flex flex-col items-center text-center mb-16">
             <div className="flex items-center gap-3 mb-3">
@@ -318,7 +323,7 @@ const Testimonials = () => {
             ))}
           </div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   )

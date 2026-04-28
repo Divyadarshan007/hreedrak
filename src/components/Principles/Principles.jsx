@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import { motion } from 'framer-motion'
 import {
   HiOutlineShieldCheck,
   HiOutlineLightBulb,
@@ -51,10 +51,15 @@ const principles = [
 ]
 
 const Principles = () => {
-  const ref = useScrollAnimation()
   return (
     <section className="py-16 lg:py-24 bg-white">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-3">
@@ -72,8 +77,12 @@ const Principles = () => {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {principles.map((item, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
               className={`group ${item.bgColor} rounded-3xl p-8 border border-transparent hover:border-white/20 transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-black/5`}
             >
               <div className="flex items-center justify-between mb-6">
@@ -87,10 +96,10 @@ const Principles = () => {
               </div>
               <h3 className="text-xl font-bold text-[#231F20] mb-4">{item.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import { motion } from 'framer-motion'
 
 const productCategories = {
   vacuum: [
@@ -202,12 +202,17 @@ function InquireModal({ product, onClose }) {
 const Products = () => {
   const [activeTab, setActiveTab] = useState('vacuum')
   const [selectedProduct, setSelectedProduct] = useState(null)
-  const ref = useScrollAnimation()
   const navigate = useNavigate()
 
   return (
     <section className="py-16 lg:py-20 bg-[#EEF3FA]" id="products">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
 
         {/* Section header */}
         <div className="flex flex-col items-center text-center mb-16">
@@ -240,9 +245,13 @@ const Products = () => {
 
         {/* Product grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-          {productCategories[activeTab].map((product) => (
-            <div
+          {productCategories[activeTab].map((product, index) => (
+            <motion.div
               key={product.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => navigate(`/products/${product.categorySlug}/${product.slug}`)}
               className="bg-white rounded-lg p-5 flex flex-col items-center text-center hover:shadow-xl transition-shadow border border-[#A8C4E8] cursor-pointer"
             >
@@ -256,11 +265,11 @@ const Products = () => {
               >
                 Inquire
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-      </div>
+      </motion.div>
 
       {/* Modal */}
       {selectedProduct && (

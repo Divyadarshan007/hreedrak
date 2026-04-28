@@ -1,7 +1,6 @@
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import { motion } from 'framer-motion'
 
 const CTABanner = () => {
-  const ref = useScrollAnimation()
   return (
     <section className="bg-[#ED1B24] py-20 relative overflow-hidden">
 
@@ -24,7 +23,13 @@ const CTABanner = () => {
         style={{ transform: 'skewX(-12deg) translateX(20%)' }}
       />
 
-      <div ref={ref} className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-on-scroll">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+      >
 
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="w-8 h-0.5 bg-[#FDB813]" />
@@ -50,7 +55,7 @@ const CTABanner = () => {
           </button>
         </div>
 
-      </div>
+      </motion.div>
     </section>
   )
 }

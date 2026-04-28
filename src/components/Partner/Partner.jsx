@@ -1,10 +1,15 @@
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import { motion } from 'framer-motion'
 
 const Partner = () => {
-  const ref = useScrollAnimation()
   return (
     <section id="partner" className="overflow-hidden">
-      <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 animate-on-scroll">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="grid grid-cols-1 lg:grid-cols-2"
+      >
 
         {/* Left panel — Dark */}
         <div className="bg-[#231F20] px-8 sm:px-12 lg:px-16 py-16 lg:py-20 flex flex-col justify-center">
@@ -37,7 +42,7 @@ const Partner = () => {
           </div>
         </div>
 
-      </div>
+      </motion.div>
     </section>
   )
 }

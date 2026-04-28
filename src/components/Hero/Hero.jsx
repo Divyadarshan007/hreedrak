@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const Hero = () => {
   return (
     <section
@@ -22,14 +24,24 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tight mb-8 animate-fade-in-up delay-100">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tight mb-8"
+          >
             Advancing Diagnostics <br />
             <span className="text-[#FDB813]">Through Innovation</span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-lg sm:text-xl text-gray-200 leading-relaxed mb-10 max-w-2xl animate-fade-in-up delay-200">
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-lg sm:text-xl text-gray-200 leading-relaxed mb-10 max-w-2xl"
+          >
             Precision-engineered blood collection systems designed for global healthcare standards and reliable patient outcomes.
-          </p>
+          </motion.p>
         </div>
       </div>
     </section>
@@ -37,5 +49,4 @@ const Hero = () => {
 }
 
 export default Hero
-
 

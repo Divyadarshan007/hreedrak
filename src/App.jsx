@@ -12,6 +12,10 @@ import Contact from './pages/Contact'
 import Catalogue from './pages/Catalogue'
 import RequestQuote from './pages/RequestQuote'
 
+if ('scrollRestoration' in window.history) {
+  window.history.scrollRestoration = 'manual'
+}
+
 const ScrollToTop = () => {
   const { pathname } = useLocation()
   useEffect(() => {

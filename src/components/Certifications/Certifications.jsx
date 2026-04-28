@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import { motion } from 'framer-motion'
 
 const certImages = [
   { src: '/certificates/ce.png', alt: 'CE Certification' },
@@ -10,10 +10,15 @@ const certImages = [
 ]
 
 const Certifications = () => {
-  const ref = useScrollAnimation()
   return (
     <section className="bg-white py-12" id="certifications">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="flex flex-wrap items-center justify-center gap-10">
           {certImages.map((cert, i) => (
             <img
@@ -24,7 +29,7 @@ const Certifications = () => {
             />
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

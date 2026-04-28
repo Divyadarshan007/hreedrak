@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import { motion } from 'framer-motion'
 
 const sloganItems = [
   {
@@ -22,10 +22,15 @@ const sloganItems = [
 ]
 
 const SloganSection = () => {
-  const ref = useScrollAnimation()
   return (
     <section className="py-16 lg:py-24 bg-white overflow-hidden">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
 
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -43,8 +48,12 @@ const SloganSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {sloganItems.map((item, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
               className="relative p-8 pt-12 min-h-[350px] rounded-sm transition-all duration-500 hover:-translate-y-3 cursor-default group"
               style={{ backgroundColor: item.bg }}
             >
@@ -69,7 +78,7 @@ const SloganSection = () => {
                 className="absolute bottom-0 left-0 w-full h-[6px]"
                 style={{ backgroundColor: item.color }}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -81,7 +90,7 @@ const SloganSection = () => {
 
 
 
-      </div>
+      </motion.div>
     </section>
   )
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import {
   HiOutlineShieldCheck,
   HiOutlineLightBulb,
@@ -77,7 +78,7 @@ const certs = [
 const faqs = [
   {
     q: 'What types of products does Hreedrak Bioscience Private Limited offer?',
-    a: 'We offer a wide range of blood collection solutions including Vacuum and Non-Vacuum Blood Collection Tubes, Microtainers, Paediatric Tubes, Advanced Cell-Free DNA Tubes, and Urine Containers.',
+    a: 'We offer a wide range of blood collection solutions including Vacuum and Non-Vacuum Blood Collection Tubes, Microtainers, Paediatric Tubes, and Urine Containers.',
   },
   {
     q: 'Do you offer customization for specific product requirements?',
@@ -233,7 +234,13 @@ const FAQItem = ({ q, a }) => {
 }
 
 const ContactSection = () => (
-  <section className="py-12">
+  <motion.section
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ duration: 0.6 }}
+    className="py-12"
+  >
     <SectionLabel number="08" title="Contact Us" centered />
     <div className="rounded-3xl overflow-hidden border border-gray-100 shadow-xl bg-white max-w-4xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2">
@@ -305,7 +312,7 @@ const ContactSection = () => (
         </div>
       </div>
     </div>
-  </section>
+  </motion.section>
 )
 
 /* ── Main Component ────────────────────────────────────────────── */
@@ -320,12 +327,17 @@ const About = () => {
       {/* ── Hero Banner ── */}
       <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #034DA2 0%, #023585 55%, #231F20 100%)' }}>
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" style={{ backgroundColor: '#ffffff07' }} />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center relative">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center relative"
+        >
           <p className="text-xs font-semibold uppercase tracking-[0.25em] mb-2" style={{ color: '#A8C4E8' }}>
             HREEDRAK BIOSCIENCE PRIVATE LIMITED
           </p>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white">About Us</h1>
-        </div>
+        </motion.div>
       </div>
 
       {/* ── Breadcrumb ── */}
@@ -347,8 +359,13 @@ const About = () => {
           <div className="space-y-24 lg:space-y-32">
 
             {/* 01 — About Us (Text Left, Image Right) */}
-            <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div>
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center overflow-hidden">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+              >
                 <SectionLabel number="01" title="About Us" />
                 <div className="space-y-6">
                   <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
@@ -361,28 +378,46 @@ const About = () => {
                     Every product we develop is engineered to deliver <strong>consistency, safety, and performance</strong>, meeting the evolving demands of modern laboratories and healthcare institutions globally.
                   </p>
                 </div>
-              </div>
-              <div className="relative group">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="relative group"
+              >
                 <div className="absolute -inset-4 bg-[#034DA2]/5 rounded-[2rem] -rotate-2 scale-95 group-hover:rotate-0 transition-transform duration-500" />
                 <img
                   src="/about_us_lab.png"
                   alt="Modern Bioscience Laboratory"
                   className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
                 />
-              </div>
+              </motion.div>
             </section>
 
             {/* 02 — Mission (Image Left, Text Right) */}
-            <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div className="relative group order-2 lg:order-1">
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center overflow-hidden">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="relative group order-2 lg:order-1"
+              >
                 <div className="absolute -inset-4 bg-[#ED1B24]/5 rounded-[2rem] rotate-2 scale-95 group-hover:rotate-0 transition-transform duration-500" />
                 <img
                   src="/Medical-innovation-in-action.png"
                   alt="Innovation in Action"
                   className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
                 />
-              </div>
-              <div className="order-1 lg:order-2">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="order-1 lg:order-2"
+              >
                 <SectionLabel number="02" title="Mission" />
                 <div className="space-y-6">
                   <p className="text-lg font-bold leading-relaxed" style={{ color: PRIMARY }}>
@@ -401,12 +436,17 @@ const About = () => {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </motion.div>
             </section>
 
             {/* 03 — Vision (Text Left, Image Right) */}
-            <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div>
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center overflow-hidden">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+              >
                 <SectionLabel number="03" title="Vision" />
                 <div className="space-y-6">
                   <p className="text-lg font-bold leading-relaxed" style={{ color: PRIMARY }}>
@@ -424,15 +464,21 @@ const About = () => {
                     ))}
                   </div>
                 </div>
-              </div>
-              <div className="relative group">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="relative group"
+              >
                 <div className="absolute -inset-4 bg-[#00A650]/5 rounded-[2rem] -rotate-2 scale-95 group-hover:rotate-0 transition-transform duration-500" />
                 <img
                   src="/Colorful-liquids-in-laboratory-test-tubes.png"
                   alt="Future of Diagnostics"
                   className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
                 />
-              </div>
+              </motion.div>
             </section>
 
             {/* 04 — Core Values */}
@@ -476,7 +522,14 @@ const About = () => {
                     text: 'text-[#A06EE1]'
                   }
                 ].map((val, i) => (
-                  <div key={i} className={`group ${val.bg} rounded-3xl p-8 border border-transparent hover:border-white/20 transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-black/5`}>
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className={`group ${val.bg} rounded-3xl p-8 border border-transparent hover:border-white/20 transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-black/5`}
+                  >
                     <div className="flex items-center justify-between mb-6">
                       <div className="p-3 rounded-2xl bg-white shadow-sm flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                         <div className={`${val.text} group-hover:animate-jiggle`}>
@@ -486,7 +539,7 @@ const About = () => {
                     </div>
                     <h4 className="font-bold text-xl mb-4" style={{ color: FONT }}>{val.t}</h4>
                     <p className="text-gray-600 text-sm leading-relaxed">{val.d}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </section>
@@ -494,7 +547,13 @@ const About = () => {
             {/* 05 — Our Philosophy */}
             <section>
               <SectionLabel number="05" title="Our Philosophy" centered />
-              <div className="rounded-[3rem] p-10 lg:p-16 relative overflow-hidden text-center" style={{ backgroundColor: tint[PRIMARY] }}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="rounded-[3rem] p-10 lg:p-16 relative overflow-hidden text-center" style={{ backgroundColor: tint[PRIMARY] }}
+              >
                 <h3 className="text-3xl lg:text-5xl font-black mb-12 italic" style={{ color: FONT }}>Innovation. Evolve. Thrive.</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
                   {[
@@ -511,16 +570,20 @@ const About = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             </section>
 
             {/* 06 — Company at a Glance */}
             <section>
               <SectionLabel number="06" title="Company at a Glance" centered />
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {profileItems.map((item) => (
-                  <div
+                {profileItems.map((item, index) => (
+                  <motion.div
                     key={item.label}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
                     className="flex items-center gap-5 p-6 rounded-2xl border border-gray-100 transition-all hover:shadow-lg"
                     style={{ backgroundColor: tint[item.color] }}
                   >
@@ -534,7 +597,7 @@ const About = () => {
                       <p className="text-[10px] uppercase font-bold tracking-[0.15em] mb-1" style={{ color: GRAY }}>{item.label}</p>
                       <p className="text-base font-bold leading-tight" style={{ color: FONT }}>{item.value}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </section>
@@ -543,8 +606,15 @@ const About = () => {
             <section>
               <SectionLabel number="07" title="Our Certifications" centered />
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {certs.map((cert) => (
-                  <div key={cert.acronym} className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col transition-all hover:shadow-xl hover:-translate-y-1">
+                {certs.map((cert, index) => (
+                  <motion.div
+                    key={cert.acronym}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5, delay: index * 0.15 }}
+                    className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col transition-all hover:shadow-xl hover:-translate-y-1"
+                  >
 
                     {/* Certificate Image Preview - Taller, Full View, Lower Blur */}
                     <div className="relative h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100">
@@ -599,7 +669,7 @@ const About = () => {
                         </a>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </section>
@@ -608,14 +678,19 @@ const About = () => {
             <ContactSection />
 
             {/* 09 — FAQs */}
-            <section>
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6 }}
+            >
               <SectionLabel number="09" title="Frequently Asked Questions" centered />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
                 {faqs.map((faq) => (
                   <FAQItem key={faq.q} q={faq.q} a={faq.a} />
                 ))}
               </div>
-            </section>
+            </motion.section>
 
           </div>
         </div>

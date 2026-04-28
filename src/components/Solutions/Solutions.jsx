@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import { motion } from 'framer-motion'
 
 const solutions = [
   {
@@ -41,10 +41,15 @@ const solutions = [
 ]
 
 const Solutions = () => {
-  const ref = useScrollAnimation()
   return (
     <section id="solutions" className="bg-white py-16 lg:py-24">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
 
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
@@ -61,8 +66,12 @@ const Solutions = () => {
         {/* 3-column card grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {solutions.map((sol, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
               className="relative p-8 pt-12 min-h-[350px] rounded-sm overflow-hidden group transition-all duration-500 hover:-translate-y-3 cursor-default"
               style={{ backgroundColor: sol.bg }}
             >
@@ -100,11 +109,11 @@ const Solutions = () => {
                 className="absolute bottom-0 left-0 w-full h-[6px]"
                 style={{ backgroundColor: sol.color }}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
 
-      </div>
+      </motion.div>
     </section>
   )
 }

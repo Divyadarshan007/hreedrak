@@ -1,7 +1,6 @@
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import { motion } from 'framer-motion'
 
 const OrderOfDraw = () => {
-  const ref = useScrollAnimation()
   const watermarkText = "HREEDRAK"
 
   const tubes = [
@@ -17,7 +16,12 @@ const OrderOfDraw = () => {
 
   return (
     <section className="bg-white py-20 overflow-hidden" id="order-of-draw">
-      <div ref={ref} className="animate-on-scroll">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="flex flex-col items-center text-center mb-16 relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-[#ED1B24]" />
@@ -89,7 +93,7 @@ const OrderOfDraw = () => {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <style jsx>{`
         @keyframes slideRight {

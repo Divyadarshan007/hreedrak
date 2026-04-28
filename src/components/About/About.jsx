@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import { motion } from 'framer-motion'
 
 const cards = [
   {
@@ -26,12 +26,17 @@ const cards = [
 ]
 
 const About = () => {
-  const ref = useScrollAnimation()
   const navigate = useNavigate()
 
   return (
     <section id="about" className="bg-white py-16 lg:py-24 overflow-hidden">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-4">
@@ -46,8 +51,12 @@ const About = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {cards.map((card, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
               className="relative flex flex-col p-8 pt-12 min-h-[320px] rounded-sm transition-all duration-500 hover:-translate-y-3 cursor-default group"
               style={{ backgroundColor: card.bg }}
             >
@@ -77,7 +86,7 @@ const About = () => {
                 className="absolute bottom-0 left-0 w-full h-[6px]"
                 style={{ backgroundColor: card.color }}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -93,7 +102,7 @@ const About = () => {
           </button>
         </div>
 
-      </div>
+      </motion.div>
     </section>
   )
 }
