@@ -73,6 +73,17 @@ const certs = [
     pdf: '/certificates/iso-13485-2016.pdf',
     filename: 'Hreedrak-ISO-13485-Certificate.pdf',
   },
+  {
+    acronym: 'CDSCO',
+    name: 'Central Drugs Standard Control Organization',
+    issuedBy: 'Directorate General of Health Services',
+    scope: 'Ensuring the safety, efficacy and quality of medical devices manufactured and distributed in India.',
+    label: 'Certified 2014',
+    logo: '/certificates/cdsco.png',
+    bgImg: '',
+    pdf: '',
+    filename: '',
+  },
 ]
 
 const faqs = [
@@ -605,7 +616,7 @@ const About = () => {
             {/* 07 — Our Certifications */}
             <section>
               <SectionLabel number="07" title="Our Certifications" centered />
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {certs.map((cert, index) => (
                   <motion.div
                     key={cert.acronym}
@@ -613,7 +624,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.5, delay: index * 0.15 }}
-                    className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col transition-all hover:shadow-xl hover:-translate-y-1"
+                    className="group bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden flex flex-col transition-all hover:shadow-2xl hover:-translate-y-1"
                   >
 
                     {/* Certificate Image Preview - Taller, Full View, Lower Blur */}
