@@ -33,6 +33,12 @@ const Navbar = () => {
         { name: 'K2 EDTA', href: '/products/vacuum-blood-collection-tubes/k2-edta-vacuum-blood-collection-tube' },
         { name: 'K3 EDTA', href: '/products/vacuum-blood-collection-tubes/k3-edta-vacuum-blood-collection-tube' },
         { name: 'Plain Serum', href: '/products/vacuum-blood-collection-tubes/plain-serum-vacuum-blood-collection-tube' },
+        { name: 'Gel + Clot Activator', href: '/products/vacuum-blood-collection-tubes/gel-plus-clot-activator-vacuum-blood-collection-tube'},
+        { name: 'Gel Lithium Heparin', href: '/products/vacuum-blood-collection-tubes/gel-plus-clot-activator-vacuum-blood-collection-tube'},
+        { name: 'Lithium Heparin', href: '/products/vacuum-blood-collection-tubes/gel-plus-clot-activator-vacuum-blood-collection-tube'},
+        { name: 'Sodium Heparin', href: '/products/vacuum-blood-collection-tubes/gel-plus-clot-activator-vacuum-blood-collection-tube'},
+        { name: 'Sodium Citrate 3.2', href: '/products/vacuum-blood-collection-tubes/gel-plus-clot-activator-vacuum-blood-collection-tube'},
+        { name: 'Sodium Citrate 3.8', href: '/products/vacuum-blood-collection-tubes/gel-plus-clot-activator-vacuum-blood-collection-tube'},
       ],
     },
     {
@@ -44,6 +50,12 @@ const Navbar = () => {
         { name: 'K2 EDTA', href: '/products/non-vacuum-blood-collection-tubes/k2-edta-non-vacuum-blood-collection-tube' },
         { name: 'K3 EDTA', href: '/products/non-vacuum-blood-collection-tubes/k3-edta-non-vacuum-blood-collection-tube' },
         { name: 'Plain Serum', href: '/products/non-vacuum-blood-collection-tubes/plain-non-vacuum-blood-collection-tube' },
+        { name: 'Gel + Clot Activator', href: '/products/non-vacuum-blood-collection-tubes/gel-plus-clot-activator-non-vacuum-blood-collection-tube' },
+        { name: 'Gel Lithium Heparin', href: '/products/non-vacuum-blood-collection-tubes/gel-plus-clot-activator-non-vacuum-blood-collection-tube' },
+        { name: 'Lithium Heparin', href: '/products/non-vacuum-blood-collection-tubes/gel-plus-clot-activator-non-vacuum-blood-collection-tube' },
+        { name: 'Sodium Heparin', href: '/products/non-vacuum-blood-collection-tubes/gel-plus-clot-activator-non-vacuum-blood-collection-tube' },
+        { name: 'Sodium Citrate 3.2', href: '/products/non-vacuum-blood-collection-tubes/gel-plus-clot-activator-non-vacuum-blood-collection-tube' },
+        { name: 'Sodium Citrate 3.8', href: '/products/non-vacuum-blood-collection-tubes/gel-plus-clot-activator-non-vacuum-blood-collection-tube' },
       ],
     },
     {
@@ -55,6 +67,15 @@ const Navbar = () => {
         { name: 'K2 EDTA', href: '/products/single-cap-blood-collection-tubes/k2-edta-blood-collection-tube' },
         { name: 'K3 EDTA', href: '/products/single-cap-blood-collection-tubes/k3-edta-blood-collection-tube' },
         { name: 'Plain Serum', href: '/products/single-cap-blood-collection-tubes/plain-serum-blood-collection-tube' },
+      ],
+    },
+    {
+      name: 'Micro/ Pediatric Tube',
+      href: '/products/micro-pediatric-tubes',
+      subItems: [
+        { name: 'Clot Activator', href: '/products/micro-pediatric-tubes/clot-activator-micro-pediatric-tube' },
+        { name: 'K2 EDTA', href: '/products/micro-pediatric-tubes/k2-edta-micro-pediatric-tube' },
+        { name: 'K3 EDTA', href: '/products/micro-pediatric-tubes/k3-edta-micro-pediatric-tube' },
       ],
     },
     {
