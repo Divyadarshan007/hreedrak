@@ -6,6 +6,7 @@ import About from './pages/About'
 import VacuumBloodCollectionTubes from './pages/products/vacuum-blood-collection-tubes'
 import NonVacuumBloodCollectionTubes from './pages/products/non-vacuum-blood-collection-tubes'
 import SingleCapBloodCollectionTubes from './pages/products/single-cap-blood-collection-tubes'
+import MicroPediatricTubes from './pages/products/micro-pediatric-tubes'
 import ProductDetail from './pages/products/ProductDetail'
 import OemServices from './pages/OemServices'
 import Contact from './pages/Contact'
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/products/vacuum-blood-collection-tubes" element={<VacuumBloodCollectionTubes />} />
           <Route path="/products/non-vacuum-blood-collection-tubes" element={<NonVacuumBloodCollectionTubes />} />
           <Route path="/products/single-cap-blood-collection-tubes" element={<SingleCapBloodCollectionTubes />} />
+          <Route path="/products/micro-pediatric-tubes" element={<MicroPediatricTubes />} />
           <Route path="/products/:categorySlug/:productSlug" element={<ProductDetail />} />
           <Route path="/oem-services" element={<OemServices />} />
           <Route path="/contact" element={<Contact />} />

@@ -255,8 +255,8 @@ const ProductDetail = () => {
                 {/* Specs (Business Type, Brand Name, Material, Shape, etc.) */}
                 {product.specs && product.specs
                   .filter(s => ![
-                    'Business Type', 'Brand Name', 'Shape', 'Feature', 'Color', 
-                    'Application', 'Size', 'Draw Volume', 'Type', 'Country of Origin', 
+                    'Business Type', 'Brand Name', 'Shape', 'Color',
+                    'Application', 'Size', 'Type', 'Country of Origin',
                     'Condition', 'Product Code'
                   ].includes(s.label))
                   .map((s) => (
@@ -269,8 +269,8 @@ const ProductDetail = () => {
                 {/* Remaining product details */}
                 {product.details
                   .filter(d => ![
-                    'Business Type', 'Brand Name', 'Shape', 'Feature', 'Color', 
-                    'Application', 'Size', 'Draw Volume', 'Type', 'Country of Origin', 
+                    'Business Type', 'Brand Name', 'Shape', 'Color',
+                    'Application', 'Size', 'Type', 'Country of Origin',
                     'Condition', 'Product Code'
                   ].includes(d.label))
                   .map((d) => (
