@@ -187,7 +187,7 @@ const ProductDetail = () => {
 
           {/* Product header: category + name + price + MOQ */}
           <div className="mb-8 pb-6 border-b border-gray-100">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: ACCENT }}>
+            <p className="text-[16px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: ACCENT }}>
               {product.categoryName}
             </p>
             <div className="flex items-start gap-3 mb-2">
