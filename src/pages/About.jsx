@@ -80,9 +80,9 @@ const certs = [
     scope: 'Ensuring the safety, efficacy and quality of medical devices manufactured and distributed in India.',
     label: 'Certified 2014',
     logo: '/certificates/cdsco.png',
-    bgImg: '',
-    pdf: '',
-    filename: '',
+    bgImg: '/certificates/CDSCO.jpg',
+    pdf: '/certificates/cdsco.pdf',
+    filename: 'Hreedrak-CDSCO-Certificate.pdf',
   },
 ]
 

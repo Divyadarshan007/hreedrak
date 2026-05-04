@@ -5,7 +5,7 @@ export const allProducts = [
     slug: 'clot-activator-vacuum-blood-collection-tube',
     categorySlug: 'vacuum-blood-collection-tubes',
     categoryName: 'Vacuum Blood Collection Tube',
-    name: 'Clot Activator Vacuum Blood Collection Tube',
+    name: 'Clot Activator',
     image: '/productImage/vaccum_tubes/vacuum-clot-activator-blood-collection-tube-1740496023-7886366.jpg',
     images: [
       '/productImage/vaccum_tubes/vacuum-clot-activator-blood-collection-tube-1740496023-7886366.jpg',
@@ -31,7 +31,7 @@ export const allProducts = [
     slug: 'sodium-fluoride-vacuum-blood-collection-tube',
     categorySlug: 'vacuum-blood-collection-tubes',
     categoryName: 'Vacuum Blood Collection Tube',
-    name: 'Sodium Fluoride Vacuum Blood Collection Tube',
+    name: 'Sodium Fluoride',
     image: '/productImage/vaccum_tubes/fluoride-vacuum-blood-collection-tube-1740496500-7886414.jpg',
     images: [
       '/productImage/vaccum_tubes/fluoride-vacuum-blood-collection-tube-1740496500-7886414.jpg',
@@ -57,7 +57,7 @@ export const allProducts = [
     slug: 'k2-edta-vacuum-blood-collection-tube',
     categorySlug: 'vacuum-blood-collection-tubes',
     categoryName: 'Vacuum Blood Collection Tube',
-    name: '⁠K2 EDTA Vacuum Blood Collection Tube',
+    name: 'K2 EDTA',
     image: '/productImage/vaccum_tubes/k2-edta-vacuum-blood-collection-tube-1740491889-7886336.jpg',
     images: [
       '/productImage/vaccum_tubes/k2-edta-vacuum-blood-collection-tube-1740491889-7886336.jpg',
@@ -83,7 +83,7 @@ export const allProducts = [
     slug: 'k3-edta-vacuum-blood-collection-tube',
     categorySlug: 'vacuum-blood-collection-tubes',
     categoryName: 'Vacuum Blood Collection Tube',
-    name: 'K3 EDTA Vacuum Blood Collection Tube',
+    name: 'K3 EDTA',
     image: '/productImage/vaccum_tubes/k3-edta-vacuum-blood-collection-tubes-1740491241-7886279.jpg',
     images: [
       '/productImage/vaccum_tubes/k3-edta-vacuum-blood-collection-tubes-1740491241-7886279.jpg',
@@ -108,7 +108,7 @@ export const allProducts = [
     slug: 'plain-serum-vacuum-blood-collection-tube',
     categorySlug: 'vacuum-blood-collection-tubes',
     categoryName: 'Vacuum Blood Collection Tube',
-    name: 'Plain Serum Vacuum Blood Collection Tube',
+    name: 'Plain Serum',
     image: '/productImage/vaccum_tubes/vacuum-plain-serum-blood-collection-tube-1740637011-7886589.jpg',
     images: [
       '/productImage/vaccum_tubes/vacuum-plain-serum-blood-collection-tube-1740637011-7886589.jpg',
@@ -134,7 +134,7 @@ export const allProducts = [
     slug: 'sodium-fluoride-non-vacuum-blood-collection-tube',
     categorySlug: 'non-vacuum-blood-collection-tubes',
     categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
-    name: 'Sodium Fluoride Non-Vacuum Blood Collection Tube',
+    name: 'Sodium Fluoride',
     image: '/productImage/non_vaccum_tubes/fluoride-safety-cap-blood-collection-tube-1740581900-7886495.jpg',
     images: [
       '/productImage/non_vaccum_tubes/fluoride-safety-cap-blood-collection-tube-1740581900-7886495.jpg',
@@ -162,7 +162,7 @@ export const allProducts = [
     slug: 'clot-activator-non-vacuum-blood-collection-tube',
     categorySlug: 'non-vacuum-blood-collection-tubes',
     categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
-    name: 'Clot Activator Non-Vacuum Blood Collection Tube',
+    name: 'Clot Activator',
     image: '/productImage/non_vaccum_tubes/clot-activator-safety-cap-blood-collection-tube-1740581205-7886494.jpg',
     images: [
       '/productImage/non_vaccum_tubes/clot-activator-safety-cap-blood-collection-tube-1740581205-7886494.jpg',
@@ -190,7 +190,7 @@ export const allProducts = [
     slug: 'k2-edta-non-vacuum-blood-collection-tube',
     categorySlug: 'non-vacuum-blood-collection-tubes',
     categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
-    name: 'K2 EDTA Non-Vacuum Blood Collection Tube',
+    name: 'K2 EDTA',
     image: '/productImage/non_vaccum_tubes/k2-edta-safety-cap-blood-collection-tube-1740580690-7886490.jpg',
     images: [
       '/productImage/non_vaccum_tubes/k2-edta-safety-cap-blood-collection-tube-1740580690-7886490.jpg',
@@ -216,7 +216,7 @@ export const allProducts = [
     slug: 'k3-edta-non-vacuum-blood-collection-tube',
     categorySlug: 'non-vacuum-blood-collection-tubes',
     categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
-    name: '⁠K3 EDTA Non-Vacuum Blood Collection Tube',
+    name: 'K3 EDTA',
     image: '/productImage/non_vaccum_tubes/k3-edta-safety-cap-blood-collection-tube-1740580332-7886474.jpg',
     images: [
       '/productImage/non_vaccum_tubes/k3-edta-safety-cap-blood-collection-tube-1740580332-7886474.jpg',
@@ -242,7 +242,7 @@ export const allProducts = [
     slug: 'plain-non-vacuum-blood-collection-tube',
     categorySlug: 'non-vacuum-blood-collection-tubes',
     categoryName: '⁠Non-vacuum Safety Cap Blood Collection Tube',
-    name: 'Plain Non-Vacuum Blood Collection Tube',
+    name: 'Plain',
     image: '/productImage/non_vaccum_tubes/non-vacuum-double-cap-plain-blood-collection-tube-1740637631-7886598.jpg',
     images: [
       '/productImage/non_vaccum_tubes/non-vacuum-double-cap-plain-blood-collection-tube-1740637631-7886598.jpg',
@@ -268,7 +268,7 @@ export const allProducts = [
     slug: 'clot-activator-single-cap-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
     categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
-    name: 'Clot Activator Blood Collection Tube',
+    name: 'Clot Activator',
     image: '/productImage/single_cap_tubes/single-cap-clot-activator-blood-collection-tube-1740497900-7886439.jpg',
     images: [
       '/productImage/single_cap_tubes/single-cap-clot-activator-blood-collection-tube-1740497900-7886439.jpg',
@@ -293,7 +293,7 @@ export const allProducts = [
     slug: 'sodium-fluoride-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
     categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
-    name: 'Sodium Fluoride Blood Collection Tube',
+    name: 'Sodium Fluoride',
     image: '/productImage/single_cap_tubes/fluoride-single-cap-blood-collection-tube-1740498240-7886448.jpg',
     images: [
       '/productImage/single_cap_tubes/fluoride-single-cap-blood-collection-tube-1740498240-7886448.jpg',
@@ -319,7 +319,7 @@ export const allProducts = [
     slug: 'k2-edta-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
     categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
-    name: 'K2 EDTA Blood Collection Tube',
+    name: 'K2 EDTA',
     image: '/productImage/single_cap_tubes/k2-edta-single-cap-blood-collection-tube-1740497396-7886431.jpg',
     images: [
       '/productImage/single_cap_tubes/k2-edta-single-cap-blood-collection-tube-1740497396-7886431.jpg',
@@ -344,7 +344,7 @@ export const allProducts = [
     slug: 'k3-edta-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
     categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
-    name: 'K3 EDTA Blood Collection Tube',
+    name: 'K3 EDTA',
     image: '/productImage/single_cap_tubes/k3-edta-single-cap-tube-1740497811-7886427.jpg',
     images: [
       '/productImage/single_cap_tubes/k3-edta-single-cap-tube-1740497811-7886427.jpg',
@@ -369,7 +369,7 @@ export const allProducts = [
     slug: 'plain-serum-blood-collection-tube',
     categorySlug: 'single-cap-blood-collection-tubes',
     categoryName: 'Non-vacuum Single Cap Blood Collection Tube',
-    name: 'Plain Serum Blood Collection Tube',
+    name: 'Plain Serum',
     image: '/productImage/single_cap_tubes/plain-serum-blood-collection-tubes-1740637606-7886572.jpg',
     images: [
       '/productImage/single_cap_tubes/plain-serum-blood-collection-tubes-1740637606-7886572.jpg',

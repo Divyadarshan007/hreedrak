@@ -28,33 +28,33 @@ const Navbar = () => {
       name: 'Vacuum Blood Collection Tube',
       href: '/products/vacuum-blood-collection-tubes',
       subItems: [
-        { name: 'Clot Activator Vacuum Blood Collection Tube', href: '/products/vacuum-blood-collection-tubes/clot-activator-vacuum-blood-collection-tube' },
-        { name: 'Sodium Fluoride Vacuum Blood Collection Tube', href: '/products/vacuum-blood-collection-tubes/sodium-fluoride-vacuum-blood-collection-tube' },
-        { name: '⁠K2 EDTA Vacuum Blood Collection Tube', href: '/products/vacuum-blood-collection-tubes/k2-edta-vacuum-blood-collection-tube' },
-        { name: 'K3 EDTA Vacuum Blood Collection Tube', href: '/products/vacuum-blood-collection-tubes/k3-edta-vacuum-blood-collection-tube' },
-        { name: 'Plain Serum Vacuum Blood Collection Tube', href: '/products/vacuum-blood-collection-tubes/plain-serum-vacuum-blood-collection-tube' },
+        { name: 'Clot Activator', href: '/products/vacuum-blood-collection-tubes/clot-activator-vacuum-blood-collection-tube' },
+        { name: 'Sodium Fluoride', href: '/products/vacuum-blood-collection-tubes/sodium-fluoride-vacuum-blood-collection-tube' },
+        { name: 'K2 EDTA', href: '/products/vacuum-blood-collection-tubes/k2-edta-vacuum-blood-collection-tube' },
+        { name: 'K3 EDTA', href: '/products/vacuum-blood-collection-tubes/k3-edta-vacuum-blood-collection-tube' },
+        { name: 'Plain Serum', href: '/products/vacuum-blood-collection-tubes/plain-serum-vacuum-blood-collection-tube' },
       ],
     },
     {
       name: '⁠Non-vacuum Safety Cap Blood Collection Tube',
       href: '/products/non-vacuum-blood-collection-tubes',
       subItems: [
-        { name: 'Sodium Fluoride Non-Vacuum Blood Collection Tube', href: '/products/non-vacuum-blood-collection-tubes/sodium-fluoride-non-vacuum-blood-collection-tube' },
-        { name: 'Clot Activator Non-Vacuum Blood Collection Tube', href: '/products/non-vacuum-blood-collection-tubes/clot-activator-non-vacuum-blood-collection-tube' },
-        { name: 'K2 EDTA Non-Vacuum Blood Collection Tube', href: '/products/non-vacuum-blood-collection-tubes/k2-edta-non-vacuum-blood-collection-tube' },
-        { name: '⁠K3 EDTA Non-Vacuum Blood Collection Tube', href: '/products/non-vacuum-blood-collection-tubes/k3-edta-non-vacuum-blood-collection-tube' },
-        { name: 'Plain Non-Vacuum Blood Collection Tube', href: '/products/non-vacuum-blood-collection-tubes/plain-non-vacuum-blood-collection-tube' },
+        { name: 'Clot Activator', href: '/products/non-vacuum-blood-collection-tubes/clot-activator-non-vacuum-blood-collection-tube' },
+        { name: 'Sodium Fluoride', href: '/products/non-vacuum-blood-collection-tubes/sodium-fluoride-non-vacuum-blood-collection-tube' },
+        { name: 'K2 EDTA', href: '/products/non-vacuum-blood-collection-tubes/k2-edta-non-vacuum-blood-collection-tube' },
+        { name: 'K3 EDTA', href: '/products/non-vacuum-blood-collection-tubes/k3-edta-non-vacuum-blood-collection-tube' },
+        { name: 'Plain Serum', href: '/products/non-vacuum-blood-collection-tubes/plain-non-vacuum-blood-collection-tube' },
       ],
     },
     {
       name: 'Non-vacuum Single Cap Blood Collection Tube',
       href: '/products/single-cap-blood-collection-tubes',
       subItems: [
-        { name: 'Clot Activator Blood Collection Tube', href: '/products/single-cap-blood-collection-tubes/clot-activator-single-cap-blood-collection-tube' },
-        { name: 'Sodium Fluoride Blood Collection Tube', href: '/products/single-cap-blood-collection-tubes/sodium-fluoride-blood-collection-tube' },
-        { name: 'K2 EDTA Blood Collection Tube', href: '/products/single-cap-blood-collection-tubes/k2-edta-blood-collection-tube' },
-        { name: 'K3 EDTA Blood Collection Tube', href: '/products/single-cap-blood-collection-tubes/k3-edta-blood-collection-tube' },
-        { name: 'Plain Serum Blood Collection Tube', href: '/products/single-cap-blood-collection-tubes/plain-serum-blood-collection-tube' },
+        { name: 'Clot Activator', href: '/products/single-cap-blood-collection-tubes/clot-activator-single-cap-blood-collection-tube' },
+        { name: 'Sodium Fluoride', href: '/products/single-cap-blood-collection-tubes/sodium-fluoride-blood-collection-tube' },
+        { name: 'K2 EDTA', href: '/products/single-cap-blood-collection-tubes/k2-edta-blood-collection-tube' },
+        { name: 'K3 EDTA', href: '/products/single-cap-blood-collection-tubes/k3-edta-blood-collection-tube' },
+        { name: 'Plain Serum', href: '/products/single-cap-blood-collection-tubes/plain-serum-blood-collection-tube' },
       ],
     },
     {
@@ -213,7 +213,7 @@ const Navbar = () => {
                 <div key={cat.name}>
                   <Link
                     to={cat.href}
-                    className="block text-[10px] font-bold uppercase tracking-[0.15em] mb-3 hover:underline"
+                    className="block text-[12px] font-bold uppercase tracking-[0.15em] mb-3 hover:underline"
                     style={{ color: '#034DA2' }}
                     onClick={() => setProductsOpen(false)}
                   >
@@ -239,7 +239,7 @@ const Navbar = () => {
 
               {/* Fourth column: other products */}
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-3" style={{ color: '#034DA2' }}>
+                <p className="text-[12px] font-bold uppercase tracking-[0.15em] mb-3" style={{ color: '#034DA2' }}>
                   More
                 </p>
                 {otherCategories.map((cat) => (
