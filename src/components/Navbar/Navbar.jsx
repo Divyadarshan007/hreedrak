@@ -213,7 +213,7 @@ const Navbar = () => {
                 <div key={cat.name}>
                   <Link
                     to={cat.href}
-                    className="block text-[12px] font-bold uppercase tracking-[0.15em] mb-3 hover:underline"
+                    className="block text-[16px] font-bold uppercase tracking-[0.15em] mb-3 hover:underline"
                     style={{ color: '#034DA2' }}
                     onClick={() => setProductsOpen(false)}
                   >
@@ -239,7 +239,7 @@ const Navbar = () => {
 
               {/* Fourth column: other products */}
               <div>
-                <p className="text-[12px] font-bold uppercase tracking-[0.15em] mb-3" style={{ color: '#034DA2' }}>
+                <p className="text-[16px] font-bold uppercase tracking-[0.15em] mb-3" style={{ color: '#034DA2' }}>
                   More
                 </p>
                 {otherCategories.map((cat) => (
