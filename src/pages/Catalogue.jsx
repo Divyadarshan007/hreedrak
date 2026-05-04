@@ -5,40 +5,18 @@ const categories = [
   'Vacuum Blood Collection Tube',
   '⁠Non-vacuum Safety Cap Blood Collection Tube',
   'Non-vacuum Single Cap Blood Collection Tube',
+  'Micro/ Pediatric Tube',
   'Polystyrene Disposable ESR Pipette',
 ]
 
 const Catalogue = () => {
   const grouped = categories.map((cat) => ({
     name: cat,
-    products: allProducts.filter((p) => p.categoryName === cat || p.categoryName.replace(' ', ' ') === cat),
+    products: allProducts.filter((p) => p.categoryName === cat),
   }))
 
-  const getNecessaryFields = (product) => {
-    const fields = []
-    
-    // Default mappings based on the provided image
-    if (product.moq) fields.push({ label: 'MIN. ORDER', value: product.moq })
-    
-    // Combine specs and details
-    const allInfo = [...(product.specs || []), ...(product.details || [])]
-    
-    const targetLabels = [
-      'Material',
-      'Size',
-      'Feature',
-      'Packaging Details',
-      'Height'
-    ]
-
-    targetLabels.forEach(label => {
-      const found = allInfo.find(info => info.label.toLowerCase() === label.toLowerCase())
-      if (found) {
-        fields.push({ label: label.toUpperCase(), value: found.value })
-      }
-    })
-
-    return fields
+  const getAllFields = (product) => {
+    return [...(product.specs || []), ...(product.details || [])]
   }
 
   return (
@@ -79,7 +57,7 @@ const Catalogue = () => {
               </p>
               <p className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#034DA2]"></span>
-                Phone: 08048116653 | Email: hreedrakbioscience@gmail.com
+                Phone: +91 98251 56800 | Email: info@hreedrak.com
               </p>
               <p className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#034DA2]"></span>
@@ -109,12 +87,12 @@ const Catalogue = () => {
 
             <div className="space-y-24 print:space-y-0">
               {group.products.map((product, index) => {
-                const fields = getNecessaryFields(product)
+                const fields = getAllFields(product)
                 const isEven = index % 2 === 0
 
                 return (
-                  <div 
-                    key={product.id} 
+                  <div
+                    key={product.id}
                     className={`flex flex-col md:flex-row gap-8 md:gap-16 items-start print:flex-row print:gap-10 print:py-12 print:border-b print:border-gray-100 print:break-inside-avoid ${!isEven ? 'md:flex-row-reverse print:flex-row-reverse' : ''}`}
                   >
                     {/* Product Image */}
@@ -130,14 +108,21 @@ const Catalogue = () => {
 
                     {/* Product Content */}
                     <div className="flex-1 print:w-[70%]">
-                      <h3 className="text-2xl font-extrabold text-[#231F20] mb-6 border-b pb-4 print:text-xl print:mb-4">
-                        {product.name}
-                      </h3>
-                      
-                      <div className="grid grid-cols-1 gap-y-3">
+                      <div className="border-b pb-4 mb-6 print:mb-4">
+                        <h3 className="text-2xl font-extrabold text-[#231F20] print:text-xl">
+                          {product.name}
+                        </h3>
+                        {product.price && (
+                          <p className="mt-1 text-sm font-bold text-[#034DA2] print:text-[11px]">
+                            Price: {product.price} / Piece
+                          </p>
+                        )}
+                      </div>
+
+                      <div className="grid grid-cols-1 gap-y-3 mb-6">
                         {fields.map((field, fIdx) => (
                           <div key={fIdx} className="flex items-start gap-4 text-sm">
-                            <span className="w-40 font-black text-gray-900 uppercase tracking-tighter shrink-0 print:w-32 print:text-[11px]">
+                            <span className="w-44 font-black text-gray-900 uppercase tracking-tighter shrink-0 print:w-36 print:text-[11px]">
                               {field.label}
                             </span>
                             <span className="text-gray-400 font-bold shrink-0">:</span>
@@ -148,10 +133,16 @@ const Catalogue = () => {
                         ))}
                       </div>
 
+                      {product.description && (
+                        <p className="text-sm text-gray-600 leading-relaxed border-t pt-4 print:text-[10px] print:pt-3">
+                          {product.description}
+                        </p>
+                      )}
+
                       {/* Web-only view details link */}
                       <Link
                         to={`/products/${product.categorySlug}/${product.slug}`}
-                        className="no-print inline-flex items-center gap-2 mt-8 text-[#034DA2] font-bold hover:gap-4 transition-all"
+                        className="no-print inline-flex items-center gap-2 mt-6 text-[#034DA2] font-bold hover:gap-4 transition-all"
                       >
                         View More Details
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,22 +1,32 @@
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+
+const slides = ['/hero_banner_1.jpg', '/hero_banner_2.png']
 
 const Hero = () => {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev + 1) % slides.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section
       id="hero"
       className="relative flex items-center min-h-[90vh] overflow-hidden bg-[#231F20]"
     >
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/banner.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {/* Background Carousel */}
+      {slides.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt=""
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === current ? 'opacity-100' : 'opacity-0'}`}
+        />
+      ))}
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#231F20]/50 z-[1]" />

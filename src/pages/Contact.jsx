@@ -21,8 +21,8 @@ const contactDetails = [
       </svg>
     ),
     label: 'Call Us',
-    value: '08048116653',
-    href: 'tel:08048116653',
+    value: '+91 98251 56800',
+    href: 'tel:+919825156800',
   },
   {
     icon: (
@@ -31,8 +31,8 @@ const contactDetails = [
       </svg>
     ),
     label: 'Email',
-    value: 'hreedrakbioscience@gmail.com',
-    href: 'mailto:hreedrakbioscience@gmail.com',
+    value: 'info@hreedrak.com',
+    href: 'mailto:info@hreedrak.com',
   },
 ]
 
@@ -94,7 +94,7 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col bg-[#EEF3FA]">
       <SEOMeta
         title="Contact Us — Get in Touch"
-        description="Contact Hreedrak Bioscience for blood collection tube enquiries. Phone: 08048116653. Email: hreedrakbioscience@gmail.com. Based in Surat, Gujarat, India."
+        description="Contact Hreedrak Bioscience for blood collection tube enquiries. Phone: +91 98251 56800. Email: info@hreedrak.com. Based in Surat, Gujarat, India."
         canonical="/contact"
       />
       {/* Hero Banner */}

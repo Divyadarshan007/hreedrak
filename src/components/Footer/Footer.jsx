@@ -1,17 +1,5 @@
 import { motion } from 'framer-motion'
 
-const socialLinks = [
-  {
-    name: 'Facebook',
-    url: 'https://www.facebook.com/share/1CBMgSvKbg/?mibextid=wwXIfr',
-    icon: (
-      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-      </svg>
-    ),
-  },
-]
-
 const Footer = () => {
   return (
     <footer className="bg-[#231F20] text-white" id="footer">
@@ -46,28 +34,6 @@ const Footer = () => {
             <p className="text-gray-400 text-xs leading-relaxed mb-6">
               Having experience for more than 10 years, we are manufacturers, exporters & wholesalers of CDSCO-certified blood collection tubes — serving diagnostic labs and hospitals worldwide from Surat, Gujarat, India.
             </p>
-            <p className="text-gray-500 text-[10px] font-semibold uppercase tracking-widest mb-3">Follow Us</p>
-            <div className="flex gap-2 flex-wrap">
-              {socialLinks.map((s) => {
-                const brandColors = {
-                  'Facebook': '#1877F2',
-                }
-                const c = brandColors[s.name] || '#555'
-                return (
-                  <a
-                    key={s.name}
-                    href={s.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={s.name}
-                    className="w-8 h-8 rounded flex items-center justify-center text-white transition-all hover:scale-110"
-                    style={{ backgroundColor: c }}
-                  >
-                    {s.icon}
-                  </a>
-                )
-              })}
-            </div>
           </div>
 
           {/* Col 2: Products */}
@@ -129,8 +95,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-gray-500 text-xs mb-0.5">Email</p>
-                  <a href="mailto:hreedrakbioscience@gmail.com" className="text-gray-300 text-sm hover:text-[#FDB813] transition-colors">
-                    hreedrakbioscience@gmail.com
+                  <a href="mailto:info@hreedrak.com" className="text-gray-300 text-sm hover:text-[#FDB813] transition-colors">
+                    info@hreedrak.com
                   </a>
                 </div>
               </div>
@@ -142,8 +108,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-gray-500 text-xs mb-0.5">Phone</p>
-                  <a href="tel:08048116653" className="text-gray-300 text-sm hover:text-[#00A650] transition-colors">
-                    08048116653
+                  <a href="tel:+919825156800" className="text-gray-300 text-sm hover:text-[#00A650] transition-colors">
+                    +91 98251 56800
                   </a>
                 </div>
               </div>

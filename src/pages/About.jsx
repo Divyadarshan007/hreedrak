@@ -117,7 +117,7 @@ const faqs = [
   },
   {
     q: 'How can I place an order?',
-    a: 'You can place an order by contacting us via email at hreedrakbioscience@gmail.com or calling 08048116653.',
+    a: 'You can place an order by contacting us via email at info@hreedrak.com or calling +91 98251 56800.',
   },
 ]
 
@@ -272,8 +272,8 @@ const ContactSection = () => (
               </span>
               <div>
                 <p className="text-xs uppercase font-bold tracking-wider" style={{ color: GRAY }}>Call Us</p>
-                <a href="tel:08048116653" className="text-lg font-bold hover:underline transition-colors" style={{ color: PRIMARY }}>
-                  08048116653
+                <a href="tel:+919825156800" className="text-lg font-bold hover:underline transition-colors" style={{ color: PRIMARY }}>
+                  +91 98251 56800
                 </a>
               </div>
             </div>
@@ -286,8 +286,8 @@ const ContactSection = () => (
               </span>
               <div>
                 <p className="text-xs uppercase font-bold tracking-wider" style={{ color: GRAY }}>E-mail</p>
-                <a href="mailto:hreedrakbioscience@gmail.com" className="text-base font-bold hover:underline break-all transition-colors" style={{ color: PRIMARY }}>
-                  hreedrakbioscience@gmail.com
+                <a href="mailto:info@hreedrak.com" className="text-base font-bold hover:underline break-all transition-colors" style={{ color: PRIMARY }}>
+                  info@hreedrak.com
                 </a>
               </div>
             </div>
