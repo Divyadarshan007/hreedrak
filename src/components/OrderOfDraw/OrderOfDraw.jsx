@@ -4,14 +4,14 @@ const OrderOfDraw = () => {
   const watermarkText = "HREEDRAK"
 
   const tubes = [
-    { color: '#5299C1', label: 'Light Blue', name: 'Coagulation' },
-    { color: '#000110', label: 'Black', name: 'ESR' },
-    { color: '#A32115', label: 'Red', name: 'Plain' },
-    { color: '#A32115', label: 'Red', name: 'Red' },
-    { color: '#E6C874', label: 'Yellow', name: 'SST' },
+    { color: '#5299C1', label: 'Light Blue', name: 'Sodium Citrate 3.2%' },
+    { color: '#000110', label: 'Black', name: 'Sodium Citrate 3.8%' },
+    { color: '#A32115', label: 'Red', name: 'Clot Activator' },
+    { color: '#A32115', label: 'Red', name: 'Clot Activator' },
+    { color: '#E6C874', label: 'Yellow', name: 'Gel + Clot Activator' },
     { color: '#2D6830', label: 'Green', name: 'Heparin' },
-    { color: '#724A82', label: 'Purple', name: 'EDTA' },
-    { color: '#7F7F7F', label: 'Grey', name: 'Fluoride' },
+    { color: '#724A82', label: 'Purple', name: 'K2/K3 EDTA' },
+    { color: '#7F7F7F', label: 'Grey', name: 'Sodium Fluoride' },
   ]
 
   return (
@@ -43,7 +43,7 @@ const OrderOfDraw = () => {
               <div key={index} className="flex items-center flex-nowrap relative">
                 {/* Watermark Letter */}
                 <span
-                  className={`absolute left-1/2 top-1/2 -translate-y-1/3 text-[130px] font-black select-none pointer-events-none z-0 ${watermarkText[index] === 'K' ? 'translate-x-[-10%]' : '-translate-x-1/2'}`}
+                  className={`absolute left-1/2 top-28 -translate-y-1/3 text-[130px] font-black select-none pointer-events-none z-0 ${watermarkText[index] === 'K' ? 'translate-x-[-10%]' : '-translate-x-1/2'}`}
                   style={{ color: tube.color, opacity: 0.85 }}
                 >
                   {watermarkText[index]}
@@ -74,6 +74,13 @@ const OrderOfDraw = () => {
                       <div className="w-full h-1/3 bg-gradient-to-b from-[#880808] to-[#4a0404] opacity-95 rounded-b-[inherit] shadow-inner mb-px"></div>
                     </div>
                   </div>
+                  {/* Tube Name Below */}
+                  <div className="mt-3 w-16 text-center relative z-10">
+                    <p className="text-[12px] font-bold leading-tight break-words text-gray-700">
+                      {tube.name}
+                    </p>
+                  </div>
+
                 </div>
 
                 {/* Animated Arrow */}
