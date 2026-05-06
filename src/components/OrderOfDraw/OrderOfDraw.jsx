@@ -38,7 +38,7 @@ const OrderOfDraw = () => {
 
         <div className="relative w-full px-4 md:px-6">
           {/* Scrollable container for mobile, wrapped for desktop */}
-          <div className="flex items-center justify-start md:justify-center gap-y-12 gap-x-1 md:gap-x-4 flex-nowrap overflow-x-auto pb-12 md:pb-0 no-scrollbar scroll-smooth relative z-10 px-4">
+          <div className="flex items-center justify-start min-[1400px]:justify-center gap-y-12 gap-x-1 md:gap-x-2 lg:gap-x-4 flex-nowrap overflow-x-auto min-[1400px]:overflow-x-visible pb-12 md:pb-0 no-scrollbar scroll-smooth relative z-10 px-4">
             {tubes.map((tube, index) => (
               <div key={index} className="flex items-center flex-nowrap relative">
                 {/* Watermark Letter */}
@@ -50,7 +50,7 @@ const OrderOfDraw = () => {
                 </span>
 
                 {/* Tube Component */}
-                <div className="flex flex-col items-center relative z-10 mx-4">
+                <div className="flex flex-col items-center relative z-10 mx-1 md:mx-2 lg:mx-4">
                   <div className="relative group cursor-help transition-transform duration-300 hover:scale-105">
                     {/* Tube Cap */}
                     <div
@@ -85,7 +85,7 @@ const OrderOfDraw = () => {
 
                 {/* Animated Arrow */}
                 {index < tubes.length - 1 && (
-                  <div className="flex items-center justify-center w-8 md:w-16 h-full relative z-10">
+                  <div className="flex items-center justify-center w-8 md:w-12 lg:w-16 h-full relative z-10">
                     <svg
                       className="w-6 h-6 text-gray-400 animate-slide-right"
                       fill="none"
