@@ -38,12 +38,12 @@ const OrderOfDraw = () => {
 
         <div className="relative w-full px-4 md:px-6">
           {/* Scrollable container for mobile, wrapped for desktop */}
-          <div className="flex items-center justify-center gap-y-12 gap-x-2 md:gap-x-4 flex-nowrap md:flex-wrap overflow-x-auto md:overflow-x-visible pb-8 md:pb-0 no-scrollbar scroll-smooth relative z-10">
+          <div className="flex items-center justify-start md:justify-center gap-y-12 gap-x-1 md:gap-x-4 flex-nowrap overflow-x-auto pb-12 md:pb-0 no-scrollbar scroll-smooth relative z-10 px-4">
             {tubes.map((tube, index) => (
               <div key={index} className="flex items-center flex-nowrap relative">
                 {/* Watermark Letter */}
                 <span
-                  className={`absolute left-1/2 top-28 -translate-y-1/3 text-[130px] font-black select-none pointer-events-none z-0 ${watermarkText[index] === 'K' ? 'translate-x-[-10%]' : '-translate-x-1/2'}`}
+                  className={`absolute left-1/2 top-24 md:top-28 -translate-y-1/3 text-[90px] md:text-[130px] font-black select-none pointer-events-none z-0 ${watermarkText[index] === 'K' ? 'translate-x-[-10%]' : '-translate-x-1/2'}`}
                   style={{ color: tube.color, opacity: 0.85 }}
                 >
                   {watermarkText[index]}
@@ -54,7 +54,7 @@ const OrderOfDraw = () => {
                   <div className="relative group cursor-help transition-transform duration-300 hover:scale-105">
                     {/* Tube Cap */}
                     <div
-                      className="w-12 h-14 rounded-t-xl mb-0 relative overflow-hidden"
+                      className="w-10 md:w-12 h-12 md:h-14 rounded-t-xl mb-0 relative overflow-hidden"
                       style={{
                         background: tube.color
                       }}
@@ -62,7 +62,7 @@ const OrderOfDraw = () => {
                     </div>
 
                     {/* Tube Body */}
-                    <div className="w-11 h-40 bg-gradient-to-r from-gray-100/40 via-white/20 to-gray-200/40 border border-gray-200/50 rounded-b-3xl mx-auto shadow-xl relative flex flex-col justify-end p-0.5 backdrop-blur-[2px]">
+                    <div className="w-9 md:w-11 h-32 md:h-40 bg-gradient-to-r from-gray-100/40 via-white/20 to-gray-200/40 border border-gray-200/50 rounded-b-3xl mx-auto shadow-xl relative flex flex-col justify-end p-0.5 backdrop-blur-[2px]">
                       {/* Glass Shine */}
                       <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/30 to-transparent pointer-events-none rounded-b-3xl"></div>
                       <div className="absolute top-0 left-2 w-1 h-[90%] bg-white/40 blur-[1px] rounded-full"></div>
@@ -75,8 +75,8 @@ const OrderOfDraw = () => {
                     </div>
                   </div>
                   {/* Tube Name Below */}
-                  <div className="mt-3 w-16 text-center relative z-10">
-                    <p className="text-[12px] font-bold leading-tight break-words text-gray-700">
+                  <div className="mt-4 text-center relative z-10 min-h-[3rem] flex items-start justify-center">
+                    <p className="text-[13px] md:text-[17px] font-bold leading-tight text-gray-700 max-w-[90px] md:max-w-[120px]">
                       {tube.name}
                     </p>
                   </div>
@@ -85,7 +85,7 @@ const OrderOfDraw = () => {
 
                 {/* Animated Arrow */}
                 {index < tubes.length - 1 && (
-                  <div className="flex items-center justify-center w-10 md:w-16 h-full relative z-10">
+                  <div className="flex items-center justify-center w-8 md:w-16 h-full relative z-10">
                     <svg
                       className="w-6 h-6 text-gray-400 animate-slide-right"
                       fill="none"
