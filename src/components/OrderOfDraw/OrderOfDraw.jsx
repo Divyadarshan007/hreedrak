@@ -36,21 +36,21 @@ const OrderOfDraw = () => {
           </p>
         </div>
 
-        <div className="relative w-full px-4 md:px-6">
-          {/* Scrollable container for mobile, wrapped for desktop */}
-          <div className="flex items-center justify-start min-[1400px]:justify-center gap-y-12 gap-x-1 md:gap-x-2 lg:gap-x-4 flex-nowrap overflow-x-auto min-[1400px]:overflow-x-visible pb-12 md:pb-0 no-scrollbar scroll-smooth relative z-10 px-4">
+        <div className="relative w-full px-4 md:px-8">
+          {/* Scrollable container for mobile, centered for desktop */}
+          <div className="flex items-center justify-start md:justify-center gap-y-12 flex-nowrap overflow-x-auto pb-12 md:pb-0 no-scrollbar scroll-smooth relative z-10">
             {tubes.map((tube, index) => (
-              <div key={index} className="flex items-center flex-nowrap relative">
+              <div key={index} className="flex-none w-[130px] md:w-[155px] flex items-center justify-center relative">
                 {/* Watermark Letter */}
                 <span
-                  className={`absolute left-1/2 top-24 md:top-28 -translate-y-1/3 text-[90px] md:text-[130px] font-black select-none pointer-events-none z-0 ${watermarkText[index] === 'K' ? 'translate-x-[-10%]' : '-translate-x-1/2'}`}
+                  className="absolute md:left-28 left-24 top-24 md:top-28 -translate-y-1/3 -translate-x-1/2 text-[90px] md:text-[130px] font-black select-none pointer-events-none z-0"
                   style={{ color: tube.color, opacity: 0.85 }}
                 >
                   {watermarkText[index]}
                 </span>
 
                 {/* Tube Component */}
-                <div className="flex flex-col items-center relative z-10 mx-1 md:mx-2 lg:mx-4">
+                <div className="flex flex-col items-center relative z-10">
                   <div className="relative group cursor-help transition-transform duration-300 hover:scale-105">
                     {/* Tube Cap */}
                     <div
@@ -75,8 +75,8 @@ const OrderOfDraw = () => {
                     </div>
                   </div>
                   {/* Tube Name Below */}
-                  <div className="mt-4 text-center relative z-10 min-h-[3rem] flex items-start justify-center">
-                    <p className="text-[13px] md:text-[17px] font-bold leading-tight text-gray-700 max-w-[90px] md:max-w-[120px]">
+                  <div className="mt-4 text-center left-7 relative z-10 min-h-[3rem] flex items-start justify-center">
+                    <p className="text-[13px] md:text-[19px] font-bold leading-tight text-gray-700 max-w-[90px] md:max-w-[120px]">
                       {tube.name}
                     </p>
                   </div>
@@ -85,9 +85,9 @@ const OrderOfDraw = () => {
 
                 {/* Animated Arrow */}
                 {index < tubes.length - 1 && (
-                  <div className="flex items-center justify-center w-8 md:w-12 lg:w-16 h-full relative z-10">
+                  <div className="absolute -right-4 md:-right-6 lg:-right-8 top-1/2 -translate-y-1/2 flex items-center justify-center z-10">
                     <svg
-                      className="w-6 h-6 text-gray-400 animate-slide-right"
+                      className="w-5 h-5 md:w-6 md:h-6 text-gray-400 animate-slide-right"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
