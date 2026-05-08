@@ -14,5 +14,7 @@ export default defineConfig({
     host: true,
     port: Number(process.env.PORT) || 4051,
     strictPort: true,
+    // Required when accessed via real domain through Nginx (Host header check).
+    allowedHosts: ['hreedrak.com', 'www.hreedrak.com'],
   },
 })
