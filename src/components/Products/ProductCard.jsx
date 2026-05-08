@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom'
 const ProductCard = ({ product }) => {
   // Extract Material from specs or use default
   const material = product.specs?.find(s => s.label === 'Material')?.value || 'PET/PP/PS'
-  // Format MOQ to "XXXX Piece/MOQ"
-  const moqFormatted = `${product.moq.split(' ')[0]} Piece/MOQ`
   
   return (
     <Link 
@@ -34,18 +32,12 @@ const ProductCard = ({ product }) => {
           </h3>
         </div>
 
-        {/* Material & MOQ - Enhanced visibility with larger text */}
+        {/* Material - Enhanced visibility with larger text */}
         <div className="space-y-2.5">
           <div className="flex items-center gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-gray-300" />
             <div className="flex items-center gap-2">
               <span className="text-[15px] font-bold text-gray-800 leading-none">{material}</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-2.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-gray-300" />
-            <div className="flex items-center gap-2">
-              <span className="text-[15px] font-bold text-gray-800 leading-none">{moqFormatted}</span>
             </div>
           </div>
         </div>

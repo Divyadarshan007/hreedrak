@@ -157,7 +157,7 @@ const ProductDetail = () => {
     <div className="min-h-screen flex flex-col bg-white">
       <SEOMeta
         title={product.name}
-        description={`Buy ${product.name} from Hreedrak Bioscience. MOQ: ${product.moq}. CDSCO certified, CE marked, manufactured in ISO 7 clean room, Surat, India.`}
+        description={`Buy ${product.name} from Hreedrak Bioscience. CDSCO certified, CE marked, manufactured in ISO 7 clean room, Surat, India.`}
         canonical={`/products/${categorySlug}/${productSlug}`}
         ogImage={`https://www.hreedrakbioscience.com${product.image}`}
         structuredData={structuredData}
@@ -185,7 +185,7 @@ const ProductDetail = () => {
         {/* ── PRODUCT DETAIL — specs left, images right ── */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
 
-          {/* Product header: category + name + price + MOQ */}
+          {/* Product header: category + name + price */}
           <div className="mb-8 pb-6 border-b border-gray-100">
             <p className="text-[16px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: ACCENT }}>
               {product.categoryName}

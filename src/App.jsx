@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import Layout from './components/Layout/Layout'
 import Home from './pages/Home'
@@ -42,6 +42,9 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/request-quote" element={<RequestQuote />} />
+          
+          {/* 404 Fallback - Redirect to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Layout>
     </BrowserRouter>

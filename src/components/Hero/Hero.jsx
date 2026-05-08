@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-const slides = ['/hero_banner_1.jpg', '/hero_banner_2.png']
+const slides = ['/hero_banner_1.png', '/hero_banner_2.png']
 
 const Hero = () => {
   const [current, setCurrent] = useState(0)

@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
       {!isCataloguePage && (
         <>
           <Certifications />
-          <Testimonials />
+          {/* <Testimonials /> */}
           <Footer />
         </>
       )}
