@@ -23,7 +23,7 @@ const sloganItems = [
 
 const SloganSection = () => {
   return (
-    <section className="py-16 lg:py-24 bg-white overflow-hidden">
+    <section className="py-8 lg:py-24 bg-white overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ const SloganSection = () => {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-6 lg:mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-[#ED1B24]" />
             <p className="text-[#ED1B24] text-xs font-bold uppercase tracking-[0.3em]">OUR PHILOSOPHY</p>

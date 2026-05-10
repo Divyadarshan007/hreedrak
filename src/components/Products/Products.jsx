@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
+const placeholderImg = '/elementor-placeholder-image.png'
+
 const productCategories = {
   vacuum: [
     { id: 1, name: 'K2 EDTA Vacuum Blood Collection Tube', image: '/productImage/vaccum_tubes/k2-edta-vacuum-blood-collection-tube-1740491889-7886336.jpg', price: '₹2.75 – ₹4.00 / piece', slug: 'k2-edta-vacuum-blood-collection-tube', categorySlug: 'vacuum-blood-collection-tubes' },
@@ -103,9 +105,10 @@ function InquireModal({ product, onClose }) {
             </div>
             <div className="flex-1 flex items-center justify-center">
               <img
-                src={product.image}
+                src={product.image || placeholderImg}
                 alt={product.name}
                 className="h-44 w-auto object-contain"
+                onError={(e) => { e.target.src = placeholderImg }}
               />
             </div>
           </div>
@@ -202,7 +205,7 @@ const Products = () => {
   const navigate = useNavigate()
 
   return (
-    <section className="py-16 lg:py-20 bg-[#EEF3FA]" id="products">
+    <section className="py-8 lg:py-24 bg-[#EEF3FA]" id="products">
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -212,7 +215,7 @@ const Products = () => {
       >
 
         {/* Section header */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="flex flex-col items-center text-center mb-6 lg:mb-16">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-0.5 bg-[#034DA2]" />
             <p className="text-[#034DA2] text-xs font-bold uppercase tracking-[0.3em]">OUR PRODUCTS</p>
@@ -253,7 +256,12 @@ const Products = () => {
               className="bg-white rounded-lg p-5 flex flex-col items-center text-center hover:shadow-xl transition-shadow border border-[#A8C4E8] cursor-pointer"
             >
               <div className="mb-4">
-                <img src={product.image} alt={product.name} className="h-40 w-auto mx-auto object-contain" />
+                <img 
+                  src={product.image || placeholderImg} 
+                  alt={product.name} 
+                  className="h-40 w-auto mx-auto object-contain" 
+                  onError={(e) => { e.target.src = placeholderImg }}
+                />
               </div>
               <h3 className="text-xs font-bold text-[#231F20] mb-1 leading-snug flex-1">{product.name}</h3>
               <button

@@ -42,7 +42,7 @@ const solutions = [
 
 const Solutions = () => {
   return (
-    <section id="solutions" className="bg-white py-16 lg:py-24">
+    <section id="solutions" className="bg-white py-8 lg:py-24">
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ const Solutions = () => {
       >
 
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="flex flex-col items-center text-center mb-6 lg:mb-16">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-0.5 bg-[#993F97]" />
             <p className="text-[#993F97] text-xs font-bold uppercase tracking-[0.3em]">SOLUTIONS</p>

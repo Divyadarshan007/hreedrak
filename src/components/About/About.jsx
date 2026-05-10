@@ -29,7 +29,7 @@ const About = () => {
   const navigate = useNavigate()
 
   return (
-    <section id="about" className="bg-white py-16 lg:py-24 overflow-hidden">
+    <section id="about" className="bg-white py-8 lg:py-24 overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ const About = () => {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="flex flex-col items-center text-center mb-6 lg:mb-16">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-[#ED1B24]" />
             <p className="text-[#ED1B24] text-xs font-bold uppercase tracking-[0.3em]">ABOUT US</p>

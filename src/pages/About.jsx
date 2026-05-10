@@ -190,7 +190,7 @@ const profileItems = [
 
 /* ── Sub-components ────────────────────────────────────────────── */
 const SectionLabel = ({ number, title, centered = false }) => (
-  <div className={`flex items-center gap-4 mb-6 ${centered ? 'justify-center' : ''}`}>
+  <div className={`flex items-center gap-4 mb-4 ${centered ? 'justify-center' : ''}`}>
     <div
       className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm"
       style={{ backgroundColor: PRIMARY }}
@@ -250,7 +250,7 @@ const ContactSection = () => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.6 }}
-    className="py-12"
+    className="py-8"
   >
     <SectionLabel number="08" title="Contact Us" centered />
     <div className="rounded-3xl overflow-hidden border border-gray-100 shadow-xl bg-white max-w-4xl mx-auto">
@@ -367,7 +367,7 @@ const About = () => {
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
 
-          <div className="space-y-24 lg:space-y-32">
+          <div className="space-y-12 lg:space-y-32">
 
             {/* 01 — About Us (Text Left, Image Right) */}
             <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center overflow-hidden">

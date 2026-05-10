@@ -35,13 +35,7 @@ const NonVacuumBloodCollectionTubes = () => {
 
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-14">
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Our Collection</h2>
-            <p className="text-gray-500 font-medium tracking-wide italic">Showing all {nonVacuumProducts.length} high-quality results</p>
-          </div>
-          <div className="h-1 w-20 bg-primary rounded-full hidden md:block" />
-        </div>
+
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

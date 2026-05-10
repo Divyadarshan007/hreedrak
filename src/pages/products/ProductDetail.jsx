@@ -4,6 +4,8 @@ import { findProduct, getRelatedProducts } from '../../data/products'
 import SEOMeta from '../../components/SEO/SEOMeta'
 import ProductCard from '../../components/Products/ProductCard'
 
+const placeholderImg = '/elementor-placeholder-image.png'
+
 /* ── Palette ─────────────────────────────────────────────────────
    PRIMARY  #034DA2   FONT  #231F20   ACCENT  #ED1B24
    GREEN    #00A650   GRAY  #6D6E72
@@ -22,7 +24,9 @@ const ProductDetail = () => {
   useLayoutEffect(() => { window.scrollTo(0, 0); setActiveImg(0) }, [productSlug])
 
   const [activeImg, setActiveImg] = useState(0)
-  const images = product?.images ?? [product?.image]
+  const images = (product?.images && product.images.length > 0 && product.images[0] !== '') 
+    ? product.images 
+    : [product?.image || placeholderImg]
 
   const [form, setForm] = useState({
     name: '', email: '', mobile: '', quantity: '', purpose: '',
@@ -331,7 +335,12 @@ const ProductDetail = () => {
                       className="relative z-[1] rounded-2xl overflow-hidden border-2 shadow-xl"
                       style={{ backgroundColor: '#EEF3FA', borderColor: '#C5D6F0' }}
                     >
-                      <img src={images[0]} alt={product.name} className="w-full h-auto object-cover" />
+                      <img 
+                        src={images[0]} 
+                        alt={product.name} 
+                        className="w-full h-auto object-cover" 
+                        onError={(e) => { e.target.src = placeholderImg }}
+                      />
 
                     </div>
                   </div>
@@ -346,7 +355,12 @@ const ProductDetail = () => {
                         style={{ backgroundColor: '#EEF3FA', borderColor: '#C5D6F0' }}
                         onClick={() => setActiveImg(i + 1)}
                       >
-                        <img src={img} alt={product.name} className="w-full h-full object-cover" />
+                        <img 
+                          src={img || placeholderImg} 
+                          alt={product.name} 
+                          className="w-full h-full object-cover" 
+                          onError={(e) => { e.target.src = placeholderImg }}
+                        />
                       </div>
                     ))}
                   </div>
@@ -378,7 +392,12 @@ const ProductDetail = () => {
                     className="group bg-white border border-gray-100 rounded-2xl p-5 flex flex-col items-center hover:shadow-xl hover:border-primary/20 transition-all duration-300"
                   >
                     <div className="h-36 w-full rounded-xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-105" style={{ backgroundColor: '#F8FAFC' }}>
-                      <img src={p.image} alt={p.name} className="h-24 w-auto object-contain" />
+                      <img 
+                        src={p.image || placeholderImg} 
+                        alt={p.name} 
+                        className="h-24 w-auto object-contain" 
+                        onError={(e) => { e.target.src = placeholderImg }}
+                      />
                     </div>
                     <h3 className="text-[14px] text-center font-bold text-gray-900 mb-6 leading-tight flex-1 line-clamp-2">
                       {p.name}
@@ -444,7 +463,12 @@ const ProductDetail = () => {
               <div className="sm:w-48 border-r border-gray-200 p-4 flex flex-col items-center justify-center gap-3" style={{ backgroundColor: '#EEF3FA' }}>
                 <p className="text-sm font-semibold text-center leading-snug" style={{ color: FONT }}>{product.name}</p>
                 <div className="w-28 h-28 flex items-center justify-center">
-                  <img src={product.image} alt={product.name} className="h-24 w-auto object-contain" />
+                  <img 
+                    src={product.image || placeholderImg} 
+                    alt={product.name} 
+                    className="h-24 w-auto object-contain" 
+                    onError={(e) => { e.target.src = placeholderImg }}
+                  />
                 </div>
 
               </div>

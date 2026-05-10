@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { allProducts } from '../data/products'
 
+const placeholderImg = '/elementor-placeholder-image.png'
+
 const categories = [
   'Vacuum Blood Collection Tube',
   '⁠Non-vacuum Safety Cap Blood Collection Tube',
@@ -99,9 +101,10 @@ const Catalogue = () => {
                     <div className="w-full md:w-auto flex justify-center print:w-[30%]">
                       <div className="relative group w-full max-w-72 aspect-square bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm print:p-0 print:border-none print:shadow-none print:rounded-none">
                         <img
-                          src={product.image}
+                          src={product.image || placeholderImg}
                           alt={product.name}
                           className="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-110"
+                          onError={(e) => { e.target.src = placeholderImg }}
                         />
                       </div>
                     </div>

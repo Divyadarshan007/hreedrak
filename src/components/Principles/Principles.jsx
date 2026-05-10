@@ -52,7 +52,7 @@ const principles = [
 
 const Principles = () => {
   return (
-    <section className="py-16 lg:py-24 bg-white">
+    <section className="py-8 lg:py-24 bg-white">
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ const Principles = () => {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="flex flex-col items-center text-center mb-6 lg:mb-16">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-0.5 bg-[#00A650]" />
             <p className="text-[#00A650] text-xs font-bold uppercase tracking-[0.3em]">

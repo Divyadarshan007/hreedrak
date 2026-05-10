@@ -15,14 +15,14 @@ const OrderOfDraw = () => {
   ]
 
   return (
-    <section className="bg-white py-20 overflow-hidden" id="order-of-draw">
+    <section className="bg-white py-8 lg:py-24 overflow-hidden" id="order-of-draw">
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
       >
-        <div className="flex flex-col items-center text-center mb-16 relative z-10">
+        <div className="flex flex-col items-center text-center mb-6 lg:mb-16 relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-[#ED1B24]" />
             <p className="text-[#ED1B24] text-xs font-bold uppercase tracking-[0.3em]">COLLECTION PROCESS</p>
@@ -38,7 +38,7 @@ const OrderOfDraw = () => {
 
         <div className="relative w-full px-4 md:px-8">
           {/* Scrollable container for mobile, centered for desktop */}
-          <div className="flex items-center justify-start md:justify-center gap-y-12 flex-nowrap overflow-x-auto pb-12 md:pb-0 no-scrollbar scroll-smooth relative z-10">
+          <div className="flex items-center justify-start md:justify-center gap-y-12 flex-nowrap overflow-x-auto pb-2 md:pb-0 no-scrollbar scroll-smooth relative z-10">
             {tubes.map((tube, index) => (
               <div key={index} className="flex-none w-[130px] md:w-[155px] flex items-center justify-center relative">
                 {/* Watermark Letter */}

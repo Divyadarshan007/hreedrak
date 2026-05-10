@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 
+const placeholderImg = '/elementor-placeholder-image.png'
+
 /**
  * ProductCard component for the product list grid.
  * Displays: Category, Product Name, Brand Name, and MOQ.
@@ -17,9 +19,10 @@ const ProductCard = ({ product }) => {
       {/* Image Section - Shortened height for a more compact view */}
       <div className="aspect-[3/2] bg-white overflow-hidden flex items-center justify-center">
         <img 
-          src={product.image} 
+          src={product.image || placeholderImg} 
           alt={product.name} 
           className="w-full h-full object-cover"
+          onError={(e) => { e.target.src = placeholderImg }}
         />
       </div>
 
