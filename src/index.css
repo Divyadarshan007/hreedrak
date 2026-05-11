@@ -84,3 +84,72 @@ body {
 .delay-300 { animation-delay: 0.3s; }
 .delay-500 { animation-delay: 0.5s; }
 
+
+/* --- Google Translate Styling --- */
+.skiptranslate iframe {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+#google_translate_element {
+  display: flex;
+  align-items: center;
+}
+
+/* Style the default Google Translate select dropdown */
+.goog-te-combo {
+  background-color: #231F20 !important; /* Black/Dark Gray */
+  color: white !important;
+  border: 1px solid #4b5563 !important;
+  border-radius: 6px !important;
+  padding: 4px 8px !important;
+  font-size: 14px !important;
+  font-family: inherit !important;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 140px !important;
+}
+
+.goog-te-combo:hover {
+  background-color: #000000 !important;
+  border-color: #ED1B24 !important; /* Red highlight on hover */
+}
+
+/* Hide "Powered by Google" and all other branding text/logos */
+.goog-te-gadget {
+  font-family: inherit !important;
+  color: transparent !important;
+  font-size: 0 !important;
+}
+
+.goog-te-gadget span, 
+.goog-te-gadget a,
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  color: white !important;
+  font-size: 14px !important;
+  display: inline-block !important; /* Ensure the dropdown stays visible */
+  visibility: visible !important;
+}
+
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 1024px) {
+  .goog-te-combo {
+    width: 100% !important;
+    padding: 8px !important;
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid #e5e7eb !important;
+  }
+}

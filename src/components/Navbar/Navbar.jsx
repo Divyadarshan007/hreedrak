@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import GoogleTranslate from '../GoogleTranslate/GoogleTranslate'
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -152,6 +153,9 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            <div className="ml-4 flex items-center border-l border-gray-200 pl-4 h-8">
+              <GoogleTranslate />
+            </div>
           </div>
 
           {/* Mobile hamburger */}
@@ -217,6 +221,10 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            <div className="pt-4 pb-2 px-3 border-t border-gray-100 mt-2">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Language</p>
+              <GoogleTranslate />
+            </div>
           </div>
         )}
       </div>
